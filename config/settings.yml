@@ -1,0 +1,19 @@
+application:
+  name: III Aquarii
+  contact: admin@example.com
+  hostname: localhost
+aq_sh:
+  user_home: /home
+  user_name: aq_git
+git:
+  root_dir: /home
+  repo_user: aq_git
+  repo_path: git
+  have_public_clone: false # FIXME what is this ?
+  shell: /usr/local/bin/git-shell
+shell:
+  path: aquarii-lib/aquarii-sh.rb
+logs:
+  email: email.log
+  scm: scm.log
+  aq_sh: aq_sh.log
