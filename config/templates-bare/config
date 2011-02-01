@@ -1,5 +1,5 @@
 [core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = true
-        ignorecase = true
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
