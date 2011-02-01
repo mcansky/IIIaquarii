@@ -19,15 +19,23 @@ gem 'ruby-debug'
 
 # User auth
 gem "devise", :git => 'git://github.com/plataformatec/devise.git'
+
 # Rails config files
 gem 'rails_config'
+
 # Highlightings
 # TODO use github's syntax highligter and pygment wrapper
 # ------
+
 # Other
 gem 'nifty-generators'
+
 # Git stuff
 gem 'grit'
+
 # Versioning
 # TODO see if more recent available
 gem 'acts_as_versioned', :git => "git://github.com/xspond/acts_as_versioned.git", :branch => "rails3"
+
+# Use jQuery instead of rails default
+gem "jquery-rails"
