@@ -1,6 +1,16 @@
 class SshKey < ActiveRecord::Base
   belongs_to :user
 
+  validates_presence_of :name, :key
+  before_validation :is_valid?
+
+  # Wrapper around valid method for validation
+  def is_valid?
+    if not self.valid
+      errors.add_to_base "Invalid SSH Key !"
+    end
+  end
+
   # extract the login from the pasted key and insert it in the db
   def extract_login
     if self.valid
@@ -21,6 +31,9 @@ class SshKey < ActiveRecord::Base
   def valid
     if self.key
       key_pieces = self.key.split(" ")
+      if key_pieces.size < 2
+        return false
+      end
       small_key = key_pieces[0] + " " + key_pieces[1]
       #if small_key =~ /^(ssh-\w+ [a-zA-Z0-9\/\+]+==?).*$/
       if small_key =~ /^(ssh-\w+ [a-zA-Z0-9\/\+].*)$/

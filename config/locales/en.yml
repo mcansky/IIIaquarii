@@ -7,6 +7,19 @@ en:
     label: "Repositories"
   sshkeys:
     label: "SSH keys"
+    yours: "Your Keys"
+    new: "New Key"
+    edit: "Edit Key"
+    key: "SSH Key"
+    list: "Key List"
+    show: "Show Key"
+    delete: "Delete key"
+    not_owner: "You are not the key owner."
+    created: "Key Created"
+    updated: "Key Updated"
+    destroyed: "Key Deleted"
+    login: "Login"
+    extracted_from_key: "Extracted from key"
   signup:
     label: "Sign up"
   logout:
@@ -20,3 +33,8 @@ en:
     name: "Name:"
   sessions:
     signin: "Sign In"
+  links:
+    cancel: "Cancel"
+    submit: "Submit"
+  js:
+    confirm: "Are you sure?"

@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <title><%= t(:show, :scope => :sshkeys) %> <%= @key.name %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div id="sshkeys">
+  <h2>
+    <%= image_tag("/images/icons/license-key.png", :title => t(:key, :scope => :sshkeys), :alt => t(:key, :scope => :sshkeys), :border => 0)%>
+    <%= @key.name %>
+    <%= link_to image_tag("/images/icons/pencil.png", :title => t(:edit, :scope => :sshkeys), :alt => t(:edit, :scope => :sshkeys), :border => 0), :action => "edit", :id => @key.id %>
+    <%= link_to(ssh_key_url(@key), :confirm => t(:confirm, :scope => :js), :method => :delete) do %>
+      <%= image_tag("/images/icons/target.png", :title => t(:delete, :scope => :sshkeys), :alt => t(:delete, :scope => :sshkeys), :border => 0) %>
+    <% end %>
+  </h2>
+
+  <div class="sshkey">
+    <p><strong><%= t(:login, :scope => :sshkeys) %></strong> : <%= @key.login %> (<%= t(:extracted_from_key, :scope => :sshkeys)%>)</p>
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <title><%= t(:new, :scope => :sshkeys) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<h1><%= t(:new, :scope => :sshkeys) %></h1>
+
+<%= render "form", :key => @key %>
+
+<%= link_to t(:list, :scope => :sshkeys), ssh_keys_path %>

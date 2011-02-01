@@ -82,6 +82,10 @@ ActiveRecord::Schema.define(:version => 20110201131157) do
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "ssh_keys", :force => true do |t|
+    t.string   "name",       :default => "default"
+    t.text     "key"
+    t.string   "login"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
