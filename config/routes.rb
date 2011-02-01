@@ -4,6 +4,7 @@ IIIaquarii::Application.routes.draw do
   resources :users
   resources :ssh_keys
   resources :aq_repositories
+  resources :rights
 
   # fork
   match "/aq_repositories/fork/:id" => "aq_repositories#fork"
