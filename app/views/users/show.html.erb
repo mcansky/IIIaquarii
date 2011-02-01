@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <title><%= @user.login %><%= t(:user_show_profile, :scope => :users) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div id="user">
+
+  <div class="user_desc">
+    <h2><%= image_tag("/images/icons/user-silhouette.png", :title => nil, :alt => nil, :border => 0) %> <%= @user.login %></h2>
+
+    <p>
+      <strong><%= t(:contact, :scope => :users) %></strong> <%= @user.email %>
+    </p>
+  </div>
+
+  <div class="user_repositories">
+    <h2><%= t(:label, :scope => :repositories) %></h2>
+</div>
+
+<div class="user_commits">
+  <h2>Latest commits</h2>
+
+</div>
+<div class="clear"></div>
+
+</div>

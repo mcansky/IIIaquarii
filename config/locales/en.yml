@@ -14,5 +14,8 @@ en:
   users:
     edit: "Edit user"
     new: "New user"
+    show: "Show user"
+    user_show_profile: "'s profile"
+    contact: "Contact:"
   sessions:
     signin: "Sign In"
