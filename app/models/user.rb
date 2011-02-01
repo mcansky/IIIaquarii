@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :login
 
+  has_friendly_id :login, :use_slug => true
+
   before_validation :set_initial_name
 
   validates_presence_of :login, :email, :password, :name

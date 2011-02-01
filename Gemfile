@@ -39,3 +39,6 @@ gem 'acts_as_versioned', :git => "git://github.com/xspond/acts_as_versioned.git"
 
 # Use jQuery instead of rails default
 gem "jquery-rails"
+
+# Friendly ID
+gem "friendly_id", "~> 3.2"
