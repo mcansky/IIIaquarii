@@ -13,3 +13,6 @@ en:
     label: "Logout"
   users:
     edit: "Edit user"
+    new: "New user"
+  sessions:
+    signin: "Sign In"
