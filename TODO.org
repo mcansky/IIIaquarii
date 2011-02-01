@@ -1,4 +1,4 @@
 * Tasks [0/3] [0%]
 ** TODO devise designs
-** TODO Global links colour ?
+** TODO Global links colour
 ** TODO Gravatar using Gravtastic
