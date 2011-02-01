@@ -5,6 +5,7 @@ application:
   name: III Aquarii
   contact: admin@example.com
   hostname: localhost
+  use_rvm: true
 aq_sh:
   user_home: /tmp
   user_name: aq_git
