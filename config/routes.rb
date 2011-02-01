@@ -12,7 +12,7 @@ IIIaquarii::Application.routes.draw do
   match "/aq_repositories/browse/:id/(:dir)", :to => "aq_repositories#show", :dir => /(.*)/
 
   # view a file
-  match "/aq_repositories/view_file/:id/(:path)", :to => "aq_repositories#view_file", :path => /(.*)/
+  match "/aq_repositories/view_file/:id/(:file_path)", :to => "aq_repositories#view_file", :file_path => /(.*)/
 
   # commit log
   match "/aq_repositories/commits/:id", :to => "aq_repositories#show_commits"
