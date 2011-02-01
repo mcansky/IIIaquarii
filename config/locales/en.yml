@@ -16,6 +16,7 @@ en:
     new: "New user"
     show: "Show user"
     user_show_profile: "'s profile"
-    contact: "Contact:"
+    email: "Email:"
+    name: "Name:"
   sessions:
     signin: "Sign In"

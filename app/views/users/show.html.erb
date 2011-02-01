@@ -8,7 +8,11 @@
     <h2><%= image_tag("/images/icons/user-silhouette.png", :title => nil, :alt => nil, :border => 0) %> <%= @user.login %></h2>
 
     <p>
-      <strong><%= t(:contact, :scope => :users) %></strong> <%= @user.email %>
+      <% if @user.name != @user.login %>
+        <strong><%= t(:name, :scope => :users) %></strong> <%= @user.name %>
+        <br>
+      <% end %>
+      <strong><%= t(:email, :scope => :users) %></strong> <%= mail_to @user.email, nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>
     </p>
   </div>
 

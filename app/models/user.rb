@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :login, :email, :password, :name
   # TODO how to i18n this ?
-  validates_format_of :name, :with => /^\w+$/i, :message => "can only contains letters and numbers."
+  validates_format_of :name, :with => /^[\w\s.'-]+$/i, :message => "can only contains letters and numbers."
   validates_format_of :login, :with => /^\w+$/i, :allow_blank => true, :message => "can only contains letters and numbers."
   validates_uniqueness_of :name, :case_sensitive => true
   validates_uniqueness_of :email, :case_sensitive => true
