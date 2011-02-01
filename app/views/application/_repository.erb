@@ -27,7 +27,8 @@
 	  <span class="kind_hg">H</span>
 	<% end %>
 	<span class="rep_name"><%= link_to rep2.owner.login + "/" + rep2.name, rep2 %></span>
-	<%= link_to t(:user_del), rep2, {:method => :delete, :confirm => t(:ask_confirm), :title => t(:user_del) }%>
+        &nbsp;-&nbsp;
+	<%= link_to t(:delete, :scope => :repositories), rep2, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
       </h3>
       <div class="desc">
 	<p><%= rep2.desc %></p>
