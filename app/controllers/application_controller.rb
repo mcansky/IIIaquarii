@@ -18,8 +18,7 @@ class ApplicationController < ActionController::Base
       return true
     else
       flash[:notice] = t(:required, :scope => :login)
-      # TODO implement
-      #redirect_to login_path
+      redirect_to new_user_session_url
     end # if current_user
   end # def login_required
 
