@@ -81,7 +81,7 @@ class AqRepository < ActiveRecord::Base
     grit_repo = Repo.new(self.path)
     count = 0
     grit_repo.branches.each do |b|
-      self.branches << AqBranche.new(:name => b.name) if not self.branches.find_by_name(b.name)
+      self.branches << AqBranch.new(:name => b.name) if not self.branches.find_by_name(b.name)
     end
     self.branches.each do |b|
       b.grit_update
@@ -184,7 +184,7 @@ class AqRepository < ActiveRecord::Base
     dirs = {
       "hooks" => nil,
       "info" => nil,
-      "object" => { "info" => nil, "pack" => nil },
+      "objects" => { "info" => nil, "pack" => nil },
       "refs" => { "heads" => nil, "tags" => nil }}
     files = ["HEAD", "config", "description"]
 
