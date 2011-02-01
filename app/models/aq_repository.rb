@@ -9,11 +9,11 @@ class AqRepository < ActiveRecord::Base
 
   has_many :rights
   has_many :users, :through => :rights
-  #has_many :branches, :class_name => "AqBranch"
-  #has_many :commits, :class_name => "AqCommit", :through => :branches, :order => "committed_time"
+  has_many :branches, :class_name => "AqBranch"
+  has_many :commits, :class_name => "AqCommit", :through => :branches, :order => "committed_time"
   has_many :forks, :class_name => "AqRepository", :foreign_key => "parent_id"
   belongs_to :parent, :class_name => "AqRepository", :foreign_key => "parent_id"
-  #has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
+  has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
 
   def owner
     a_right = self.rights.find(:all, :conditions => ["role = ?", 'o']).first

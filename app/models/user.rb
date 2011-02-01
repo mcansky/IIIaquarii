@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
   has_friendly_id :login, :use_slug => true
 
+  has_many :ssh_keys
+  has_many :rights
+  has_many :aq_repositories, :through => :rights
+  has_many :aq_commits, :foreign_key => "author_id", :order => "committed_time DESC"
+
   before_validation :set_initial_name
 
   validates_presence_of :login, :email, :password, :name
