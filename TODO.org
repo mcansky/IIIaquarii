@@ -1,7 +1,8 @@
-* Tasks [0/6] [0%]
+* Tasks [0/7] [0%]
 ** TODO devise designs
 ** TODO Global links colour
 ** TODO Gravatar using Gravtastic
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO fix aq_sh log path
+** TODO Add config option to use RVM hack or not

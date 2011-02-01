@@ -22,7 +22,7 @@ class SshKey < ActiveRecord::Base
   # return the ssh key (without the username@host)
   def short
     if self.valid
-      key_pieces = self.key_split(" ")
+      key_pieces = self.key.split(" ")
       return key_pieces[0] + " " + key_pieces[1]
     end
   end # def short
@@ -49,7 +49,7 @@ class SshKey < ActiveRecord::Base
   # prepare the command for the export to the filesystem
   def command
     if self.valid
-      command = ["command=\"#{Rails.root}/#{Settings.application.aq_shell} #{self.login}\"",
+      command = ["source ~/.rvm/scripts/rvm ; command=\"#{Rails.root}/#{Settings.shell.path} #{self.login}\"",
                  "no-port-forwarding", "no-X11-forwarding", "no-agent-forwarding"]
       command.join(",")
     end
