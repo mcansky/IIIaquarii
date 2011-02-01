@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <title>
+    <%= t(:edit, :scope => :repositories) %> - <%= Settings.application.name %>
+  </title>
+<% end %>
+
+<h1><%= @repository.name %></h1>
+
+<%= render "form", :repository => @repository %>
+
+<%= button_to t(:delete, :scope => :links), @repository, :confirm => t(:confirm, :scope => :js), :method => :delete %>

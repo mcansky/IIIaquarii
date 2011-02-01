@@ -18,11 +18,16 @@
 
   <div class="user_repositories">
     <h2><%= t(:label, :scope => :repositories) %></h2>
+    <% @user.aq_repositories.first(10).each_slice(2) do |rep1,rep2| %>
+      <%= render "application/short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+    <% end %>
 </div>
 
 <div class="user_commits">
   <h2>Latest commits</h2>
-
+  <% for commit in @user.aq_commits.first(10) %>
+    <%= render "application/short_commit", :commit => commit %>
+  <% end %>
 </div>
 <div class="clear"></div>
 

@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <title><%= t(:new, :scope => :repositories) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div id="repositories">
+  <h2><%= t(:new, :scope => :repositories) %></h2>
+
+  <%= render "form", :repository => @repository %>
+
+  <%= link_to t(:list, :scope => :repositories), :controller => "aq_repositories", :action => "index" %>
+</div>

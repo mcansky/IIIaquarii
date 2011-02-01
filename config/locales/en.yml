@@ -5,6 +5,18 @@ en:
     label: "Login"
   repositories:
     label: "Repositories"
+    repositories: "Repositories"
+    new: "New repository"
+    list: "Repository list"
+    edit: "Edit repository"
+    private_path: "Private URL:"
+    public_path: "Public URL:"
+    branches: "Branches:"
+    no_branches: "No branches"
+    commits: "Commits:"
+    owner: "Owner"
+    delete: "Delete repository"
+    repo_sources: "Browse repository"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
@@ -31,10 +43,25 @@ en:
     user_show_profile: "'s profile"
     email: "Email:"
     name: "Name:"
+    delete: "Delete user"
   sessions:
     signin: "Sign In"
+  beans:
+    beans: "Coffee beans"
+    show_some_love: "Show some love: drop a coffee bean !"
+    beans_dropped: "coffee beans dropped"
+    bean_drop: "Drop a coffee bean"
+    bean_already_dropped: "You already dropped a bean for this project this month !"
+    no_more_beans_month: "You already dropped all your beans this month !"
   links:
     cancel: "Cancel"
     submit: "Submit"
+    delete: "Delete"
+    continue: "Continue"
   js:
     confirm: "Are you sure?"
+  activerecord:
+    attributes:
+      aq_repository:
+        repo_kind: "Type"
+        visibility: "Private"

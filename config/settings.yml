@@ -3,14 +3,14 @@ application:
   contact: admin@example.com
   hostname: localhost
 aq_sh:
-  user_home: /home
+  user_home: /tmp
   user_name: aq_git
 repos:
-  root_dir: /home
+  root_dir: /tmp
   repo_user: aq_git
 git:
   repo_path: git
-  have_public_clone: false # global public clone ?
+  have_public_clone: true # global public clone ?
   shell: /usr/local/bin/git-shell
 shell:
   path: aquarii-lib/aquarii-sh.rb

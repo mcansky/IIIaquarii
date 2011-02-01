@@ -1,0 +1,39 @@
+<div id="new_repository_text_message">
+  <h3>Global setup:</h3>
+  <ul>
+    <li>Download and install Git</li>
+    <li>git config --global user.name "<%= current_user.name %>"</li>
+    <li>git config --global user.email <%= current_user.email %></li>
+  </ul>
+
+  <br>
+
+  <h3>Non-existing git repo?</h3>
+  <ul>
+    <li>mkdir "<%= @repository.name %>"</li>
+    <li>cd "<%= @repository.name %>"</li>
+    <li>git init</li>
+    <li>touch README</li>
+    <li>git add README</li>
+    <li>git commit -m "first commit"</li>
+    <li>git remote add origin <%= @repository.private_path %></li>
+    <li>git push origin master</li>
+  </ul>
+
+  <br>
+
+  <h3>Existing git repo?</h3>
+  <ul>
+    <li>cd your_project</li>
+    <li>git remote add origin <%= @repository.private_path %></li>
+    <li>git push origin master</li>
+  </ul>
+
+  <br>
+
+  <h3>Done ?</h3>
+  <ul>
+    <li><%= link_to t(:continue, :scope => :links), @repository %></li>
+  </ul>
+
+</div>

@@ -3,6 +3,7 @@ IIIaquarii::Application.routes.draw do
 
   resources :users
   resources :ssh_keys
+  resources :aq_repositories
 
   root :to => "application#index"
 end

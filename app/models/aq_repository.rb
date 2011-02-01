@@ -43,7 +43,7 @@ class AqRepository < ActiveRecord::Base
     return r_committers
   end # def committers
 
-  def has_public_clone?
+  def have_public_clone?
     Settings.git.have_public_clone
   end
 
@@ -58,7 +58,7 @@ class AqRepository < ActiveRecord::Base
   def private_path
     if self.is_git?
       split_path = self.path.split("/")
-      ppath = Settings.git.repo_user + "@" + Settings.application.hostname + ":" +
+      ppath = Settings.repos.repo_user + "@" + Settings.application.hostname + ":" +
         split_path[-2] + "/" + split_path[-1]
     end # if self.is_git?
   end # def private_path
@@ -136,8 +136,8 @@ class AqRepository < ActiveRecord::Base
     # e.g. /home/aq_git/git/username
     if self.owner
       repo_dir = scm_dir + self.owner.login
-    elsif current_user
-      repo_dir = scm_dir + current_user.login
+    elsif User.our_current_user
+      repo_dir = scm_dir + User.our_current_user.login
     end
     repo_dir.mkdir if !repo_dir.exist?
 
@@ -152,13 +152,13 @@ class AqRepository < ActiveRecord::Base
   end # def repo_path // Generate the repo path
 
   def fork(parent_repo)
-    if !current_user.aq_repositories.find_by_name(parent_repo.name)
+    if !User.our_current_user.aq_repositories.find_by_name(parent_repo.name)
       self.name = parent_repo.name
       self.kind = parent_repo.kind
       self.repo_path
       system("cp -r #{parent_repo.path}/* #{self.path}")
       self.parent = parent_repo
-      self.owner = current_user
+      self.owner = User.our_current_user
       self.repo_update
     else
       redirect_to parent_repo

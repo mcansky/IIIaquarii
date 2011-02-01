@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  cattr_accessor :our_current_user
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,

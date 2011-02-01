@@ -1,0 +1,38 @@
+<div class="left_rep">
+  <div class="repository">
+    <h3>
+      <% if rep1.is_git? %>
+	<span class="kind_git">G</span>
+      <% elsif rep1.is_hg? %>
+	<span class="kind_hg">H</span>
+      <% end %>
+      <span class="rep_name"><%= link_to rep1.owner.login + "/" + rep1.name, rep1 %></span>
+      &nbsp;-&nbsp;
+      <%= link_to t(:delete, :scope => :repositories), rep1, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
+    </h3>
+    <div class="desc">
+      <p><%= rep1.desc %></p>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+<% if rep2 %>
+  <div class="right_rep">
+    <div class="repository">
+      <h3>
+	<% if rep2.is_git? %>
+	  <span class="kind_git">G</span>
+	<% elsif rep2.is_hg? %>
+	  <span class="kind_hg">H</span>
+	<% end %>
+	<span class="rep_name"><%= link_to rep2.owner.login + "/" + rep2.name, rep2 %></span>
+	<%= link_to t(:user_del), rep2, {:method => :delete, :confirm => t(:ask_confirm), :title => t(:user_del) }%>
+      </h3>
+      <div class="desc">
+	<p><%= rep2.desc %></p>
+	<div class="clear"></div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <title>
+    <%= t(:repo_my, :scope => :repositories) %> - <%= Settings.application.name %>
+  </title>
+<% end %>
+
+<div id="repositories">
+  <h2>
+    <%= t(:repositories, :scope => :repositories) %>
+    <% if current_user %>
+      <%= link_to image_tag("/images/icons/plus-small.png", :title => t(:new, :scope => :repositories), :alt => t(:new, :scope => :repositories), :border => 0), {:action => "new"}%>
+    <% end %>
+  </h2>
+
+  <% @repositories.first(10).each_slice(2) do |rep1,rep2| %>
+  <%= render "application/repository", :rep1 => rep1, :rep2 => rep2 %>
+<% end %>
+<div class="clear"></div>
+</div>

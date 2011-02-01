@@ -1,0 +1,11 @@
+<div class="commit">
+  <h4>
+    <%= image_tag("/images/icons/block.png", :title => t(:commit, :scope => :repositories) , :alt => t(:commit, :scope => :repositories), :border => 0) %>
+    <%= commit.author_name %>
+    <%= t(:pushed) %>
+    <%= commit.sha %>
+    <%= t(:to) %>
+    <%= commit.branch.name %>
+  </h4>
+  <p><%= commit.log.lines.first %></p>
+</div>

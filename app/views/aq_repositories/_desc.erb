@@ -1,0 +1,19 @@
+<div class="desc">
+  <% if @repository.have_public_clone? %>
+    <p><strong><%= t(:public_path, :scope => :repositories) %> </strong><%= @repository.public_path %></p>
+  <% end %>
+  <% if @repository.owner == current_user %>
+    <p><strong><%= t(:private_path, :scope => :repositories) %> </strong><%= @repository.private_path %></p>
+  <% end %>
+  <p><strong><%= t(:branches, :scope => :repositories) %> </strong>
+    <% if @repository.branches.empty? %>
+      <%= t(:no_branches, :scope => :repositories) %>
+    <% end %>
+    <% @repository.branches.each do |br| %>
+      <%= link_to br.name, :action => "show", :branch => br.name %>
+    <% end %>
+  </p>
+  <p><strong><%= link_to t(:commits, :scope => :repositories), "/aq_repositories/commits/#{@repository.id}" %> <%= @repository.commits.count %></strong></p>
+  <p class="desc"><%= @repository.desc %></p>
+  <div class="clear"></div>
+</div>

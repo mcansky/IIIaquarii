@@ -1,0 +1,36 @@
+<% content_for :head do %>
+  <title><%= t(:repo_commits_list, :scope => :repositories) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div id="repository">
+  <%= render "infos", :repository => @repository %>
+
+  <div class="repository">
+    <%= render "people", :repository => @repository %>
+
+    <%= render "desc", :repository => @repository %>
+
+    <div id="commits_list">
+      <% if @repository.branches.size != 0 %>
+	<% branch = "master" %>
+	<% branch = params[:branch] if params[:branch] %>
+        <% commits = @grit_repo.commits(branch) %>
+        <% for commit in commits %>
+          <div class="commit">
+            <div class="commit_date">
+              <%= link_to "#{commit.sha.slice(0,7)}", "/aq_repositories/commits/#{@repository.id}/#{commit.sha}?branch=#{branch}" %>...
+              <%= "on: #{commit.date.strftime("%I:%M %p %x").downcase} by: #{commit.author.name} #{commit.author.email}" %>
+            </div>
+            <% # Typo '=' ? %>
+            <div class="commit_m=essage">
+              <%= commit.message %>
+            </div>
+          </div>
+          <br />
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
