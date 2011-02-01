@@ -17,6 +17,7 @@ en:
     owner: "Owner"
     delete: "Delete repository"
     repo_sources: "Browse repository"
+    repo_my: "Own repositories"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
