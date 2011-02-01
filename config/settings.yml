@@ -1,3 +1,6 @@
+# PLEASE READ THE FILE 'GIT_CONFIG_PATHS' BEFORE CONFIGURATION !!!
+# You _really_ need to understand the two set of variables to build
+# the final repository path from the Aquarii shell or the WebApp.
 application:
   name: III Aquarii
   contact: admin@example.com
@@ -7,7 +10,7 @@ aq_sh:
   user_name: aq_git
 repos:
   root_dir: /tmp
-  repo_user: rhaamo
+  repo_user: aq_git
 git:
   repo_path: git
   have_public_clone: true # global public clone ?
