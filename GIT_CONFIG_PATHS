@@ -1,0 +1,6 @@
+Aquarii Shell
+	aq_sh.user_home  aq_sh.user_name  git.repo_path  <username> <repo name>
+	/tmp             /aq_git          /git           /toto      /some_repos.git
+WebApp
+	repos.root_dir   repos.repo_user  git.repo_path  <username> <repo name>
+	/tmp             /aq_git          /git           /toto      /some_repos.git
