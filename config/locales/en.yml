@@ -18,6 +18,8 @@ en:
     delete: "Delete repository"
     repo_sources: "Browse repository"
     repo_my: "Own repositories"
+    file_view: "View file"
+    commits_list: "Commits list"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"

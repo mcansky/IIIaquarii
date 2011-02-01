@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= t(:repo_file_view, :scope => :repositories) %> - <%= Settings.application.name %></title>
+  <title><%= t(:file_view, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
 <div id="repository">
@@ -15,17 +15,17 @@
 	<% branch = "master" %>
 	<% branch = params[:branch] if params[:branch] %>
 	<% root_dir = "" %>
-        <% root_dir = params[:path] + "/" if params[:path] %>
+        <% root_dir = params[:file_path] + "/" if params[:file_path] %>
         <% root_dir = (Pathname(root_dir) + "..").to_s %>
         <% if root_dir == "." %>
           <% root_dir = "" %>
         <% end %>
         <% tree = @grit_repo.tree(branch, root_dir) %>
-        <% if params[:path] %>
+        <% if params[:file_path] %>
           <% blobs = tree.blobs %>
           <% if blobs %>
             <% blobs.each do |a_blob| %>
-              <% if a_blob.name == params[:path].split("/").last %>
+              <% if a_blob.name == params[:file_path].split("/").last %>
                 <% if a_blob.mime_type =~ /^(text)\/(.*)$/ %>
                   <pre><%= a_blob.data %></pre>
                 <% end %>
