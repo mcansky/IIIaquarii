@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110201125555) do
+ActiveRecord::Schema.define(:version => 20110201130335) do
+
+  create_table "aq_branches", :force => true do |t|
+    t.string   "name"
+    t.integer  "aq_repository_id"
+    t.integer  "owner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "aq_repositories", :force => true do |t|
     t.string   "name"
