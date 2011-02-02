@@ -204,16 +204,18 @@ span.kind_hg {
     padding-bottom: 5px;
 }
 
-#repo_browser {
+#repo_browser #repo_files {
     border: 1px solid #CECECE;
     background-color: #EFEFEF;
+}
+
+#repo_browser {
     margin-bottom: 1em;
 }
 
 #repo_browser .path {
-    padding: 5px;
-    border-bottom: 1px solid #CECECE;
-    font-size: 10pt;
+    padding-bottom: 5px;
+    font-size: 15pt;
     font-weight: bold;
 }
 
