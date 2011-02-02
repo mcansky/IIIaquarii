@@ -161,6 +161,7 @@ body {
     border-left: 2px solid #888;
 }
 
+
 #repositories .left_repo .rep_name, #repositories .right_repo .rep_name {
     padding-left: 5px;
 }
@@ -180,6 +181,71 @@ span.kind_hg {
     font-size: 12pt;
     font-weight: bold;
     color: green;
+}
+
+#repo_infos_and_ppl {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #EEE;
+}
+
+#repo_urls_and_branchs {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 5px;
+}
+
+#repository .repo_desc {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 5px;
+}
+
+#repo_browser {
+    border: 1px solid #CECECE;
+    background-color: #EFEFEF;
+    margin-bottom: 1em;
+}
+
+#repo_browser .path {
+    padding: 5px;
+    border-bottom: 1px solid #CECECE;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+#repo_browser #repo_files tr {
+    width: 100%;
+}
+
+#repo_browser #repo_files th, #repo_browser #repo_files td {
+    padding: 3px;
+}
+
+#repo_browser #repo_files td a {
+    text-decoration: none;
+}
+
+#repo_browser #repo_files tr.file {
+    border-top: 1px solid #CECECE;
+}
+
+#repo_browser #repo_files th.rf_filename {
+    min-width: 200px;
+    text-align: left;
+}
+#repo_browser #repo_files th.rf_updated_on {
+    min-width: 130px;
+    text-align: left;
+}
+#repo_browser #repo_files th.rf_commit_log {
+    width: 100%;
+    text-align: left;
+}
+
+#view_readme_file {
+    border: 1px solid #cecece;
+    background-color: #F6F6F6;
+    padding: 5px;
 }
 
 #footer {

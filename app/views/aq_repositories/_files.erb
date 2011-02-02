@@ -6,11 +6,11 @@
       <%= link_to "/", :action => :show, :id => @repository.id %>
       <%= path %> (<%= params[:branch] || "master" %>)</p>
   </div>
-  <table cellspacing=0>
+  <table cellspacing=0 id="repo_files">
     <tr>
-      <th>Filename</th>
-      <th>Updated on</th>
-      <th>Commit log</th>
+      <th class="rf_filename" >Filename</th>
+      <th class="rf_updated_on" >Updated on</th>
+      <th class="rf_commit_log" >Commit log</th>
     </tr>
     <% branch = "master" %>
     <% branch = params[:branch] if params[:branch] %>

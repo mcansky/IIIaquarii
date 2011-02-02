@@ -1,0 +1,8 @@
+<div id="repo_urls">
+  <% if @repository.have_public_clone? %>
+    <p><strong><%= t(:public_path, :scope => :repositories) %> </strong><%= @repository.public_path %></p>
+  <% end %>
+  <% if @repository.owner == current_user %>
+    <p><strong><%= t(:private_path, :scope => :repositories) %> </strong><%= @repository.private_path %></p>
+  <% end %>
+</div>

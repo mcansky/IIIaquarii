@@ -8,7 +8,7 @@
   <div class="repository">
     <%= render "people", :repository => @repository %>
 
-    <%= render "desc", :repository => @repository %>
+    <p class="desc"><%= @repository.desc %></p>
 
     <div id="view_file">
       <% if @repository.branches.size != 0 %>

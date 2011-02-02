@@ -3,14 +3,39 @@
 <% end %>
 
 <div id="repository">
-  <%= render "infos", :repository => @repository %>
+  <div id="repo_infos_and_ppl">
+    <div class="grid_7 alpha">
+      <%= render "infos", :repository => @repository %>
+    </div>
 
-  <div class="repository">
+    <div class="grid_5 omega">
+      <%= render "people", :repository => @repository %>
+    </div>
+    <div class="clear"></div>
+  </div>
 
-    <%= render "people", :repository => @repository %>
 
-    <%= render "desc", :repository => @repository %>
 
+  <div id="repo_urls_and_branchs">
+    <div class="grid_7 alpha">
+      <%= render :partial => "repo_urls" %>
+    </div>
+
+    <div class="grid_5 omega">
+      <%= render :partial => "repo_branch_list" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+
+
+  <div class="grid_12 repo_desc">
+    <p class="desc"><%= @repository.desc %></p>
+  </div>
+  <div class="clear"></div>
+
+
+  <div class="grid_10 prefix_1 suffix_1">
     <% if @repository.branches.empty? and @repository.commits.empty? %>
       <%= render "new_repository_text_message", :repository => @repository %>
     <% end %>
@@ -30,6 +55,7 @@
         <% if blobs %>
           <% blobs.each do |a_blob| %>
             <% if a_blob.name =~ /^(README|README.(.*)|readme|readme.(.*))$/ and a_blob.mime_type =~ /^text\/(.*)$/ %>
+              <h3><%= a_blob.name %></h3>
               <div id="view_readme_file">
                 <pre><%= a_blob.data %></pre>
               </div>
@@ -38,7 +64,7 @@
         <% end %>
       <% end %>
     <% end %>
-
-    <div class="clear"></div>
   </div>
+  <div class="clear"></div>
+
 </div>
