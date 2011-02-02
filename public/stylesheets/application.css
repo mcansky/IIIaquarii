@@ -10,6 +10,10 @@ p {
     margin-bottom: 0;
 }
 
+img {
+    border: 0;
+}
+
 body {
     background: #EEE url(/images/bg_main.png);
     color: #333;
@@ -23,8 +27,35 @@ body {
 #menu .container_12{
     background-image: url(/images/background-yellow.png);
 }
-#index_menu_left {}
-#index_menu_right {}
+
+#index_menu_left {
+    padding: 5px;
+}
+
+#index_menu_left a {
+    text-decoration: none;
+}
+
+#index_menu_left a:hover {
+    color: #000;
+}
+
+#index_menu_left #link_home {
+    background-image: url(/images/icons/home.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+
+#index_menu_right {
+    padding: 5px;
+}
+
+#index_menu_right img {
+    /* Fix icons alignment */
+    margin-bottom: -4px;
+}
 
 #content {
     margin-top: 1em;
@@ -136,6 +167,42 @@ span.kind_hg {
     margin-bottom: 10px;
 }
 
+#flash_error_messages {
+    margin-top: -1em; /* content have a margin-top: 1em; */
+    margin-bottom: 10px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    background-color: #DFDFDF;
+    border-left: 1px solid #424242;
+    border-right: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#flash_error_messages .close_flash_error_message {
+    display: inline;
+    float: right;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+
+#show_error_messages {
+    display: none;
+}
+
+.devise_shared_link {
+    font-size: 10pt;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+input {
+    margin-bottom: 10px;
+}
 
 /*
 

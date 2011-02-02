@@ -28,7 +28,7 @@
 
       <div class="container_12">
         <!-- left part -->
-        <div class="grid_10">
+        <div class="grid_11">
           <div id="index_menu_left">
             <%= link_to "Home", root_url, :id => "link_home" %>
 
@@ -43,13 +43,13 @@
         </div> <!-- /left part -->
 
         <!-- right part -->
-        <div class="grid_2">
+        <div class="grid_1">
           <div id="index_menu_right">
             <% if current_user %>
 	      <%= link_to image_tag("/images/icons/wrench.png", :alt => t(:edit, :scope => :users), :title => t(:edit, :scope => :users), :border => 0), edit_user_registration_url %>
 	      <%= link_to image_tag("/images/icons/door.png", :alt =>t(:label, :scope => :logout), :title => t(:label, :scope => :logout), :border => 0), destroy_user_session_url %>
             <% else %>
-	      <%= link_to image_tag("/images/icons/door.png", :alt => t(:label, :scope => :login), :title => t(:label, :scope => :logout)), new_user_session_url %>
+	      <%= link_to image_tag("/images/icons/door.png", :alt => t(:label, :scope => :login), :title => t(:label, :scope => :login)), new_user_session_url %>
 	      <%= link_to image_tag("/images/icons/rocket-fly.png", :alt => t(:label, :scope => :signup), :title => t(:label, :scope => :signup), :border => 0), new_user_registration_url %>
             <% end %>
           </div>

@@ -1,0 +1,11 @@
+<% if flash[:warning] or flash[:notice] or flash[:error] or flash[:alert] %>
+  <div id="show_error_messages">
+    <a href="#" onclick="$('#show_error_messages').toggle();$('#flash_error_messages').toggle();">Show message</a>
+    <br><br>
+  </div>
+
+  <div id="flash_error_messages">
+    <a class="close_flash_error_message" href="#" onclick="$('#flash_error_messages').toggle('slow');$('#show_error_messages').toggle();" >x</a>
+    <span><%= flash[:error] || flash[:alert] || flash[:warning] || flash[:notice] %></span>
+  </div>
+<% end %>
