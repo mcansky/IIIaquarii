@@ -1,4 +1,4 @@
-<div class="left_repo">
+<div class="left_repo grid_6 alpha">
   <div class="repository">
     <h3>
       <% if rep1.is_git? %>
@@ -12,13 +12,12 @@
     </h3>
     <div class="desc">
       <p><%= rep1.desc %></p>
-      <div class="clear"></div>
     </div>
   </div>
 </div>
 
 <% if rep2 %>
-  <div class="right_rep">
+  <div class="right_repo grid_6 omega">
     <div class="repository">
       <h3>
 	<% if rep2.is_git? %>
@@ -32,8 +31,9 @@
       </h3>
       <div class="desc">
 	<p><%= rep2.desc %></p>
-	<div class="clear"></div>
       </div>
     </div>
   </div>
 <% end %>
+
+<div class="clear"></div>

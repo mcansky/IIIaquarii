@@ -6,10 +6,7 @@
 html {}
 
 /* Override some stuff from text.css */
-p {
-    margin-bottom: 0;
-}
-h2 {
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
     margin-bottom: 0;
 }
 
@@ -150,6 +147,17 @@ body {
 }
 
 #repositories .short_repository .rep_name {
+    padding-left: 5px;
+}
+
+#repositories .left_repo, #repositories .right_repo {
+    padding: 0;
+    margin-bottom: 2em;
+    padding-left: 8px;
+    border-left: 2px solid #888;
+}
+
+#repositories .left_repo .rep_name, #repositories .right_repo .rep_name {
     padding-left: 5px;
 }
 
