@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_our_current_user
 
   def index
+    @repositories = AqRepository.find(:all)
+    @commits = AqCommit.find(:all, :order => "committed_time DESC")
   end
 
   # We need to access to "current_user" from some models

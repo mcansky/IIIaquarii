@@ -20,6 +20,8 @@ en:
     repo_my: "Own repositories"
     file_view: "View file"
     commits_list: "Commits list"
+    fork: "Fork"
+    show_commit: "Show commit"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"

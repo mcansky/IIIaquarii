@@ -1,5 +1,4 @@
 * Tasks [0/8] [0%]
-** TODO devise designs
 ** TODO Global links colour
 ** TODO Gravatar using Gravtastic
 ** TODO Sanitize repositories names !
@@ -7,3 +6,4 @@
 ** TODO fix aq_sh log path
 ** TODO Add config option to use RVM hack or not
 ** TODO AqBranch owner_id nil ??
+** TODO New lighter design

@@ -15,14 +15,18 @@
 
   <div id="commits">
     <h2>Latest commits</h2>
-    TODO
+    <% for commit in @commits.first(10) %>
+      <%= render "short_commit", :commit => commit %>
+    <% end %>
   </div>
 </div>
 
 <div id="right_content">
   <div id="repositories">
     <h2>Repositories</h2>
-    TODO
+    <% @repositories.first(30).each_slice(2) do |rep1,rep2| %>
+      <%= render "short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+    <% end %>
 </div>
 </div>
 
