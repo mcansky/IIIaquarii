@@ -1,6 +1,7 @@
 require 'pathname'
 require 'grit'
 include Grit
+include ActionView::Helpers::TextHelper
 
 class AqRepository < ActiveRecord::Base
   before_save :repo_path
@@ -171,6 +172,16 @@ class AqRepository < ActiveRecord::Base
     end
   end # def aq_logger(logfile, message)
 
+
+  def short_desc(length=80)
+    truncate(self.desc, :length => length, :omission => '...')
+  end
+
+
+
+
+
+
   private
   # Initialize the repository
   def repo_init
@@ -246,5 +257,6 @@ class AqRepository < ActiveRecord::Base
       end
     end
   end # def repo_set_git_visibility (public or private using git-daemon-export-ok file)
+
 
 end

@@ -4,7 +4,7 @@ class CreateAqRepositories < ActiveRecord::Migration
       t.string :name
       t.string :path
       t.string :kind, :default => "git"
-      t.text   :desc
+      t.string :desc
 
       # Used for "fork" repos
       t.integer :parent_id

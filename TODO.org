@@ -1,4 +1,4 @@
-* Tasks [0/11] [0%]
+* Tasks [0/15] [0%]
 ** TODO Global links colour
 ** TODO Gravatar using Gravtastic
 ** TODO Sanitize repositories names !
@@ -10,3 +10,7 @@
 ** TODO In short repositories, "G" and text are not horizontally aligned
 ** TODO Bad border-bottom in file browser if last element
 ** TODO Update menu links like home link
+** TODO Add style for various forms
+** TODO Delete and edit links on user page for repos
+** TODO User stats
+** TODO User links

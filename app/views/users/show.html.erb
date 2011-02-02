@@ -38,8 +38,8 @@
   <div class="grid_6">
     <div id="repositories">
       <h2><%= t(:label, :scope => :repositories) %></h2>
-      <% @user.aq_repositories.first(10).each_slice(2) do |rep1,rep2| %>
-        <%= render "application/short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+      <% @user.aq_repositories.each do |rep| %>
+        <%= render "application/short_repository", :rep => rep %>
       <% end %>
     </div>
   </div>

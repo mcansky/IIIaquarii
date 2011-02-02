@@ -1,0 +1,12 @@
+<div class="short_repository">
+  <p>
+    <% if rep.is_git? %>
+      <span class="kind_git" title="Git" >G</span>
+    <% elsif rep.is_hg? %>
+      <span class="kind_hg" title="HG" >H</span>
+    <% end %>
+    <span class="rep_name"><%= link_to rep.owner.login + "/" + rep.name, rep %></span>
+    &nbsp;-&nbsp;
+    <span class="rep_short_desc"><%= rep.short_desc %></span>
+  </p>
+</div>
