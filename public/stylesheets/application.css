@@ -14,6 +14,10 @@ img {
     border: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background: #EEE url(/images/bg_main.png);
     color: #333;

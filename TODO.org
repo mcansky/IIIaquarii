@@ -1,16 +1,22 @@
-* Tasks [0/15] [0%]
+* Tasks [4/17] [23%]
 ** TODO Global links colour
-** TODO Gravatar using Gravtastic
+** DONE Gravatar using Gravtastic
+   CLOSED: [2011-02-02 Wed 23:00]
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO fix aq_sh log path
-** TODO Add config option to use RVM hack or not
+** DONE Add config option to use RVM hack or not
+   CLOSED: [2011-02-02 Wed 23:00]
 ** TODO AqBranch owner_id nil ??
 ** TODO New lighter design
 ** TODO In short repositories, "G" and text are not horizontally aligned
-** TODO Bad border-bottom in file browser if last element
+** DONE Bad border-bottom in file browser if last element
+   CLOSED: [2011-02-02 Wed 23:00]
 ** TODO Update menu links like home link
 ** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
 ** TODO User stats
 ** TODO User links
+** TODO Put the browser path outside explorer
+** DONE Use "ProjectName /" instead of "/"
+   CLOSED: [2011-02-02 Wed 23:03]

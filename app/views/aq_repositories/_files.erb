@@ -3,7 +3,7 @@
     <% path = "" %>
     <% path = params[:dir] + "/" if params[:dir] %>
     <p>
-      <%= link_to "/", :action => :show, :id => @repository.id %>
+      <%= link_to @repository.name, :action => :show, :id => @repository.id %> /
       <%= path %> (<%= params[:branch] || "master" %>)</p>
   </div>
   <table cellspacing=0 id="repo_files">
