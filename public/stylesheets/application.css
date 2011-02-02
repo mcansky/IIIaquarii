@@ -110,6 +110,10 @@ body {
     margin-left: 1em;
 }
 
+#commits h2, #repositories h2 {
+    margin-bottom: 1em;
+}
+
 #commits .short_commit .sh_commit_date_repos img {
     margin-bottom: -3px;
 }
@@ -203,7 +207,7 @@ span.kind_hg {
     text-decoration: none;
 }
 
-input {
+input, textarea {
     margin-bottom: 10px;
 }
 
@@ -221,6 +225,10 @@ input {
 
 #user_commits_and_repositories {
     border-top: 1px solid #EEE;
+}
+
+.sshkey {
+    margin-left: 2em;
 }
 
 /*
