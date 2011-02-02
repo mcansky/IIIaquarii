@@ -150,6 +150,10 @@ body {
     padding-left: 5px;
 }
 
+#repositories .left_repo a, #repositories .right_repo a {
+    text-decoration: none;
+}
+
 #repositories .left_repo, #repositories .right_repo {
     padding: 0;
     margin-bottom: 2em;
@@ -159,6 +163,11 @@ body {
 
 #repositories .left_repo .rep_name, #repositories .right_repo .rep_name {
     padding-left: 5px;
+}
+
+#repositories .left_repo .rep_actions, #repositories .right_repo .rep_actions {
+    font-size: 8pt;
+    font-weight: normal;
 }
 
 span.kind_git {

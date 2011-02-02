@@ -7,8 +7,9 @@
 	<span class="kind_hg">H</span>
       <% end %>
       <span class="rep_name"><%= link_to rep1.owner.login + "/" + rep1.name, rep1 %></span>
-      &nbsp;-&nbsp;
-      <%= link_to t(:delete, :scope => :repositories), rep1, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
+      <span class="rep_actions">
+        <%= link_to t(:delete, :scope => :repositories), rep1, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
+      </span>
     </h3>
     <div class="desc">
       <p><%= rep1.desc %></p>
@@ -26,8 +27,9 @@
 	  <span class="kind_hg">H</span>
 	<% end %>
 	<span class="rep_name"><%= link_to rep2.owner.login + "/" + rep2.name, rep2 %></span>
-        &nbsp;-&nbsp;
-	<%= link_to t(:delete, :scope => :repositories), rep2, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
+        <span class="rep_actions">
+	  <%= link_to t(:delete, :scope => :repositories), rep2, {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
+        </span>
       </h3>
       <div class="desc">
 	<p><%= rep2.desc %></p>
