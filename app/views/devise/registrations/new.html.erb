@@ -2,7 +2,9 @@
   <title><%= t(:new, :scope => :users) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<h2>Sign up</h2>
+<div id="flash_error_messages">
+  <h2>Sign up</h2>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -28,5 +30,7 @@
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>
+
+<br>
 
 <%= render :partial => "devise/shared/links" %>

@@ -1,4 +1,4 @@
-* Tasks [0/8] [0%]
+* Tasks [0/10] [0%]
 ** TODO Global links colour
 ** TODO Gravatar using Gravtastic
 ** TODO Sanitize repositories names !
@@ -7,3 +7,5 @@
 ** TODO Add config option to use RVM hack or not
 ** TODO AqBranch owner_id nil ??
 ** TODO New lighter design
+** TODO In short repositories, "G" and text are not horizontally aligned
+** TODO Bad border-bottom in file browser if last element

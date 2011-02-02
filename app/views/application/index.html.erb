@@ -2,32 +2,44 @@
   <title><%= t(:home, :scope => :application) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<div id="img_banner">
-  <p>
-    We shall commit this.
-  </p>
-</div>
-
-<div id="left_content">
-  <div id="intro_text">
-    <p>Loren ipsum osts our open-source projects and is a place for developers, but also targets anyone that want to get their hands dirty. Much of the work around these projects happen in community forums</p>
-  </div>
-
-  <div id="commits">
-    <h2>Latest commits</h2>
-    <% for commit in @commits.first(10) %>
-      <%= render "short_commit", :commit => commit %>
-    <% end %>
+<!-- Aquarii banner -->
+<div class="grid_12" id="aquarii_banner">
+  <div id="aq_banner">
+    <p>We shall commit this.</p>
   </div>
 </div>
-
-<div id="right_content">
-  <div id="repositories">
-    <h2>Repositories</h2>
-    <% @repositories.first(30).each_slice(2) do |rep1,rep2| %>
-      <%= render "short_repositories", :rep1 => rep1, :rep2 => rep2 %>
-    <% end %>
-</div>
-</div>
-
 <div class="clear"></div>
+
+<div id="introduction">
+  <div class="grid_12">
+    <div id="text_intro">
+      <p>Loren ipsum osts our open-source projects and is a place for developers, but also targets anyone that want to get their hands dirty. Much of the work around these projects happen in community forums</p>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div id="index_commits_and_repositories">
+  <!-- left, commits -->
+  <div class="grid_6">
+    <div id="commits">
+      <h2>Latest commits</h2>
+      <% for commit in @commits.first(10) %>
+        <%= render "short_commit", :commit => commit %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- right, repositories -->
+  <div class="grid_6">
+    <div id="repositories">
+      <h2>Repositories</h2>
+      <% @repositories.first(30).each_slice(2) do |rep1,rep2| %>
+        <%= render "short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+

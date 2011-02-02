@@ -1,16 +1,23 @@
 <div class="short_commit">
-  <div class="left_sh_commit">
+  <!-- commit date -->
+  <div class="sh_commit_date_repos">
     <p>
+      <%= image_tag("/images/icons/block.png", :alt => "commit", :width => "16px", :height => "16px") %>
       <span class="date"><%= commit.committed_time.strftime("%I:%M %p %x").downcase %></span>
       <span class="repository"><%= link_to commit.branch.aq_repository.owner.login + "/" + commit.branch.aq_repository.name, commit.branch.aq_repository %></span>
     </p>
   </div>
-  <div class="right_sh_commit">
+
+  <!-- commit infos -->
+  <div class="sh_commit_infos">
     <p>
       <span class="commit_id"><%= t(:commit, :scope => :commits).downcase %> <%= link_to commit.sha.slice(0,7) + "...", "/aq_repositories/commits/#{commit.branch.aq_repository.id}/#{commit.sha}?branch=#{commit.branch.name}" %></span>
       <span class="commit_author"><%= t(:by, :scope => :other) %> <%= link_to commit.author.login, commit.author %></span>
-      <span class="commit_log"><%= commit.log.lines.first.slice(0,80) + "..." %></span>
     </p>
   </div>
-  <div class="clear"></div>
+
+  <!-- commit log -->
+  <div class="sh_commit_log">
+    <span class="commit_log"><%= commit.log.lines.first.slice(0,80) + "..." %></span>
+  </div>
 </div>

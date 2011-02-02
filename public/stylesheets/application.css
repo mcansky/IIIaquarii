@@ -3,20 +3,144 @@
     padding: 0;
 }
 
-body {
-    background: #EEE url(/images/bg_main.png);
+html {}
+
+/* Override some stuff from text.css */
+p {
+    margin-bottom: 0;
 }
 
-#top_bar {
-    width: 950px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+body {
+    background: #EEE url(/images/bg_main.png);
+    color: #333;
+}
+
+#header {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+#menu .container_12{
+    background-image: url(/images/background-yellow.png);
+}
+#index_menu_left {}
+#index_menu_right {}
+
+#content {
+    margin-top: 1em;
+    margin-bottom:2em;
+}
+
+#aquarii_banner {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#aq_banner {
+    border: 1px solid #DDD;
+    background: #888;
     padding: 10px;
 }
 
+#aq_banner p {
+    font-size: 16pt;
+    color: #FFF;
+    font-family: times;
+}
+
+#introduction {
+    margin-bottom: 1em;
+}
+
+#introduction #text_intro p {
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 14pt;
+}
+
+#index_commits_and_repositories {
+    font-family: sans-serif;
+}
+
+#index_commits_and_repositories #commits {
+    padding: 10px;
+    font-size: 10pt;
+    line-height: 14pt;
+}
+
+#commits .short_commit {
+    padding: 0;
+    margin-bottom: 10px;
+    padding-left: 8px;
+    border-left: 2px solid #888;
+    margin-left: 1em;
+}
+
+#commits .short_commit .sh_commit_date_repos img {
+    margin-bottom: -3px;
+}
+
+#commits .short_commit .sh_commit_infos {
+}
+
+#commits .short_commit .sh_commit_infos span.commit_id a {
+    color: red;
+    text-decoration: none;
+}
+
+#commits .short_commit .sh_commit_infos span.commit_author a {
+    color: red;
+    text-decoration: none;
+}
+
+#commits .short_commit .sh_commit_log span.commit_log {
+    padding-left: 5px;
+}
+
+#index_commits_and_repositories #repositories {
+    padding: 10px;
+    font-size: 10pt;
+    line-height: 14pt;
+}
+
+#repositories .short_repository {
+    padding: 0;
+    margin-bottom: 10px;
+    padding-left: 8px;
+    border-left: 2px solid #888;
+    margin-left: 1em;
+}
+
+#repositories .short_repository .rep_name {
+    padding-left: 5px;
+}
+
+span.kind_git {
+    font-size: 12pt;
+    font-weight: bold;
+    color: green;
+}
+
+span.kind_hg {
+    font-size: 12pt;
+    font-weight: bold;
+    color: green;
+}
+
+#footer {
+    border-top: 2px solid #BABABA;
+    text-align: center;
+    font-size: 9pt;
+    padding-top: 10px;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+
+/*
+
 #sub_bar {
-    background: #686868 url(/images/background-yellow.png);
+    background-image: url(/images/background-yellow.png);
     color: #191919;
     padding: 5px;
     padding-top: 8px;
@@ -73,53 +197,18 @@ body {
     border: none;
 }
 
-#main {
-    width: 100%;
-    background: #EEE url(/images/bg_content.png);
-    border-top: 1px solid #BABABA;
-    border-bottom: 1px solid #BABABA;
-    padding: 0;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
-}
-
-#content {
-    width: 970px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0px;
-    color: #DDDDDD;
-}
-
 input, textarea {
     background: #FFF;
     border: 1px solid #CCC;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding: 2px;
 }
 
-#img_banner {
-    border: 1px solid #DDD;
-    width: 950px;
-    background: #888;
-    margin: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
-
-#img_banner p {
-    font-size: 16pt;
-    color: #FFF;
-    font-family: times;
-}
 
 
-div.clear {
-    clear: both;
-}
+
+
 
 #content #left_content {
     float: left;
@@ -134,10 +223,6 @@ div.clear {
     margin-right: 0;
 }
 
-#left_content #intro_text, #commits, #repositories {
-    font-family: sans-serif;
-}
-
 #left_content #commits h2, #repositories h2 {
     background: #4d4d4d;
     padding: 10px;
@@ -147,7 +232,7 @@ div.clear {
     font-family: sans-serif;
 }
 
-#left_content #intro_text, #commits, #user div.user_commits {
+#user div.user_commits {
     background: #4d4d4d;
     padding: 10px;
     color: #EEE;
@@ -156,7 +241,7 @@ div.clear {
     font-family: sans-serif;
 }
 
-#left_content #commits, #user div.user_commits {
+#user div.user_commits {
     margin-top: 10px;
     padding: 0;
 }
@@ -171,7 +256,7 @@ div.clear {
     font-weight: bold;
 }
 
-#commits div.short_commit div.left_sh_commit, div.user_commits div.short_commit div.left_sh_commit {
+div.user_commits div.short_commit div.left_sh_commit {
     float: left;
     margin-left: 0;
     width: 30%;
@@ -180,7 +265,7 @@ div.clear {
     height: 80px;
 }
 
-#commits div.short_commit div.left_sh_commit span, div.user_commits div.short_commit div.left_sh_commit span {
+div.user_commits div.short_commit div.left_sh_commit span {
     display: block;
 }
 
@@ -305,7 +390,7 @@ div.desc {
 #repository {
     font-family: sans-serif;
     font-size: 10pt;
-    color: #EEE;
+    color: #191919;
     padding-top: 15px;
 }
 
@@ -344,7 +429,7 @@ div.desc {
 }
 
 #files #repo_browser {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -359,7 +444,7 @@ div.desc {
     border: 1px solid #888;
     width: 100%;
     font-family: sans-serif;
-    background: #555;
+    background: #f1f1f1;
 }
 
 #files table th {
@@ -508,12 +593,7 @@ div.desc {
     font-size: 10pt;
 }
 
-#footer {
-    text-align: center;
-    font-size: 9pt;
-    color: grey;
-    margin-bottom: 10px;
-}
+
 
 #view_file {
     width: 90%;
@@ -525,7 +605,7 @@ div.desc {
 }
 
 #view_readme_file {
-    width: 90%;
+    width: 95%;
     padding: 3px;
     margin-left: auto;
     margin-right: auto;
@@ -554,3 +634,25 @@ div.desc {
     list-style-type: none;
     padding-left: 1em;
 }
+
+.devise_shared_link {
+    font-size: 10pt;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+#flash_error_messages {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    background-color: #DFDFDF;
+    border: 1px solid #424242;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+*/
