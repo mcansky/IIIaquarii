@@ -34,8 +34,8 @@
   <div class="grid_6">
     <div id="repositories">
       <h2>Repositories</h2>
-      <% @repositories.first(30).each_slice(2) do |rep1,rep2| %>
-        <%= render "short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+      <% @repositories.first(30).each do |rep| %>
+        <%= render "short_repository", :rep => rep %>
       <% end %>
     </div>
   </div>
