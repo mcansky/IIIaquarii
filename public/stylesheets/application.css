@@ -17,7 +17,7 @@ body {
 
 #sub_bar {
     background: #686868 url(/images/background-yellow.png);
-    color: #DDD;
+    color: #191919;
     padding: 5px;
     padding-top: 8px;
     width: 950px;
@@ -29,15 +29,23 @@ body {
     font-family: monospace;
     text-decoration: none;
     font-weight: bold;
-    color: #DDD;
+    color: #191919;
 }
 
 #sub_bar a:hover {
-    color: #FFF;
+    color: #000;
 }
 
 #sub_left {
     width: 65%;
+}
+
+#sub_left #link_home {
+    background-image: url(/images/icons/home.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 18px;
 }
 
 #sub_bar #user_stuff {
@@ -131,7 +139,7 @@ div.clear {
 }
 
 #left_content #commits h2, #repositories h2 {
-    background: #000;
+    background: #4d4d4d;
     padding: 10px;
     color: #EEE;
     font-size: 10pt;
@@ -140,7 +148,7 @@ div.clear {
 }
 
 #left_content #intro_text, #commits, #user div.user_commits {
-    background: #000;
+    background: #4d4d4d;
     padding: 10px;
     color: #EEE;
     font-size: 10pt;
@@ -262,7 +270,7 @@ span.kind_hg {
 }
 
 #repositories a {
-    color: #EEE;
+    color: #191919;
     text-decoration: none;
     font-weight: normal;
     font-size: 10pt;

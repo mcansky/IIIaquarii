@@ -51,6 +51,8 @@ en:
     delete: "Delete user"
   sessions:
     signin: "Sign In"
+  commits:
+    commit: "Commit"
   beans:
     beans: "Coffee beans"
     show_some_love: "Show some love: drop a coffee bean !"
@@ -65,6 +67,8 @@ en:
     continue: "Continue"
   js:
     confirm: "Are you sure?"
+  other:
+    by: "by"
   activerecord:
     attributes:
       aq_repository:

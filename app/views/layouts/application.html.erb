@@ -28,10 +28,7 @@
       </div>
 
       <div id="sub_left">
-        <%= link_to root_url do %>
-          <%= image_tag("/images/icons/home.png", :title => t(:home, :scope => :application), :alt => t(:home, :scope => :application), :border => 0) %>
-          Home
-        <% end %>
+        <%= link_to "Home", root_url, :id => "link_home" %>
 
         <% if current_user %>
 	  <span id="user_stuff">
