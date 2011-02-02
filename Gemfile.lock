@@ -54,6 +54,7 @@ GEM
       abstract (>= 1.0.0)
     friendly_id (3.2.0)
       babosa (~> 0.2.1)
+    gravtastic (3.1.0)
     grit (2.4.1)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -119,6 +120,7 @@ DEPENDENCIES
   acts_as_versioned!
   devise!
   friendly_id (~> 3.2)
+  gravtastic
   grit
   jquery-rails
   nifty-generators

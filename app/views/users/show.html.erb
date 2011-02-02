@@ -2,11 +2,23 @@
   <title><%= @user.login %><%= t(:user_show_profile, :scope => :users) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<div id="user">
+<div id="user_gravatar_and_links">
+  <div class="grid_6">
+    <h2 id="username_w_gravatar">
+      <span id="user_name_gravatar">
+        <%= image_tag(@user.gravatar_url(:size => 60), :title => nil, :alt => nil, :border => 0) %>
+      </span>
+      <%= @user.login %>
+    </h2>
+  </div>
+  <div class="grid_6">
+    <!-- placeholder for user links -->
+  </div>
+  <div class="clear"></div>
+</div>
 
-  <div class="user_desc">
-    <h2><%= image_tag("/images/icons/user-silhouette.png", :title => nil, :alt => nil, :border => 0) %> <%= @user.login %></h2>
-
+<div id="user_profile_and_stats" id="user_profile">
+  <div class="grid_6">
     <p>
       <% if @user.name != @user.login %>
         <strong><%= t(:name, :scope => :users) %></strong> <%= @user.name %>
@@ -16,19 +28,30 @@
     </p>
   </div>
 
-  <div class="user_repositories">
-    <h2><%= t(:label, :scope => :repositories) %></h2>
-    <% @user.aq_repositories.first(10).each_slice(2) do |rep1,rep2| %>
-      <%= render "application/short_repositories", :rep1 => rep1, :rep2 => rep2 %>
-    <% end %>
+  <div class="grid_6" id="user_stats">
+    <!-- placeholder for future stats -->
+  </div>
+  <div class="clear"></div>
 </div>
 
-<div class="user_commits">
-  <h2>Latest commits</h2>
-  <% for commit in @user.aq_commits.first(10) %>
-    <%= render "application/short_commit", :commit => commit %>
-  <% end %>
-</div>
-<div class="clear"></div>
+<div id="user_commits_and_repositories">
+  <div class="grid_6">
+    <div id="repositories">
+      <h2><%= t(:label, :scope => :repositories) %></h2>
+      <% @user.aq_repositories.first(10).each_slice(2) do |rep1,rep2| %>
+        <%= render "application/short_repositories", :rep1 => rep1, :rep2 => rep2 %>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="grid_6">
+    <div id="commits">
+      <h2>Latest commits</h2>
+      <% for commit in @user.aq_commits.first(10) %>
+        <%= render "application/short_commit", :commit => commit %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="clear"></div>
 </div>

@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 
   has_friendly_id :login, :use_slug => true
 
+  include Gravtastic
+  gravtastic
+
   has_many :ssh_keys
   has_many :rights
   has_many :aq_repositories, :through => :rights

@@ -42,3 +42,6 @@ gem "jquery-rails"
 
 # Friendly ID
 gem "friendly_id", "~> 3.2"
+
+# Gravatars
+gem 'gravtastic'
