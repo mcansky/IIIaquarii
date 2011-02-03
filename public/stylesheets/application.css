@@ -231,7 +231,7 @@ span.kind_hg {
     text-decoration: none;
 }
 
-#repo_browser #repo_files tr.file {
+#repo_browser #repo_files tr.file, #repo_browser #repo_files tr.dir {
     border-top: 1px solid #CECECE;
 }
 

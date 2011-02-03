@@ -1,4 +1,4 @@
-* Tasks [5/21] [23%]
+* Tasks [6/22] [27%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -15,6 +15,8 @@
 ** TODO Notify the user if no SshKey when adding a repos
 ** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
 ** TODO Layout problem with the repo description
+** DONE Trailing slash needed for view_file ?
+   CLOSED: [2011-02-03 Thu 09:44]
 ** DONE Gravatar using Gravtastic
    CLOSED: [2011-02-02 Wed 23:00]
 ** DONE Add config option to use RVM hack or not
