@@ -254,6 +254,12 @@ span.kind_hg {
     padding: 5px;
 }
 
+#view_readme_file pre, #view_file pre {
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
 #footer {
     border-top: 2px solid #BABABA;
     text-align: center;
@@ -334,6 +340,11 @@ input, textarea {
 #new_repository_text_message ul li {
     list-style-type: none;
     padding-left: 1em;
+}
+
+#repo_last_commit {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 /*

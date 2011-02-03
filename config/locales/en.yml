@@ -54,6 +54,8 @@ en:
     signin: "Sign In"
   commits:
     commit: "Commit"
+    last_commit: "Last commit"
+    author: "author"
   beans:
     beans: "Coffee beans"
     show_some_love: "Show some love: drop a coffee bean !"
@@ -70,6 +72,7 @@ en:
     confirm: "Are you sure?"
   other:
     by: "by"
+    on_l: "on"
   activerecord:
     attributes:
       aq_repository:

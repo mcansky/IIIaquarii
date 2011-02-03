@@ -1,0 +1,15 @@
+<div id="repo_last_commit">
+  <div class="commit_sha">
+    <% last_commit = repository.commits.last %>
+    <%= t(:last_commit, :scope => :commits) %> <%= last_commit.sha %>
+  </div>
+
+  <div class="author_name_and_date">
+    <%= t(:by, :scope => :other).capitalize %> <%= last_commit.author_name %> (<%= t(:author, :scope => :commits) %>)
+    <%= t(:on_l, :scope => :other) %> <%= last_commit.committed_time %>
+  </div>
+
+  <div class="commit_log">
+    <%= last_commit.log %>
+  </div>
+</div>
