@@ -3,13 +3,35 @@
 <% end %>
 
 <div id="repository">
-  <%= render "infos", :repository => @repository %>
+  <div id="repo_infos_and_ppl">
+    <div class="grid_7 alpha">
+      <%= render "infos", :repository => @repository %>
+    </div>
 
-  <div class="repository">
-    <%= render "people", :repository => @repository %>
+    <div class="grid_5 omega">
+      <%= render "people", :repository => @repository %>
+    </div>
+    <div class="clear"></div>
+  </div>
 
+    <div id="repo_urls_and_branchs">
+    <div class="grid_7 alpha">
+      <%= render :partial => "repo_urls" %>
+    </div>
+
+    <div class="grid_5 omega">
+      <%= render :partial => "repo_branch_list" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="grid_12 repo_desc">
     <p class="desc"><%= @repository.desc %></p>
+  </div>
+  <div class="clear"></div>
 
+
+  <div class="grid_10 prefix_1 suffix_1">
     <div id="view_file">
       <% if @repository.branches.size != 0 %>
 	<% branch = "master" %>
@@ -35,7 +57,6 @@
         <% end %>
       <% end %>
     </div>
-
-    <div class="clear"></div>
   </div>
+  <class="clear"></div>
 </div>

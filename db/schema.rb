@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20110201131157) do
     t.string   "name"
     t.string   "path"
     t.string   "kind",       :default => "git"
-    t.text     "desc"
+    t.string   "desc"
     t.integer  "parent_id"
     t.integer  "visibility", :default => 0
     t.datetime "created_at"

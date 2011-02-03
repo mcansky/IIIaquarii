@@ -1,4 +1,4 @@
-* Tasks [5/17] [29%]
+* Tasks [5/21] [23%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -11,6 +11,10 @@
 ** TODO Delete and edit links on user page for repos
 ** TODO User stats
 ** TODO User links
+** TODO Add last commit to repository browser
+** TODO Notify the user if no SshKey when adding a repos
+** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
+** TODO Layout problem with the repo description
 ** DONE Gravatar using Gravtastic
    CLOSED: [2011-02-02 Wed 23:00]
 ** DONE Add config option to use RVM hack or not

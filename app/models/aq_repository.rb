@@ -88,7 +88,7 @@ class AqRepository < ActiveRecord::Base
       b.grit_update
       count += 1
     end
-    aq_logger(Settings.logs.scm, "User #{self.owner}, Repository: #{self.name}, #{count} branches treated.")
+    aq_logger(Settings.logs.scm, "User #{self.owner.login}, Repository: #{self.name}, #{count} branches treated.")
     self.save
   end # def grit_update // Update branches stored in DB
 

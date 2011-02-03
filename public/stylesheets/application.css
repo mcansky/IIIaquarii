@@ -248,7 +248,7 @@ span.kind_hg {
     text-align: left;
 }
 
-#view_readme_file {
+#view_readme_file, #view_file {
     border: 1px solid #cecece;
     background-color: #F6F6F6;
     padding: 5px;
@@ -318,6 +318,22 @@ input, textarea {
 
 .sshkey {
     margin-left: 2em;
+}
+
+#new_repository_text_message {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+#new_repository_text_message ul {
+    list-style-type: none;
+}
+
+#new_repository_text_message ul li {
+    list-style-type: none;
+    padding-left: 1em;
 }
 
 /*
