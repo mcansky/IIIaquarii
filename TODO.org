@@ -1,4 +1,4 @@
-* Tasks [6/22] [27%]
+* Tasks [7/22] [31%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -11,11 +11,12 @@
 ** TODO Delete and edit links on user page for repos
 ** TODO User stats
 ** TODO User links
-** TODO Add last commit to repository browser
 ** TODO Notify the user if no SshKey when adding a repos
 ** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
 ** TODO Layout problem with the repo description
 ** Improve view_file path to clickable subdirs
+** DONE Add last commit to repository browser
+   CLOSED: [2011-02-03 Thu 20:26]
 ** DONE Trailing slash needed for view_file ?
    CLOSED: [2011-02-03 Thu 09:44]
 ** DONE Gravatar using Gravtastic
