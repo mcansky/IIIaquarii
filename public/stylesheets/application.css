@@ -213,7 +213,7 @@ span.kind_hg {
     margin-bottom: 1em;
 }
 
-#repo_browser .path {
+#repo_browser .path, .view_file_path{
     padding-bottom: 5px;
     font-size: 15pt;
     font-weight: bold;

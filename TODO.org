@@ -15,6 +15,7 @@
 ** TODO Notify the user if no SshKey when adding a repos
 ** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
 ** TODO Layout problem with the repo description
+** Improve view_file path to clickable subdirs
 ** DONE Trailing slash needed for view_file ?
    CLOSED: [2011-02-03 Thu 09:44]
 ** DONE Gravatar using Gravtastic
