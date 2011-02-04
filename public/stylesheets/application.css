@@ -61,6 +61,14 @@ body {
     margin-bottom: -4px;
 }
 
+#dont_use_ie_please {
+    border: 1px solid #DDD;
+    background: #EEE;
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+}
+
 #content {
     margin-top: 1em;
     margin-bottom:2em;
