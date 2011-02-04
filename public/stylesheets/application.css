@@ -359,14 +359,24 @@ input, textarea {
     /* rounded corners */
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
+    border-radius: 20px;
 
     /* background gradient */
+
+
+    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAACACAMAAAD9J/PGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdQTFRF/Pz8zc3N2traz8/P0NDR0tLS0NDQ9fX1+Pj4//7/9PT04uLi6Ojo39/fzs3NzMzM/f7+3Nzc9fb26uvq6urp4ODh9/f44+Pj+vn519fX29zb19bX1tXV6Onp5OPk2dnY+/r79vX1+vv7+vr6+Pn4+fr6/////v7+0dHR09PT/fz80tPS0dHS/Pv78vPzzs7P/v39zs7O7/Dv/f393t7d8vLx3+Dg2drZ8PDw8fHw5+bn2dnZ7ezt7+/v5eXl5OTl+fn46+vr7u7u6urq1NTV1dXV4ODg2NnY7O3s19fY09TUz87P4eHh09PS9PP0zczM7u7t3Nzd8vLy29va8fHx5uXm5ubm7u7v5OTk1dXU19fW3Nvc5+fn+/v71tbV3d3dz87O7Ovs6Ofn3t7e9vf28/Pz4+Pi7Ozs8O/v9/f31NTT/P399vb3QCtbEwAAAKZJREFUeNokw9NSBQAUQNGV3c22bdu2bdf/P3em9potIWFf0p/8MKjfg20pIT2khg490kK3XZ22fLm0YlWNO1eqVdq0rt60ccnhWJVrhwrdG/EsL4xZU2pHTnhTrs6FeXNOnZly40luqFViWbFFj95tmHFgyblZH4ZMmHRi1JE+r/Zkh4zQqMiPF5/KZIYWCyq0atakwa1e/3X5NmxAQcjSHrf9CjAAht4XiD8Rf/EAAAAASUVORK5CYII=) no-repeat;
+    background-size: 100% 100%;
+    background-clip: border-box;
+    background-origin: border-box;
+
     background: -moz-linear-gradient(19% 75% 90deg, #B6B7B5, #E7E6EE);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E7E6EE), to(#B6B7B5));
 
     /* shadow behind the box */
     -moz-box-shadow: 0px -5px 300px #E2D3E6;
     -webkit-box-shadow:0px -5px 300px #E2D3E6;
+    box-shadow:0px -5px 300px #E2D3E6;
+
 }
 
 #login_form input {
@@ -385,17 +395,22 @@ input, textarea {
     -webkit-transition-property: -webkit-box-shadow, background;
     -webkit-transition-duration: 0.25s;
 
-    -mox-transition-property: -webkit-box-shadow, background;
-    -mox-transition-duration: 0.25s;
+    -moz-transition-property: -webkit-box-shadow, background;
+    -moz-transition-duration: 0.25s;
+
+    transition-property: box-shadow, background;
+    transition-duration: 0.25s;
 
     /* Small shadow box */
     -moz-box-shadow: 0px 0px 2px #000;
     -webkit-box-shadow: 0px 0px 2px #000;
+    box-shadow: 0px 0px 2px #000;
 }
 
 #login_form input:hover {
     -webkit-box-shadow: 0px 0px 4px #000;
     -mox-box-shadow: 0px 0px 4px #000;
+    box-shadow: 0px 0px 4px #000;
     background: #F8F8FF;
 }
 
