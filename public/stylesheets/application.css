@@ -347,6 +347,79 @@ input, textarea {
     margin-bottom: 1em;
 }
 
+#login_form {
+    margin-top: 3em;
+    margin-bottom: 2em;
+
+    padding: 20px;
+    border: 1px solid #CCC;
+
+    /* CSS3 */
+
+    /* rounded corners */
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+
+    /* background gradient */
+    background: -moz-linear-gradient(19% 75% 90deg, #B6B7B5, #E7E6EE);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E7E6EE), to(#B6B7B5));
+
+    /* shadow behind the box */
+    -moz-box-shadow: 0px -5px 300px #E2D3E6;
+    -webkit-box-shadow:0px -5px 300px #E2D3E6;
+}
+
+#login_form input {
+    width: 230px;
+    background: #DFDDDD;
+    padding: 6px;
+    margin-bottom: 10px;
+    border-top: 1px solid #ad64e0;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+
+    /* CSS3 */
+
+    /* Transition selectors */
+    -webkit-transition-property: -webkit-box-shadow, background;
+    -webkit-transition-duration: 0.25s;
+
+    -mox-transition-property: -webkit-box-shadow, background;
+    -mox-transition-duration: 0.25s;
+
+    /* Small shadow box */
+    -moz-box-shadow: 0px 0px 2px #000;
+    -webkit-box-shadow: 0px 0px 2px #000;
+}
+
+#login_form input:hover {
+    -webkit-box-shadow: 0px 0px 4px #000;
+    -mox-box-shadow: 0px 0px 4px #000;
+    background: #F8F8FF;
+}
+
+#login_form p.login_form_submit input {
+    width: 100px;
+    color: #000;
+    text-transform: uppercase;
+    text-shadow: grey 1px 1px;
+    border-top: 1px solid #ad64e0;
+    margin-top: 10px;
+
+    /* CSS3 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D3D1D6), to(#848583));
+    background:  -moz-linear-gradient(19% 75% 90deg,#848583, #D3D1D6);
+}
+
+#login_form input.login_form_remember_me {
+    width: 20px;
+}
+
+#login_form a {
+    color: black;
+}
+
 /*
 
 #sub_bar {
