@@ -22,7 +22,7 @@ for fullname, names, filenames, mimetypes in get_all_lexers():
             lfs = "/^%s$/" % n
         lf.append(lfs)
     lst += ",".join(lf)
-    lst += "], mimetypes => ["
+    lst += "], :mimetypes => ["
     mt = []
     for n in mimetypes:
         mt.append("\'%s\'" % n)
