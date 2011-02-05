@@ -1,12 +1,23 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email %></p>
-
-  <p><%= f.submit "Send me reset password instructions" %></p>
+<% content_for :head do %>
+  <title><%= t(:new, :scope => :passwords) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="new_password_form">
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <p><%= f.label :email %><br />
+        <%= f.email_field :email %></p>
+
+      <p class="new_password_form_submit" ><%= f.submit "Send new password instructions" %></p>
+    <% end %>
+
+    <%= render :partial => "devise/shared/links" %>
+
+  </div>
+</div>
+<div class="clear"></div>

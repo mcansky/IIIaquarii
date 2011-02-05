@@ -2,6 +2,8 @@
   <title><%= t(:signin, :scope => :sessions) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <div class="grid_4 prefix_4 suffix_4">
   <div id="login_form">
 
