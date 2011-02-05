@@ -46,8 +46,14 @@ gem "friendly_id", "~> 3.2"
 # Gravatars
 gem 'gravtastic'
 
+# Gems required for markup
+gem 'rdiscount'
+gem 'RedCloth'
+gem 'org-ruby'
+gem 'creole'
+
 # Markup for README.bla
-gem 'github-markup'
+gem 'github-markup', :git => "git://github.com/rhaamo/markup.git", :require => 'github/markup'
 
 # Render code
 gem 'albino', :git => "git://github.com/rhaamo/albino.git"

@@ -61,7 +61,7 @@
             <% if a_blob.name =~ /^(README|README.(.*)|readme|readme.(.*))$/ and a_blob.mime_type =~ /^text\/(.*)$/ %>
               <h3><%= a_blob.name %></h3>
               <div id="view_readme_file">
-                <pre><%= a_blob.data %></pre>
+                <%= GitHub::Markup.render(a_blob.name, a_blob.data).html_safe %>
               </div>
             <% end %>
           <% end %>

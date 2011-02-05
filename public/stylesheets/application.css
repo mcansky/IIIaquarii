@@ -262,7 +262,7 @@ span.kind_hg {
     padding: 5px;
 }
 
-#view_readme_file pre, #view_file pre {
+#view_readme_file, #view_file pre {
     overflow-x: auto;
     overflow-y: auto;
     padding-bottom: 10px;
@@ -442,6 +442,18 @@ input, textarea {
 #login_form a {
     color: black;
 }
+
+
+
+
+/* MARKUPS SPECIFIC */
+.rendered_markup_redcloth {}
+.rendered_markup_redcloth h2 {
+    margin-top: 1em;
+    border-top: 5px solid #CCC;
+}
+
+
 
 /*
 
