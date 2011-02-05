@@ -24,11 +24,9 @@ module ApplicationHelper
     end
 
     # Try using Albino
-    lexer_by_mimetype = PygmentsLexersList.get_lexer_by_mimetype(mimetype)
-    lexer_by_filename = PygmentsLexersList.get_lexer_by_filename(filename)
+    lexer = PygmentsLexersList.get_lexer_by_filename(filename)
 
-    if (lexer_by_mimetype) or (lexer_by_mimetype == lexer_by_filename)
-      lexer = lexer_by_mimetype || lexer_by_filename
+    if lexer
       syntaxer = Albino.new(text, lexer[:keywrd])
       return syntaxer.colorize(options)
     end
