@@ -453,6 +453,10 @@ input, textarea {
     padding-bottom: 10px;
 }
 
+#view_readme_file {
+    padding: 5px;
+}
+
 #vfi_mode_lines_size {
     border-left: 1px solid #cecece;
     border-right: 1px solid #cecece;
