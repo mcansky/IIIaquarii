@@ -2,6 +2,15 @@
   <title><%= t(:file_view, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<% branch = "master" %>
+<% branch = params[:branch] if params[:branch] %>
+<% root_dir = "" %>
+<% root_dir = params[:file_path] + "/" if params[:file_path] %>
+<% root_dir = (Pathname(root_dir) + "..").to_s + "/" %>
+<% if root_dir == "." or root_dir == "./" %>
+  <% root_dir = "" %>
+<% end %>
+
 <div id="repository">
   <div id="repo_infos_and_ppl">
     <div class="grid_7 alpha">
@@ -41,19 +50,17 @@
       <% path = (Pathname(params[:file_path] + "/") + "..").to_s if params[:file_path] %>
       <p>
         <%= link_to @repository.name, :action => :show, :id => @repository.id %> /
-        <%= path %> / <%= params[:file_path].split("/").last %> (<%= params[:branch] || "master" %>)</p>
+        <% old_path = [] %>
+        <% path.split("/").each do |p| %>
+          <% act_path = (old_path + [p]).join("/") %>
+          <%= link_to p, "/aq_repositories/browse/#{@repository.id}/#{act_path}?branch=#{branch}" %>
+          <% old_path << p %>
+          /
+        <% end %>
+        <%= params[:file_path].split("/").last %> (<%= params[:branch] || "master" %>)</p>
     </div>
   </div>
   <div class="clear"></div>
-
-  <% branch = "master" %>
-  <% branch = params[:branch] if params[:branch] %>
-  <% root_dir = "" %>
-  <% root_dir = params[:file_path] + "/" if params[:file_path] %>
-  <% root_dir = (Pathname(root_dir) + "..").to_s + "/" %>
-  <% if root_dir == "." or root_dir == "./" %>
-    <% root_dir = "" %>
-  <% end %>
 
   <% if (a_file = @grit_repo.tree(branch) / params[:file_path]) %>
     <div class="grid_10 prefix_1 suffix_1">
