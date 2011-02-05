@@ -62,7 +62,7 @@
               <% if a_blob.name == params[:file_path] %><%# .split("/").last # Not needed ??? %>
                 <% puts a_blob.mime_type %>
                 <% if is_text? a_blob.mime_type %>
-                  <pre><%= a_blob.data %></pre>
+                  <%= highlight(a_blob.name, a_blob.mime_type, a_blob.data).html_safe %>
                 <% elsif is_image? a_blob.mime_type %>
                   Images currently not implemented
                 <% else %>

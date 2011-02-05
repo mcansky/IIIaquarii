@@ -17,7 +17,7 @@ for fullname, names, filenames, mimetypes in get_all_lexers():
     lf = []
     for n in filenames:
         if n.startswith("*."):
-            lfs = "/^(.*).%s$/" % n.replace("*.", "")
+            lfs = "/^(.*).%s$/" % n.replace("*.", "").replace("+", "\+")
         else:
             lfs = "/^%s$/" % n
         lf.append(lfs)
@@ -26,6 +26,8 @@ for fullname, names, filenames, mimetypes in get_all_lexers():
     mt = []
     for n in mimetypes:
         mt.append("\'%s\'" % n)
+        if n.replace("/x-", "/") != n:
+            mt.append("\'%s\'" % n.replace("/x-", "/"))
     lst += ",".join(mt)
     lst += "]},"
 
