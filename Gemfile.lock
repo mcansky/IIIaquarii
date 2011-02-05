@@ -8,6 +8,12 @@ GIT
       warden (~> 1.0.3)
 
 GIT
+  remote: git://github.com/rhaamo/albino.git
+  revision: 978f6f5bcd51590e476ac148dd58289976a25700
+  specs:
+    albino (1.2.3)
+
+GIT
   remote: git://github.com/xspond/acts_as_versioned.git
   revision: 6c5ef375908e9370fde59dbc1a649c1639d8e08e
   branch: rails3
@@ -54,6 +60,7 @@ GEM
       abstract (>= 1.0.0)
     friendly_id (3.2.0)
       babosa (~> 0.2.1)
+    github-markup (0.5.3)
     gravtastic (3.1.0)
     grit (2.4.1)
       diff-lcs (~> 1.1)
@@ -118,8 +125,10 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_versioned!
+  albino!
   devise!
   friendly_id (~> 3.2)
+  github-markup
   gravtastic
   grit
   jquery-rails

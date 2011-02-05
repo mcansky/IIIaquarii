@@ -45,3 +45,9 @@ gem "friendly_id", "~> 3.2"
 
 # Gravatars
 gem 'gravtastic'
+
+# Markup for README.bla
+gem 'github-markup'
+
+# Render code
+gem 'albino', :git => "git://github.com/rhaamo/albino.git"
