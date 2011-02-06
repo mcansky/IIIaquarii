@@ -9,7 +9,10 @@
         <%= image_tag(@user.gravatar_url(:size => 60), :title => nil, :alt => nil, :border => 0) %>
       </span>
       <span id="user_name_login">
-        <%= @user.login %>
+        <span class="un_login"><%= @user.login %></span>
+        <% if (@user.login != @user.name) and @user.name %>
+          <span class="un_name">( <%= @user.name %> )</span>
+          <% end %>
       </span>
     </h2>
   </div>

@@ -553,6 +553,13 @@ input, textarea {
     margin-top: 14px;
 }
 
+.un_login {
+}
+
+.un_name {
+    color: #696969;
+}
+
 /* Button Clean Gray
    *******************************************************************************/
 button.clean-gray {
