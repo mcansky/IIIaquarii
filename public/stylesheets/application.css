@@ -545,7 +545,7 @@ input, textarea {
 }
 
 #user_name_login {
-    position: fixed;
+    position: absolute;
     padding: 14px 0px 0px 5px;
 }
 
@@ -563,7 +563,7 @@ input, textarea {
 #us_commits_count {
     font-size: 30pt;
     display: block;
-    margin-top: -10px;
+    margin-top: -15px;
 }
 
 #us_commits_txt {
@@ -574,7 +574,7 @@ input, textarea {
 #us_repos_count {
     font-size: 30pt;
     display: block;
-    margin-top: -10px;
+    margin-top: -15px;
 }
 
 #us_repos_txt {

@@ -1,7 +1,9 @@
 <ul>
   <li>
-    <span id="us_repos_count"><%= @user.aq_repositories.count %></span>
-    <span id="us_repos_txt">repositories</span>
+    <%= link_to user_aq_repositories_url(@user) do %>
+      <span id="us_repos_count"><%= @user.aq_repositories.count %></span>
+      <span id="us_repos_txt">repositories</span>
+    <% end %>
   </li>
   <li>
     <span id="us_commits_count"><%= @user.aq_commits.count %></span>
