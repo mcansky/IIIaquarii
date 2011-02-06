@@ -1,4 +1,4 @@
-* Tasks [9/34] [26%]
+* Tasks [10/34] [29%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -8,7 +8,6 @@
 ** TODO In short repositories, "G" and text are not horizontally aligned
 ** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
-** TODO User stats
 ** TODO Notify the user if no SshKey when adding a repos
 ** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
 ** TODO Layout problem with the repo description
@@ -25,6 +24,8 @@
 ** TODO More style for commit list and commit "header"
 ** TODO Filter repositories for non-public repos
 
+** DONE User stats
+   CLOSED: [2011-02-06 Sun 17:09]
 ** DONE User links
    CLOSED: [2011-02-06 Sun 16:44]
 ** DONE Update menu links like home link
