@@ -2,21 +2,43 @@
   <title><%= t(:show_commit, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<% branch = "master" %>
+<% branch = params[:branch] if params[:branch] %>
+<% commit = params[:commit_id] %>
+<% commit = @grit_repo.commit(commit) %>
+
 <div id="repository">
-  <%= render "infos", :repository => @repository %>
+  <div id="repo_infos_and_ppl">
+    <div class="grid_7 alpha">
+      <%= render "infos", :repository => @repository %>
+    </div>
 
-  <div class="repository">
+    <div class="grid_5 omega">
+      <%= render "people", :repository => @repository %>
+    </div>
+    <div class="clear"></div>
+  </div>
 
-    <%= render "people", :repository => @repository %>
+  <div id="repo_urls_and_branchs">
+    <div class="grid_7 alpha">
+      <%= render :partial => "repo_urls" %>
+    </div>
 
+    <div class="grid_5 omega">
+      <%= render :partial => "repo_branch_list" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="grid_12 repo_desc">
     <p class="desc"><%= @repository.desc %></p>
+  </div>
+  <div class="clear"></div>
 
-    <div id="commits_list">
+  <div class="grid_10 prefix_1 suffix_1">
+    <div id="show_commit">
       <% if @repository.branches.size != 0 %>
-	<% branch = "master" %>
-        <% branch = params[:branch] if params[:branch] %>
-        <% commit = params[:commit_id] %>
-        <% commit = @grit_repo.commit(commit) %>
+
         <% if commit %>
           <div class="commit">
             <div class="commit_date">
@@ -31,7 +53,7 @@
             <div class="commit_diff">
               <% diffs = commit.diffs %>
               <% for diff in diffs %>
-                <pre><%= diff.diff %></pre>
+                <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
               <% end %>
             </div>
           </div>
@@ -39,7 +61,7 @@
         <% end %>
       <% end %>
     </div>
-
-    <div class="clear"></div>
   </div>
+
+  <div class="clear"></div>
 </div>

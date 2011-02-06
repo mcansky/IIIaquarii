@@ -452,15 +452,26 @@ input, textarea {
 }
 
 
-#view_readme_file, #view_file {
+#view_readme_file, #view_file,.commit_diff {
     border: 1px solid #cecece;
     background-color: #F6F6F6;
 }
 
-#view_readme_file, #view_file pre {
+#view_readme_file, #view_file pre, .commit_diff pre {
     overflow-x: auto;
     overflow-y: auto;
     padding-bottom: 10px;
+}
+
+#view_file div.linenodiv, .commit_diff div.linenodiv {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 5px;
+}
+
+#view_file td.code, .commit_diff td.code {
+    padding-left: 5px;
+    padding-top: 5px;
 }
 
 #view_readme_file {
@@ -477,17 +488,6 @@ input, textarea {
 
 #vfi_mode_lines_size span.vfi_raw {
     float: right;
-}
-
-#view_file div.linenodiv {
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 5px;
-}
-
-#view_file td.code {
-    padding-left: 5px;
-    padding-top: 5px;
 }
 
 #file_browser_no_such_file {

@@ -1,4 +1,4 @@
-* Tasks [7/27] [25%]
+* Tasks [7/30] [23%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -19,8 +19,11 @@
 ** TODO Add /:branch/ after AqRepository name instead of a ?branch= ?
 ** TODO Improve view_file path to clickable subdirs
 ** TODO View file overflow-x/y auto needed
+** TODO RSS feeds for commit log of a project
+** TODO RSS feed for all commits for an user
+** TODO Add cache blocks for highlights
 ** DONE Add last commit to repository browser
-   CLOSED: [2011-02-03 Thu 20:26]
+   CLOSED: [2011-02-06 Sun 14:08]
 ** DONE Trailing slash needed for view_file ?
    CLOSED: [2011-02-03 Thu 09:44]
 ** DONE Gravatar using Gravtastic
