@@ -1,4 +1,4 @@
-* Tasks [7/30] [23%]
+* Tasks [7/31] [22%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -22,6 +22,8 @@
 ** TODO RSS feeds for commit log of a project
 ** TODO RSS feed for all commits for an user
 ** TODO Add cache blocks for highlights
+** TODO Clickable liste of files in the commit diff
+
 ** DONE Add last commit to repository browser
    CLOSED: [2011-02-06 Sun 14:08]
 ** DONE Trailing slash needed for view_file ?
