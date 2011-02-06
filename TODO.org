@@ -1,4 +1,4 @@
-* Tasks [7/34] [20%]
+* Tasks [8/34] [23%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -6,7 +6,6 @@
 ** TODO AqBranch owner_id nil ??
 ** TODO New lighter design
 ** TODO In short repositories, "G" and text are not horizontally aligned
-** TODO Update menu links like home link
 ** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
 ** TODO User stats
@@ -27,6 +26,8 @@
 ** TODO More style for commit list and commit "header"
 ** TODO Filter repositories for non-public repos
 
+** DONE Update menu links like home link
+   CLOSED: [2011-02-06 Sun 16:30]
 ** DONE Add last commit to repository browser
    CLOSED: [2011-02-06 Sun 14:08]
 ** DONE Trailing slash needed for view_file ?

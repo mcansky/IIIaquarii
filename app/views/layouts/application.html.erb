@@ -34,9 +34,9 @@
 
             <% if current_user %>
 	      <span id="user_stuff">
-	        <%= link_to image_tag("/images/icons/user-silhouette.png", :title => t(:home, :scope => :application), :alt => t(:home, :scope => :application), :border => 0) + " #{current_user.login}", current_user %>
-	        <%= link_to image_tag("/images/icons/databases.png", :title => t(:label, :scope => :repositories), :alt => t(:label, :scope => :repositories), :border => 0) + " #{t(:label, :scope => :repositories)}", repositories_url %>
-	        <%= link_to image_tag("/images/icons/license-key.png", :title => t(:label, :scope => :sshkeys), :alt => t(:label, :scope => :sshkeys), :border => 0) + " #{t(:label, :scope => :sshkeys)}", ssh_keys_url %>
+	        <%= link_to current_user.login, current_user, :id => "link_profile" %>
+	        <%= link_to t(:label, :scope => :repositories), repositories_url, :id => "link_repositories" %>
+	        <%= link_to t(:label, :scope => :sshkeys), ssh_keys_url, :id => "link_ssh_keys" %>
 	      </span>
             <% end %>
           </div>
@@ -46,11 +46,11 @@
         <div class="grid_1 omega">
           <div id="index_menu_right">
             <% if current_user %>
-	      <%= link_to image_tag("/images/icons/wrench.png", :alt => t(:edit, :scope => :users), :title => t(:edit, :scope => :users), :border => 0), edit_user_registration_url %>
-	      <%= link_to image_tag("/images/icons/door.png", :alt =>t(:label, :scope => :logout), :title => t(:label, :scope => :logout), :border => 0), destroy_user_session_url %>
+	      <%= link_to "", edit_user_registration_url, :title => t(:edit, :scope => :users), :id => "link_edit_user" %>
+	      <%= link_to "", destroy_user_session_url, :title => t(:label, :scope => :logout), :id => "link_login_logout" %>
             <% else %>
-	      <%= link_to image_tag("/images/icons/door.png", :alt => t(:label, :scope => :login), :title => t(:label, :scope => :login)), new_user_session_url %>
-	      <%= link_to image_tag("/images/icons/rocket-fly.png", :alt => t(:label, :scope => :signup), :title => t(:label, :scope => :signup), :border => 0), new_user_registration_url %>
+	      <%= link_to "", new_user_session_url, :title => t(:label, :scope => :login), :id => "link_login_logout"  %>
+	      <%= link_to "", new_user_registration_url, :title => t(:label, :scope => :signup), :id => "link_sign_up" %>
             <% end %>
           </div>
         </div> <!-- /right part -->

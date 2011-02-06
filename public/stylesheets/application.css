@@ -51,6 +51,48 @@ body {
     height: 16px;
     padding-left: 20px;
 }
+#index_menu_left #link_profile {
+    background-image: url(/images/icons/user-silhouette.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_left #link_repositories {
+    background-image: url(/images/icons/databases.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_left #link_ssh_keys {
+    background-image: url(/images/icons/license-key.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_right #link_edit_user {
+    background-image: url(/images/icons/wrench.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_right #link_login_logout {
+    background-image: url(/images/icons/door.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_right #link_sign_up {
+    background-image: url(/images/icons/rocket-fly.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
 
 #index_menu_right {
     padding: 5px;
