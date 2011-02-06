@@ -25,7 +25,7 @@ class AqRepositoriesController < ApplicationController
     @repository.owner = current_user
     if @repository.save
       flash[:notice] = t(:repo_create_ok)
-      redirect_to @repository
+      redirect_to [@repository.owner, @repository]
     else
       flash[:notice] = t(:repo_create_ko)
       redirect_to aq_repositories
@@ -49,7 +49,7 @@ class AqRepositoriesController < ApplicationController
     end
     if @repository.update_attributes(params[:aq_repository])
       flash[:notice] = t(:repo_update_ok)
-      redirect_to @repository
+      redirect_to [@repository.owner, @repository]
     else
       render :action => 'edit'
     end

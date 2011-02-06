@@ -33,7 +33,7 @@
 
   <h3>Done ?</h3>
   <ul>
-    <li>Wait until the job see your commit then <%= link_to t(:continue, :scope => :links), @repository %></li>
+    <li>Wait until the job see your commit then <%= link_to t(:continue, :scope => :links), [@repository.owner, @repository] %></li>
   </ul>
 
 </div>
