@@ -3,7 +3,7 @@
     <% path = "" %>
     <% path = params[:dir] + "/" if params[:dir] %>
     <p>
-      <%= link_to @repository.name, :action => :show, :id => @repository.id %> /
+      <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
       <%= path %> (<%= params[:branch] || "master" %>)</p>
   </div>
   <table cellspacing=0 id="repo_files">
@@ -23,9 +23,9 @@
 	<% if (params[:back] == branch) || troot == "." %>
 	  <td>
 	    <%= image_tag("/images/icons/folder-horizontal.png", :title => t(:up, :scope => :repositories), :alt => t(:up, :scope => :repositories), :border => 0)%>
-	    <%= link_to "..", :action => "show", :id => @repository.id, :branch => branch %></td>
+	    <%= link_to "..", user_aq_repository_url(@repository.owner, @repository) %></td>
 	<% else %>
-          <td><%= link_to "..", "/aq_repositories/browse/#{@repository.id}/#{troot}?branch=#{branch}" %></td>
+          <td><%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, troot) %></td>
 	<% end %>
 	<td></td>
 	<td></td>
@@ -35,7 +35,7 @@
       <tr class="dir">
 	<td>
 	  <%= image_tag("/images/icons/folder-horizontal.png", :title => dir.basename, :alt => dir.basename, :border => 0) %>
-          <%= link_to dir.basename, "/aq_repositories/browse/#{@repository.id}/#{root_dir}#{dir.basename}?branch=#{branch}" %></td>
+          <%= link_to dir.basename, show_dir_user_aq_repository_url(@repository.owner, @repository, root_dir + dir.basename) %></td>
 	<td></td>
 	<td></td>
       </tr>
@@ -55,7 +55,7 @@
 	<tr class="file">
 	  <td>
             <%= image_tag("/images/icons/document-code.png", :title => file.name, :alt => file.name, :border => 0)%>
-            <%= link_to file.name, "/aq_repositories/view_file/#{@repository.id}/#{file.name}" %>
+            <%= link_to file.name, show_file_user_aq_repository_url(@repository.owner, @repository, file.name) %>
 	  </td>
 	  <td><%= commit_time %></td>
 	  <td><%= last_log %></td>

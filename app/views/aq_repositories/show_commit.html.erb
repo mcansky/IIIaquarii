@@ -20,7 +20,8 @@
         <% if commit %>
           <div class="commit">
             <div class="commit_date">
-              <%= link_to "#{commit.sha.slice(0,7)}", "/aq_repositories/commits/#{@repository.id}/#{commit.sha}?branch=#{branch}" %>...
+              <%# branch to url here %>
+              <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
               <%= "on: #{commit.date.strftime("%I:%M %p %x").downcase} by: #{commit.author.name} #{commit.author.email}" %>
             </div>
             <div class="commit_m=essage">

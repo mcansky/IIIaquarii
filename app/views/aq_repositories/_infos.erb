@@ -6,7 +6,7 @@
     <span class="repo_private" title="<%= t(:repo_private, :scope => :repositories) %>" >P</span>
   <% end %>
   <%= link_to @repository.owner.login, :controller => :users, :action => :show, :id => @repository.owner %> /
-  <%= link_to @repository.name, :action => :show, :id => @repository.id %>
+  <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %>
   <% if current_user && @repository.owner == current_user %>
     <%= link_to image_tag("/images/icons/pencil.png", :title => t(:edit, :scope => :repositories), :alt => t(:edit, :scope => :repositories), :border => 0), :action => "edit", :id => @repository.id %>
   <% end %>

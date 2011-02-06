@@ -49,11 +49,11 @@
       <% path = "" %>
       <% path = (Pathname(params[:file_path] + "/") + "..").to_s if params[:file_path] %>
       <p>
-        <%= link_to @repository.name, :action => :show, :id => @repository.id %> /
+        <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
         <% old_path = [] %>
         <% path.split("/").each do |p| %>
           <% act_path = (old_path + [p]).join("/") %>
-          <%= link_to p, "/aq_repositories/browse/#{@repository.id}/#{act_path}?branch=#{branch}" %>
+          <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path) %>
           <% old_path << p %>
           /
         <% end %>

@@ -1,23 +1,20 @@
 IIIaquarii::Application.routes.draw do
   devise_for :users
 
-  resources :users
   resources :ssh_keys
-  resources :aq_repositories
-  resources :rights
-
-  # fork
-  match "/aq_repositories/fork/:id" => "aq_repositories#fork"
-
-  # browse
-  match "/aq_repositories/browse/:id/(:dir)", :to => "aq_repositories#show", :dir => /(.*)/
-
-  # view a file
-  match "/aq_repositories/view_file/:id/(:file_path)", :to => "aq_repositories#view_file", :file_path => /(.*)/
-
-  # commit log
-  match "/aq_repositories/commits/:id", :to => "aq_repositories#show_commits"
-  match "/aq_repositories/commits/:id/:commit_id", :to => "aq_repositories#show_commit"
+  resources :users
+  #resources :aq_repositories # nested on :users
+  resources :users do
+    resources :aq_repositories do
+      member do
+        get "fork", :action => "fork"
+        match "dirs/(:dir)", :action => "show", :dir => /(.*)/, :via => :get, :as => :show_dir
+        match "files/(:file_path)", :action => "view_file", :file_path => /(.*)/, :via => :get, :as => :show_file
+        get "commits", :action => "show_commits", :as => :commits
+        match "commits/:sha", :action => "show_commit", :sha => /[0-9a-fA-F]{40}/, :via => :get, :as => :show_commit
+      end
+    end
+  end
 
   root :to => "application#index"
 end
