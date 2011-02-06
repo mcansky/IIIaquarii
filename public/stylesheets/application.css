@@ -560,6 +560,40 @@ input, textarea {
     color: #696969;
 }
 
+#us_commits_count {
+    font-size: 30pt;
+    display: block;
+    margin-top: -10px;
+}
+
+#us_commits_txt {
+    display: block;
+    line-height: 1px;
+}
+
+#us_repos_count {
+    font-size: 30pt;
+    display: block;
+    margin-top: -10px;
+}
+
+#us_repos_txt {
+    display: block;
+    line-height: 1px;
+}
+
+#user_stats ul {
+    list-style: none;
+}
+
+#user_stats ul li {
+    float: left;
+}
+
+
+
+
+
 /* Button Clean Gray
    *******************************************************************************/
 button.clean-gray {
