@@ -16,5 +16,7 @@ IIIaquarii::Application.routes.draw do
     end
   end
 
+  match "/repositories", :via => :get, :to => "application#repositories"
+
   root :to => "application#index"
 end

@@ -35,7 +35,7 @@
             <% if current_user %>
 	      <span id="user_stuff">
 	        <%= link_to image_tag("/images/icons/user-silhouette.png", :title => t(:home, :scope => :application), :alt => t(:home, :scope => :application), :border => 0) + " #{current_user.login}", current_user %>
-	        <%= link_to image_tag("/images/icons/databases.png", :title => t(:label, :scope => :repositories), :alt => t(:label, :scope => :repositories), :border => 0) + " #{t(:label, :scope => :repositories)}", aq_repositories_url %>
+	        <%= link_to image_tag("/images/icons/databases.png", :title => t(:label, :scope => :repositories), :alt => t(:label, :scope => :repositories), :border => 0) + " #{t(:label, :scope => :repositories)}", repositories_url %>
 	        <%= link_to image_tag("/images/icons/license-key.png", :title => t(:label, :scope => :sshkeys), :alt => t(:label, :scope => :sshkeys), :border => 0) + " #{t(:label, :scope => :sshkeys)}", ssh_keys_url %>
 	      </span>
             <% end %>
