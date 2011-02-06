@@ -4,8 +4,13 @@
   </title>
 <% end %>
 
-<h1><%= @repository.name %></h1>
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="repository_form">
+    <h1><%= @repository.name %></h1>
 
-<%= render "form", :repository => @repository %>
+    <%= render "form", :repository => @repository %>
 
-<%= button_to t(:delete, :scope => :links), @repository, :confirm => t(:confirm, :scope => :js), :method => :delete %>
+    <p class="repository_form_button"><%= button_to t(:delete, :scope => :links), [@repository.owner, @repository], :confirm => t(:confirm, :scope => :js), :method => :delete %></p>
+    </div>
+</div>
+<div class="clear"></div>

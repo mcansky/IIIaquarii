@@ -1,8 +1,8 @@
-<% form_for repository do |f| %>
+<% form_for [repository.owner, repository] do |f| %>
   <%= f.error_messages %>
   <p><%= f.label :name %> : <%= f.text_field :name %></p>
   <p><%= f.label :repo_kind %> : <%= f.select :kind, ["git"] %></p>
   <p><%= f.label :desc %> : <br /><%= f.text_field :desc, :size => 65 %></p>
-  <p><%= f.label :visibility %> : <%= f.check_box :visibility %></p>
-  <p><%= f.submit t(:submit, :scope => :links) %></p>
+  <p><%= f.label :visibility %> : <%= f.check_box :visibility, :class => "private_repo" %></p>
+  <p class="repository_form_button" ><%= f.submit t(:submit, :scope => :links) %></p>
 <% end %>

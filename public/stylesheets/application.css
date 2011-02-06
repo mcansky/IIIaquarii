@@ -345,7 +345,7 @@ input, textarea {
 
 #login_form, #sign_up_form, #new_password_form,
 #resend_confirmation_form, #resend_unlock_form,
-#edit_registration_form {
+#edit_registration_form, #repository_form {
     margin-top: 2em;
     margin-bottom: 1em;
 
@@ -379,7 +379,7 @@ input, textarea {
 
 #login_form input, #sign_up_form input, #new_password_form input,
 #resend_confirmation_form input, #resend_unlock_form input,
-#edit_registration_form input {
+#edit_registration_form input, #repository_form input {
     width: 230px;
     background: #DFDDDD;
     padding: 6px;
@@ -409,7 +409,8 @@ input, textarea {
 
 #login_form input:hover, #sign_up_form input:hover,
 #new_password_form input:hover, #resend_confirmation_form input:hover,
-#resend_unlock_form input:hover, #edit_registration_form input:hover {
+#resend_unlock_form input:hover, #edit_registration_form input:hover,
+#repository_form input:hover {
     -webkit-box-shadow: 0px 0px 4px #000;
     -mox-box-shadow: 0px 0px 4px #000;
     box-shadow: 0px 0px 4px #000;
@@ -420,7 +421,8 @@ input, textarea {
 #new_password_form p.new_password_form_submit input,
 #resend_confirmation_form p.resend_confirmation_form_submit input,
 #resend_unlock_form p.resend_unlock_form_submit input,
-#edit_registration_form p.edit_registration_form_submit input {
+#edit_registration_form p.edit_registration_form_submit input,
+#repository_form p.repository_form_button input {
     width: 240px;
     color: #000;
     /*text-transform: uppercase;
@@ -433,7 +435,7 @@ input, textarea {
     background:  -moz-linear-gradient(19% 75% 90deg,#848583, #D3D1D6);*/
 }
 
-#login_form input.login_form_remember_me {
+#login_form input.login_form_remember_me, #repository_form input.private_repo {
     width: 20px;
 }
 
