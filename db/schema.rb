@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110201131157) do
+ActiveRecord::Schema.define(:version => 20110206091652) do
 
   create_table "aq_branches", :force => true do |t|
     t.string   "name"
@@ -51,12 +51,13 @@ ActiveRecord::Schema.define(:version => 20110201131157) do
   create_table "aq_repositories", :force => true do |t|
     t.string   "name"
     t.string   "path"
-    t.string   "kind",       :default => "git"
+    t.string   "kind",        :default => "git"
     t.string   "desc"
     t.integer  "parent_id"
-    t.integer  "visibility", :default => 0
+    t.integer  "visibility",  :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
   create_table "rights", :force => true do |t|

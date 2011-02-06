@@ -8,6 +8,8 @@ class AqRepository < ActiveRecord::Base
   after_save :repo_init
   after_save :repo_set_visibility
 
+  has_friendly_id :name, :use_slug => true
+
   has_many :rights
   has_many :users, :through => :rights
   has_many :branches, :class_name => "AqBranch"
