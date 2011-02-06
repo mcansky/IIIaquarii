@@ -5,7 +5,6 @@
 ** TODO fix aq_sh log path
 ** TODO AqBranch owner_id nil ??
 ** TODO New lighter design
-** TODO In short repositories, "G" and text are not horizontally aligned
 ** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
 ** TODO Notify the user if no SshKey when adding a repos
