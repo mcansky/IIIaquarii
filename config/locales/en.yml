@@ -23,6 +23,7 @@ en:
     fork: "Fork"
     show_commit: "Show commit"
     up: "Up"
+    repo_private: "Private"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"

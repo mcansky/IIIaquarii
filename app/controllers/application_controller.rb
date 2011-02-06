@@ -18,6 +18,21 @@ class ApplicationController < ActionController::Base
     User.our_current_user = current_user || nil
   end
 
+  def check_private_repository
+    repository = AqRepository.find(params[:id])
+
+    if repository
+      if repository.is_private?
+        return redirect_to root_url
+      else
+        return true
+      end
+    else
+      return redirect_to root_url
+    end
+
+  end
+
   private
   def login_required
     if current_user

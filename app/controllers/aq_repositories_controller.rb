@@ -3,6 +3,7 @@ include Grit
 
 class AqRepositoriesController < ApplicationController
   before_filter :login_required, :except => [:show, :view_file, :show_commits, :show_commit]
+  before_filter :check_private_repository
 
   def index
     @repositories = current_user.aq_repositories

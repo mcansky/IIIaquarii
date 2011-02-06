@@ -237,6 +237,12 @@ span.kind_hg {
     color: green;
 }
 
+span.repo_private {
+    color: red;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
 #repo_infos_and_ppl {
     margin-bottom: 1em;
     border-bottom: 1px solid #EEE;
