@@ -502,7 +502,14 @@ input, textarea {
     margin-right: 5px;
 }
 
+#user_name_login {
+    position: fixed;
+    padding: 14px 0px 0px 5px;
+}
 
+.user_links {
+    margin-top: 14px;
+}
 
 /* Button Clean Gray
    *******************************************************************************/

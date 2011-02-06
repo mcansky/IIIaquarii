@@ -8,7 +8,9 @@
       <span id="user_name_gravatar">
         <%= image_tag(@user.gravatar_url(:size => 60), :title => nil, :alt => nil, :border => 0) %>
       </span>
-      <%= @user.login %>
+      <span id="user_name_login">
+        <%= @user.login %>
+      </span>
     </h2>
   </div>
   <div class="grid_6">
