@@ -17,6 +17,7 @@ class AqRepositoriesController < ApplicationController
 
   def new
     @repository = AqRepository.new
+    @user = current_user
   end
 
   def create
@@ -38,6 +39,7 @@ class AqRepositoriesController < ApplicationController
       flash[:notice] = t(:insufficient_rights)
       redirect_to root_path
     end
+    @user = @repository.owner
   end
 
   def update

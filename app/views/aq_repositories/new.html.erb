@@ -2,10 +2,11 @@
   <title><%= t(:new, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<div id="repositories">
-  <h2><%= t(:new, :scope => :repositories) %></h2>
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="repository_form">
+    <h2><%= t(:new, :scope => :repositories) %></h2>
 
-  <%= render "form", :repository => @repository %>
-
-  <%= link_to t(:list, :scope => :repositories), :controller => "aq_repositories", :action => "index" %>
+    <%= render "form", :repository => @repository %>
+  </div>
 </div>
+<div class="clear"></div>
