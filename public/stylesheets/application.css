@@ -252,6 +252,10 @@ span.kind_hg {
     margin-bottom: 1em;
     border-bottom: 1px solid #EEE;
     padding-bottom: 5px;
+
+    /* workaround for a weird bug: */
+    margin-left: 0px;
+    width:100%;
 }
 
 #repo_browser #repo_files {
