@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     @commits = AqCommit.find(:all, :order => "committed_time DESC")
   end
 
+  def repositories
+    render :text => "TODO"
+  end
+
   # We need to access to "current_user" from some models
   # and we can't with Devise, so we use this workaroud
   def set_our_current_user

@@ -1,4 +1,4 @@
-* Tasks [7/33] [21%]
+* Tasks [7/34] [20%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -25,6 +25,7 @@
 ** TODO Clickable liste of files in the commit diff
 ** TODO Encode emails addresses
 ** TODO More style for commit list and commit "header"
+** TODO Filter repositories for non-public repos
 
 ** DONE Add last commit to repository browser
    CLOSED: [2011-02-06 Sun 14:08]
