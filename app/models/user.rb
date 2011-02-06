@@ -31,4 +31,12 @@ class User < ActiveRecord::Base
   def set_initial_name
     self.name = self.login if self.name.blank?
   end
+
+  # TODO FIXME
+  def admin?
+    return false
+  end
+  def role
+    return "user"
+  end
 end
