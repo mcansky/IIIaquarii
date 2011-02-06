@@ -21,8 +21,10 @@ class ApplicationController < ActionController::Base
   def check_private_repository
     repository = AqRepository.find(params[:id])
 
+    user_id = (current_user ? current_user.id : nil)
+
     if repository
-      if repository.is_private?
+      if (repository.is_private?) and (repository.owner.id != user_id)
         return redirect_to root_url
       else
         return true
