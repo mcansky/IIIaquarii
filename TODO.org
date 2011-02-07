@@ -1,16 +1,13 @@
-* Tasks [12/33] [36%]
+* Tasks [16/32] [50%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO fix aq_sh log path
-** TODO AqBranch owner_id nil ??
-** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
-** TODO Notify the user if no SshKey when adding a repos
 ** TODO Problems trigger by the git:pull task causes "-- not found (filename)"
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO Doesn't add ?branch= if 'master' (default)
-** TODO Add /:branch/ after AqRepository name instead of a ?branch= ?
+*** TODO Add /:branch/ after AqRepository name instead of a ?branch= ?
 ** TODO Improve view_file path to clickable subdirs
 ** TODO View file overflow-x/y auto needed
 ** TODO RSS feeds for commit log of a project
@@ -19,8 +16,15 @@
 ** TODO Clickable liste of files in the commit diff
 ** TODO Encode emails addresses
 ** TODO More style for commit list and commit "header"
-** TODO Filter repositories for non-public repos
 
+** DONE Add style for various forms
+   CLOSED: [2011-02-08 Tue 00:55]
+** DONE AqBranch owner_id nil ??
+   CLOSED: [2011-02-08 Tue 00:55]
+** DONE Notify the user if no SshKey when adding a repos
+   CLOSED: [2011-02-08 Tue 00:55]
+** DONE Filter repositories for non-public repos
+   CLOSED: [2011-02-08 Tue 00:54]
 ** DONE Layout problem with the repo description
    CLOSED: [2011-02-06 Sun 17:54]
 ** DONE New lighter design
