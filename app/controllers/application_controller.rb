@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_our_current_user
 
   def index
-    @repositories = AqRepository.find(:all)
-    @commits = AqCommit.find(:all, :order => "committed_time DESC")
+    @repositories = AqRepository.public
+    @commits = AqCommit.of_public_repositories.order("committed_time DESC")
   end
 
   def repositories
