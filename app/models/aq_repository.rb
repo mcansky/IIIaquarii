@@ -18,6 +18,9 @@ class AqRepository < ActiveRecord::Base
   belongs_to :parent, :class_name => "AqRepository", :foreign_key => "parent_id"
   has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
 
+  scope :public,  { :conditions => ['visibility = ?', 0] }
+  scope :private, { :conditions => ['visibility = ?', 1] }
+
   def owner
     a_right = self.rights.find(:all, :conditions => ["role = ?", 'o']).first
     if a_right
