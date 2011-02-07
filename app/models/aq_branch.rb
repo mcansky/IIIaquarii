@@ -21,7 +21,8 @@ class AqBranch < ActiveRecord::Base
                                   :log => c.message,
                                   :author_name => c.author.name,
                                   :created_at => c.committed_date,
-                                  :committed_time => c.committed_date)
+                                  :committed_time => c.committed_date,
+                                  :repository => self.aq_repository)
           c.diffs.each do |diff|
             a_file = nil
             begin
