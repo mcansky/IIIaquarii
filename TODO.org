@@ -7,7 +7,7 @@
 ** TODO Add style for various forms
 ** TODO Delete and edit links on user page for repos
 ** TODO Notify the user if no SshKey when adding a repos
-** TODO There seems to be a problem with empty files (or binary ?) "-- not found (filename)"
+** TODO Problems trigger by the git:pull task causes "-- not found (filename)"
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO Doesn't add ?branch= if 'master' (default)
 ** TODO Add /:branch/ after AqRepository name instead of a ?branch= ?
