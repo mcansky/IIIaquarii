@@ -2,6 +2,8 @@
   <title><%= t(:repo_sources, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <div id="repository">
   <div id="repo_infos_and_ppl">
     <div class="grid_7 alpha">

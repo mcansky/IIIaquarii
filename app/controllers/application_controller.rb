@@ -18,6 +18,14 @@ class ApplicationController < ActionController::Base
     User.our_current_user = current_user || nil
   end
 
+  def warning_no_sshkey
+    if current_user
+      if current_user.ssh_keys.size == 0
+        flash[:notice] = "You need to add an SSH key to be able to push."
+      end
+    end
+  end
+
   def check_private_repository
     repository = AqRepository.find(params[:id])
 
