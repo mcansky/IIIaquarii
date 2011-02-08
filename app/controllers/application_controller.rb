@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
 
   def index
     # only show 10 repositories and 30 commits on index page
-    @repositories = AqRepository.public.limit(10)
+    if current_user
+      @repositories = AqRepository.public_with_private_user(current_user.id).limit(10)
+    else
+      @repositories = AqRepository.public.limit(10)
+    end
     @commits = AqCommit.of_public_repositories.order("committed_time DESC").limit(30)
   end
 
@@ -13,7 +17,7 @@ class ApplicationController < ActionController::Base
     page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
 
     if current_user
-      @repositories = (AqRepository.public + current_user.aq_repositories.where(:visibility => 1)).paginate :page => page, :per_page => Settings.pagination.per_page
+      @repositories = AqRepository.public_with_private_user(current_user.id).paginate :page => page, :per_page => Settings.pagination.per_page
     else
       @repositories = AqRepository.public.paginate :page => page, :per_page => Settings.pagination.per_page
     end

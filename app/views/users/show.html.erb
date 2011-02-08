@@ -43,7 +43,7 @@
   <div class="grid_6">
     <div id="repositories">
       <h2><%= t(:label, :scope => :repositories) %></h2>
-      <% @user.aq_repositories.each do |rep| %>
+      <% @user_repositories.each do |rep| %>
         <%= render "application/short_repository", :rep => rep %>
       <% end %>
     </div>
@@ -52,7 +52,7 @@
   <div class="grid_6">
     <div id="commits">
       <h2>Latest commits</h2>
-      <% for commit in @user.aq_commits.first(10) %>
+      <% for commit in @user.aq_commits.of_public_repositories.first(10) %>
         <%= render "application/short_commit", :commit => commit %>
       <% end %>
     </div>

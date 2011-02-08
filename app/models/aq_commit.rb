@@ -4,6 +4,8 @@ class AqCommit < ActiveRecord::Base
   belongs_to :author, :class_name => "User", :foreign_key => "author_id"
   has_and_belongs_to_many :aq_files
 
+  default_scope :order => "aq_commits.committed_time DESC"
+
   scope :repositories_with_visibility, lambda { |vis|
     joins(:repository).
     where("aq_repositories.visibility = ?", vis).
