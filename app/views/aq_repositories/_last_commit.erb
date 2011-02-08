@@ -2,7 +2,7 @@
 <% if last_commit %>
   <div id="repo_last_commit">
     <div class="commit_sha">
-      <%= t(:last_commit, :scope => :commits) %> <%= link_to last_commit.sha, show_commit_user_aq_repository_url(@repository.owner, @repository, last_commit.sha) %>
+      <%= t(:last_commit, :scope => :commits) %> <%= link_to last_commit.sha, show_commit_user_aq_repository_url(@repository.owner, @repository, last_commit.sha, :branch => branch) %>
     </div>
 
     <div class="author_name_and_date">

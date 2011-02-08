@@ -40,7 +40,7 @@
   <div class="clear"></div>
 
   <div class="grid_10 prefix_1 suffix_1">
-    <%= render "last_commit", :repository => @repository %>
+    <%= render "last_commit", :repository => @repository, :branch => branch %>
   </div>
   <div class="clear"></div>
 
@@ -49,12 +49,12 @@
       <% path = "" %>
       <% path = (Pathname(params[:file_path] + "/") + "..").to_s if params[:file_path] %>
       <p>
-        <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
+        <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository, :branch => branch) %> /
         <% old_path = [] %>
         <% path.split("/").each do |p| %>
           <% if p != "." %>
             <% act_path = (old_path + [p]).join("/") %>
-            <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path) %>
+            <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path, :branch => branch) %>
             /
           <% end %>
           <% old_path << p %>

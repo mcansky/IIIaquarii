@@ -1,3 +1,6 @@
+<% branch = "master" %>
+<% branch = params[:branch] if params[:branch] %>
+
 <div class="branches">
   <p><strong><%= t(:branches, :scope => :repositories) %> </strong>
     <% if @repository.branches.empty? %>
@@ -7,5 +10,5 @@
       <%= link_to br.name, user_aq_repository_url(@repository.owner, @repository, :branch => br.name) %>
     <% end %>
   </p>
-  <p><strong><%= link_to t(:commits, :scope => :repositories), commits_user_aq_repository_url(@repository.owner, @repository)  %> <%= @repository.commits.count %></strong></p>
+  <p><strong><%= link_to t(:commits, :scope => :repositories), commits_user_aq_repository_url(@repository.owner, @repository, :branch => branch)  %> <%= @repository.commits.count %></strong></p>
 </div>

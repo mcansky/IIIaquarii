@@ -16,9 +16,9 @@
 	<% if (params[:back] == branch) || troot == "." %>
 	  <td>
 	    <%= image_tag("/images/icons/folder-horizontal.png", :title => t(:up, :scope => :repositories), :alt => t(:up, :scope => :repositories), :border => 0)%>
-	<%= link_to "..", user_aq_repository_url(@repository.owner, @repository) %></td>
+	<%= link_to "..", user_aq_repository_url(@repository.owner, @repository, :branch => branch) %></td>
 	<% else %>
-          <td><%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, troot) %></td>
+          <td><%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, troot, :branch => branch) %></td>
 	<% end %>
 	<td></td>
 	<td></td>
@@ -28,7 +28,7 @@
       <tr class="dir">
 	<td>
 	  <%= image_tag("/images/icons/folder-horizontal.png", :title => dir.basename, :alt => dir.basename, :border => 0) %>
-          <%= link_to dir.basename, show_dir_user_aq_repository_url(@repository.owner, @repository, root_dir + dir.basename) %></td>
+          <%= link_to dir.basename, show_dir_user_aq_repository_url(@repository.owner, @repository, root_dir + dir.basename, :branch => branch) %></td>
 	<td></td>
 	<td></td>
       </tr>
@@ -48,7 +48,7 @@
 	<tr class="file">
 	  <td>
             <%= image_tag("/images/icons/document-code.png", :title => file.name, :alt => file.name, :border => 0)%>
-            <%= link_to file.name, show_file_user_aq_repository_url(@repository.owner, @repository, file.name) %>
+            <%= link_to file.name, show_file_user_aq_repository_url(@repository.owner, @repository, file.name, :branch => branch) %>
 	  </td>
 	  <td><%= commit_time %></td>
 	  <td><%= last_log %></td>

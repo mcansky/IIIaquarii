@@ -8,10 +8,13 @@ IIIaquarii::Application.routes.draw do
     resources :aq_repositories do
       member do
         get "fork", :action => "fork"
-        match "dirs/(:dir)", :action => "show", :dir => /(.*)/, :via => :get, :as => :show_dir
-        match "files/(:file_path)", :action => "view_file", :file_path => /(.*)/, :via => :get, :as => :show_file
-        get "commits", :action => "show_commits", :as => :commits
-        match "commits/:sha", :action => "show_commit", :sha => /[0-9a-fA-F]{40}/, :via => :get, :as => :show_commit
+        match "(:branch)/dirs/(:dir)", :action => "show", :dir => /(.*)/, :branch => /(.*)/, :via => :get, :as => :show_dir
+        match "(:branch)/files/(:file_path)", :action => "view_file", :file_path => /(.*)/, :branch => /(.*)/, :via => :get, :as => :show_file
+        get "(:branch)/commits", :action => "show_commits", :as => :commits, :branch => /(.*)/
+        match "(:branch)/commits/:sha", :action => "show_commit", :sha => /[0-9a-fA-F]{40}/, :branch => /(.*)/, :via => :get, :as => :show_commit
+
+        # Always put on the end beacause it's a "catch all"-like route
+        match "(:branch)", :action => "show", :branch => /(.*)/, :via => :get
       end
     end
   end

@@ -2,8 +2,7 @@
   <title><%= t(:repo_sources, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<% branch = "master" %>
-<% branch = params[:branch] if params[:branch] %>
+
 
 <%= render :partial => "shared/flash_messages" %>
 

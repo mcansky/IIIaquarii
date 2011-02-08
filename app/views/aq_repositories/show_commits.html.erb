@@ -2,6 +2,8 @@
   <title><%= t(:commits_list, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<% branch = "master" %>
+<% branch = params[:branch] if params[:branch] %>
 
 <div id="repository">
   <div id="repo_infos_and_ppl">
@@ -38,7 +40,7 @@
           <div class="commit">
             <div class="commit_date">
               <%# branch to url here %>
-              <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha)  %>...
+              <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha, :branch => branch)  %>...
               <%= "on: #{commit.date.strftime("%I:%M %p %x").downcase} by: #{commit.author.name} #{commit.author.email}" %>
             </div>
             <% # Typo '=' ? %>

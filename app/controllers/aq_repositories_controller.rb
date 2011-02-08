@@ -110,7 +110,7 @@ class AqRepositoriesController < ApplicationController
     end
 
 
-    @commits = WillPaginate::Collection.create(page, Settings.pagination.commits, @repository.commits.count) do |pager|
+    @commits = WillPaginate::Collection.create(page, Settings.pagination.commits, @grit_repo.commit_count(branch)) do |pager|
       start = (page.to_i-1)*Settings.pagination.commits # Assuming "current_page" is 1 based.
       pager.replace(@grit_repo.commits(branch, Settings.pagination.commits, start)) # branch, max to show, start at (skips)
     end
