@@ -1,4 +1,4 @@
-* Tasks [16/32] [50%]
+* Tasks [17/32] [53%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -8,7 +8,6 @@
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO Doesn't add ?branch= if 'master' (default)
 *** TODO Add /:branch/ after AqRepository name instead of a ?branch= ?
-** TODO Improve view_file path to clickable subdirs
 ** TODO View file overflow-x/y auto needed
 ** TODO RSS feeds for commit log of a project
 ** TODO RSS feed for all commits for an user
@@ -17,6 +16,8 @@
 ** TODO Encode emails addresses
 ** TODO More style for commit list and commit "header"
 
+** DONE Improve view_file path to clickable subdirs
+   CLOSED: [2011-02-08 Tue 08:17]
 ** DONE Add style for various forms
    CLOSED: [2011-02-08 Tue 00:55]
 ** DONE AqBranch owner_id nil ??

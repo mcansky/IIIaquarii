@@ -52,10 +52,12 @@
         <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
         <% old_path = [] %>
         <% path.split("/").each do |p| %>
-          <% act_path = (old_path + [p]).join("/") %>
-          <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path) %>
+          <% if p != "." %>
+            <% act_path = (old_path + [p]).join("/") %>
+            <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path) %>
+            /
+          <% end %>
           <% old_path << p %>
-          /
         <% end %>
         <%= params[:file_path].split("/").last %> (<%= params[:branch] || "master" %>)</p>
     </div>

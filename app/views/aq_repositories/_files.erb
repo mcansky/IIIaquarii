@@ -1,11 +1,4 @@
 <div id="repo_browser">
-  <div class="path">
-    <% path = "" %>
-    <% path = params[:dir] + "/" if params[:dir] %>
-    <p>
-      <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
-      <%= path %> (<%= params[:branch] || "master" %>)</p>
-  </div>
   <table cellspacing=0 id="repo_files">
     <tr>
       <th class="rf_filename" >Filename</th>
@@ -23,7 +16,7 @@
 	<% if (params[:back] == branch) || troot == "." %>
 	  <td>
 	    <%= image_tag("/images/icons/folder-horizontal.png", :title => t(:up, :scope => :repositories), :alt => t(:up, :scope => :repositories), :border => 0)%>
-	    <%= link_to "..", user_aq_repository_url(@repository.owner, @repository) %></td>
+	<%= link_to "..", user_aq_repository_url(@repository.owner, @repository) %></td>
 	<% else %>
           <td><%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, troot) %></td>
 	<% end %>

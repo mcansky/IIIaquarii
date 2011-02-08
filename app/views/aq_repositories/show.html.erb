@@ -45,7 +45,30 @@
     <% if @repository.branches.empty? and @repository.commits.empty? %>
       <%= render "new_repository_text_message", :repository => @repository %>
     <% end %>
+  </div>
+  <div class="clear"></div>
 
+  <div class="grid_10 prefix_1 suffix_1">
+    <div class="view_file_path">
+      <% path = "" %>
+      <% path = (Pathname(params[:dir] + "/") + "..").to_s if params[:dir] %>
+      <p>
+        <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository) %> /
+        <% old_path = [] %>
+        <% path.split("/").each do |p| %>
+          <% if p != "." %>
+            <% act_path = (old_path + [p]).join("/") %>
+            <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path) %>
+            /
+          <% end %>
+          <% old_path << p %>
+        <% end %>
+        <%= params[:dir].split("/").last if params[:dir] %> (<%= params[:branch] || "master" %>)</p>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <div class="grid_10 prefix_1 suffix_1">
     <div id="files">
       <% if @repository.branches.size != 0 %>
 	<%= render "files", :repository => @repository %>
