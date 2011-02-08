@@ -1,4 +1,4 @@
-* Tasks [17/32] [53%]
+* Tasks [18/33] [54%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -14,8 +14,10 @@
 ** TODO Add cache blocks for highlights
 ** TODO Clickable liste of files in the commit diff
 ** TODO Encode emails addresses
-** TODO More style for commit list and commit "header"
+** TODO Add pagination
 
+** DONE More style for commit list and commit "header"
+   CLOSED: [2011-02-08 Tue 10:20]
 ** DONE Improve view_file path to clickable subdirs
    CLOSED: [2011-02-08 Tue 08:17]
 ** DONE Add style for various forms

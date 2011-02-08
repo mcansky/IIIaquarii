@@ -643,3 +643,11 @@ button.clean-gray:active {
   -webkit-box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
   box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
 }
+
+#commits_list .commit {
+        padding: 0;
+    margin-bottom: 10px;
+    padding-left: 8px;
+    border-left: 2px solid #888;
+    margin-left: 1em;
+}
