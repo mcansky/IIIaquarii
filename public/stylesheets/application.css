@@ -57,6 +57,7 @@ body {
     width: 16px;
     height: 16px;
     padding-left: 20px;
+    margin-left: 5px;
 }
 #index_menu_left #link_repositories {
     background-image: url(/images/icons/databases.png);
@@ -64,6 +65,7 @@ body {
     width: 16px;
     height: 16px;
     padding-left: 20px;
+       margin-left: 5px;
 }
 #index_menu_left #link_ssh_keys {
     background-image: url(/images/icons/license-key.png);
@@ -71,6 +73,15 @@ body {
     width: 16px;
     height: 16px;
     padding-left: 20px;
+    margin-left: 5px;
+}
+#index_menu_left #link_explore {
+    background-image: url(/images/icons/application-list.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+    margin-left: 5px;
 }
 #index_menu_right #link_edit_user {
     background-image: url(/images/icons/wrench.png);
@@ -81,6 +92,13 @@ body {
 }
 #index_menu_right #link_login_logout {
     background-image: url(/images/icons/door.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+}
+#index_menu_right #link_login_login {
+    background-image: url(/images/icons/door-open-in.png);
     background-repeat:no-repeat;
     width: 16px;
     height: 16px;
@@ -649,5 +667,46 @@ button.clean-gray:active {
     margin-bottom: 10px;
     padding-left: 8px;
     border-left: 2px solid #888;
+    margin-left: 1em;
+}
+
+
+/* Pagination */
+.pagination_aq3 {
+    text-align: center;
+    padding: .3em;
+    margin-top:2em;
+}
+.pagination_aq3 a, .pagination_aq3 span {
+    padding: .2em .5em;
+}
+.pagination_aq3 span.disabled {
+    color: #AAA;
+}
+.pagination_aq3 em {
+    font-weight: bold;
+    color: #FF0084;
+}
+.pagination_aq3 a {
+    border: 1px solid #DDDDDD;
+    color: #0063DC;
+    text-decoration: none;
+}
+.pagination_aq3 a:hover, .pagination_aq3 a:focus {
+    border-color: #003366;
+    background: #0063DC;
+    color: white;
+}
+.pagination_aq3 .page_info {
+    color: #aaa;
+    padding-top: .8em;
+}
+.pagination_aq3 .prev_page, .pagination_aq3 .next_page {
+    border-width: 2px;
+}
+.pagination_aq3 .prev_page {
+    margin-right: 1em;
+}
+.pagination_aq3 .next_page {
     margin-left: 1em;
 }

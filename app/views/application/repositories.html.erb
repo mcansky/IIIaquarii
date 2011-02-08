@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <title><%= t(:label, :scope => :repositories) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div id="repositories">
+  <h2>
+    <%= t(:repositories, :scope => :repositories) %>
+    <% if current_user %>
+      <%= link_to image_tag("/images/icons/plus-small.png", :title => t(:new, :scope => :repositories), :alt => t(:new, :scope => :repositories), :border => 0), new_user_aq_repository_url(current_user) %>
+    <% end %>
+  </h2>
+
+  <% @repositories.each_slice(2) do |rep1,rep2| %>
+    <%= render "application/repository", :rep1 => rep1, :rep2 => rep2 %>
+  <% end %>
+</div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @repositories, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @repositories %>
+  </div>
+</div>
+<div class="clear"></div>

@@ -23,10 +23,6 @@ gem "devise", :git => 'git://github.com/plataformatec/devise.git'
 # Rails config files
 gem 'rails_config'
 
-# Highlightings
-# TODO use github's syntax highligter and pygment wrapper
-# ------
-
 # Other
 gem 'nifty-generators'
 
@@ -57,3 +53,6 @@ gem 'github-markup', :git => "git://github.com/rhaamo/markup.git", :require => '
 
 # Render code
 gem 'albino', :git => "git://github.com/rhaamo/albino.git"
+
+# Pagination
+gem "will_paginate",:git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"

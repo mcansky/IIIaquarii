@@ -24,7 +24,7 @@
   <div class="grid_6">
     <div id="commits">
       <h2>Latest commits</h2>
-      <% for commit in @commits.first(10) %>
+      <% for commit in @commits %>
         <%= render "short_commit", :commit => commit %>
       <% end %>
     </div>
@@ -34,7 +34,7 @@
   <div class="grid_6">
     <div id="repositories">
       <h2>Repositories</h2>
-      <% @repositories.first(30).each do |rep| %>
+      <% @repositories.each do |rep| %>
         <%= render "short_repository", :rep => rep %>
       <% end %>
     </div>

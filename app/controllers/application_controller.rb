@@ -4,12 +4,20 @@ class ApplicationController < ActionController::Base
   before_filter :set_our_current_user
 
   def index
-    @repositories = AqRepository.public
-    @commits = AqCommit.of_public_repositories.order("committed_time DESC")
+    # only show 10 repositories and 30 commits on index page
+    @repositories = AqRepository.public.limit(10)
+    @commits = AqCommit.of_public_repositories.order("committed_time DESC").limit(30)
   end
 
   def repositories
-    render :text => "TODO"
+    page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
+
+    if current_user
+      @repositories = (AqRepository.public + current_user.aq_repositories.where(:visibility => 1)).paginate :page => page, :per_page => Settings.pagination.per_page
+    else
+      @repositories = AqRepository.public.paginate :page => page, :per_page => Settings.pagination.per_page
+    end
+
   end
 
   # We need to access to "current_user" from some models
