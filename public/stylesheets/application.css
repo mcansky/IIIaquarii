@@ -517,14 +517,23 @@ input, textarea {
 
 
 /* MARKUPS SPECIFIC */
+#view_file {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
 .rendered_markup_redcloth {}
 .rendered_markup_redcloth h2 {
     margin-top: 1em;
     border-top: 5px solid #CCC;
+    padding-top: 5px;
 }
 
+#view_file .rendered_markup_redcloth {
+    padding: 5px;
+}
 
-#view_readme_file, #view_file,.commit_diff {
+#view_readme_file, #view_file, .commit_diff {
     border: 1px solid #cecece;
     background-color: #F6F6F6;
 }
