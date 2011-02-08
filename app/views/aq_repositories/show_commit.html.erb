@@ -4,7 +4,7 @@
 
 <% branch = "master" %>
 <% branch = params[:branch] if params[:branch] %>
-<% commit = params[:commit_id] %>
+<% commit = params[:sha] %>
 <% commit = @grit_repo.commit(commit) %>
 
 <div id="repository">
