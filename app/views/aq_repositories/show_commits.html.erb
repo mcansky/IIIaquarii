@@ -2,10 +2,6 @@
   <title><%= t(:commits_list, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<% branch = "master" %>
-<% branch = params[:branch] if params[:branch] %>
-<% commits = @grit_repo.commits(branch) %>
-
 
 <div id="repository">
   <div id="repo_infos_and_ppl">
@@ -38,7 +34,7 @@
   <div class="grid_10 prefix_1 suffix_1">
     <div id="commits_list">
       <% if @repository.branches.size != 0 %>
-        <% for commit in commits %>
+        <% for commit in @commits %>
           <div class="commit">
             <div class="commit_date">
               <%# branch to url here %>
@@ -57,3 +53,11 @@
   </div>
   <div class="clear"></div>
 </div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @commits, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @commits %>
+  </div>
+</div>
+<div class="clear"></div>

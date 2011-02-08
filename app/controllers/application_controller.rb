@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
     page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
 
     if current_user
-      @repositories = AqRepository.public_with_private_user(current_user.id).paginate :page => page, :per_page => Settings.pagination.per_page
+      @repositories = AqRepository.public_with_private_user(current_user.id).paginate :page => page, :per_page => Settings.pagination.all_repositories
     else
-      @repositories = AqRepository.public.paginate :page => page, :per_page => Settings.pagination.per_page
+      @repositories = AqRepository.public.paginate :page => page, :per_page => Settings.pagination.all_repositories
     end
 
   end

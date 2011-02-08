@@ -7,11 +7,12 @@ class AqRepositoriesController < ApplicationController
   before_filter :warning_no_sshkey, :only => [:new, :create, :show]
 
   def index
+    page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
     @user = User.find(params[:user_id])
     if current_user
-      @repositories = current_user.aq_repositories
+      @repositories = current_user.aq_repositories.paginate :page => page, :per_page => Settings.pagination.user_repositories
     else
-      @repositories = @user.aq_repositories.public
+      @repositories = @user.aq_repositories.public.paginate :page => page, :per_page => Settings.pagination.user_repositories
     end
   end
 
@@ -99,10 +100,21 @@ class AqRepositoriesController < ApplicationController
   end
 
   def show_commits
+    page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
+    branch = "master"
+    branch = params[:branch] if params[:branch]
+
     @repository = AqRepository.find(params[:id])
     if @repository.is_git?
       @grit_repo = Repo.new(@repository.path)
     end
+
+
+    @commits = WillPaginate::Collection.create(page, Settings.pagination.commits, @repository.commits.count) do |pager|
+      start = (page.to_i-1)*Settings.pagination.commits # Assuming "current_page" is 1 based.
+      pager.replace(@grit_repo.commits(branch, Settings.pagination.commits, start)) # branch, max to show, start at (skips)
+    end
+
   end
 
   def show_commit

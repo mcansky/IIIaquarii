@@ -7,7 +7,9 @@ application:
   hostname: localhost
   use_rvm: true
 pagination:
-  per_page: 2
+  all_repositories: 20
+  user_repositories: 2
+  commits: 15
 aq_sh:
   user_home: /tmp
   user_name: aq_git

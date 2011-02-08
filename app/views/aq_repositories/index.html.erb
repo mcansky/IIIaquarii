@@ -12,7 +12,15 @@
     <% end %>
   </h2>
 
-  <% @repositories.first(10).each_slice(2) do |rep1,rep2| %>
+  <% @repositories.each_slice(2) do |rep1,rep2| %>
     <%= render "application/repository", :rep1 => rep1, :rep2 => rep2 %>
   <% end %>
 </div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @repositories, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @repositories %>
+  </div>
+</div>
+<div class="clear"></div>
