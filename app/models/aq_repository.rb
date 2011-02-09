@@ -267,17 +267,14 @@ class AqRepository < ActiveRecord::Base
   def repo_set_git_visibility
     File.umask(0001)
     file_export = "git-daemon-export-ok"
-
     dot_git = Pathname(self.path)
+    grit_repo = Repo.new(dot_git)
 
     if self.visibility == 0
       # 0 / public
-      f = File.open(dot_git + file_export, "w")
-      f.close()
+      grit_repo.enable_daemon_serve
     else
-      if File.exist?(dot_git + file_export)
-        File.delete(dot_git + file_export)
-      end
+      grit_repo.disable_daemon_serve
     end
   end # def repo_set_git_visibility (public or private using git-daemon-export-ok file)
 
