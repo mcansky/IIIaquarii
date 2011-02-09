@@ -53,7 +53,9 @@
             <div class="commit_diff">
               <% diffs = commit.diffs %>
               <% for diff in diffs %>
-                <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+                <% cache Digest::SHA1.hexdigest(diff.diff) do %>
+                  <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+                <% end %>
               <% end %>
             </div>
           </div>

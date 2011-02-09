@@ -1,4 +1,4 @@
-* Tasks [25/35] [71%]
+* Tasks [26/35] [74%]
 ** TODO Global links colour
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO Renaming seems broken
@@ -7,9 +7,10 @@
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO RSS feeds for commit log of a project
 ** TODO RSS feed for all commits for an user
-** TODO Add cache blocks for highlights
 ** TODO Clickable liste of files in the commit diff
 
+** DONE Add cache blocks for highlights
+   CLOSED: [2011-02-09 Wed 10:52]
 ** DONE Encode emails addresses
    CLOSED: [2011-02-09 Wed 10:45]
 ** DONE Sanitize repositories names !

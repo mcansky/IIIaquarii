@@ -82,7 +82,9 @@
     <div id="view_file">
       <% if (a_file = @grit_repo.tree(branch) / params[:file_path]) %>
         <% if is_text? a_file.mime_type %>
-          <%= highlight(a_file.name, a_file.mime_type, a_file.data, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+          <% cache Digest::SHA1.hexdigest(a_file.data) do %>
+            <%= highlight(a_file.name, a_file.mime_type, a_file.data, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+          <% end %>
         <% elsif is_image? a_file.mime_type %>
           Images currently not implemented
         <% else %>
