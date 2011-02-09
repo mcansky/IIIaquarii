@@ -1,5 +1,6 @@
 require 'pathname'
 require 'grit'
+require 'fileutils'
 include Grit
 include ActionView::Helpers::TextHelper
 
@@ -8,6 +9,7 @@ class AqRepository < ActiveRecord::Base
   after_save :repo_init
   after_save :repo_set_visibility
   after_update :update_repo_on_fs
+  after_destroy :delete_repository
 
   has_friendly_id :name, :use_slug => true
 
@@ -35,6 +37,12 @@ class AqRepository < ActiveRecord::Base
     where("(rights.user_id = ? AND rights.role = ? AND aq_repositories.visibility = ?) OR aq_repositories.visibility = ?", user_id, 'o', 1, 0).
     group("aq_repositories.id")
   }
+
+  def delete_repository
+    puts "*** Deleting repository"
+    puts "*** => #{self.path}"
+    FileUtils.rm_rf(File.join(self.path, "/"))
+  end
 
   def update_repo_on_fs
     if self.name_changed?
