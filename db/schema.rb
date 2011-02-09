@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(:version => 20110206091652) do
   end
 
   create_table "aq_repositories", :force => true do |t|
-    t.string   "name"
+    t.string   "name",        :limit => 25
     t.string   "path"
-    t.string   "kind",        :default => "git"
+    t.string   "kind",                      :default => "git"
     t.string   "desc"
     t.integer  "parent_id"
-    t.integer  "visibility",  :default => 0
+    t.integer  "visibility",                :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"

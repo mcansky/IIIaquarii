@@ -1,7 +1,7 @@
 class CreateAqRepositories < ActiveRecord::Migration
   def self.up
     create_table :aq_repositories do |t|
-      t.string :name
+      t.string :name, :limit => 25
       t.string :path
       t.string :kind, :default => "git"
       t.string :desc

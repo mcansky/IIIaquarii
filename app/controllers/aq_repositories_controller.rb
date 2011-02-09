@@ -29,6 +29,7 @@ class AqRepositoriesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @repository = AqRepository.new(params[:aq_repository])
     @repository.owner = current_user
     if @repository.save
@@ -36,7 +37,7 @@ class AqRepositoriesController < ApplicationController
       redirect_to [@repository.owner, @repository]
     else
       flash[:notice] = t(:repo_create_ko)
-      redirect_to aq_repositories
+      render :action => :new
     end
   end
 
@@ -67,7 +68,7 @@ class AqRepositoriesController < ApplicationController
     repository = AqRepository.find(params[:id])
     repository.destroy
     flash[:notice] = t(:repo_destroy_ok)
-    redirect_to aq_repositories_path
+    redirect_to user_aq_repositories_path(current_user)
   end
 
   def join

@@ -1,9 +1,7 @@
-* Tasks [21/34] [61%]
+* Tasks [24/34] [70%]
 ** TODO Global links colour
-** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO fix aq_sh log path
-** TODO Delete and edit links on user page for repos
 ** TODO Problems trigger by the git:pull task causes "-- not found (filename)"
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO RSS feeds for commit log of a project
@@ -11,8 +9,13 @@
 ** TODO Add cache blocks for highlights
 ** TODO Clickable liste of files in the commit diff
 ** TODO Encode emails addresses
-** TODO Change /:branch/ url stuff
 
+** DONE Sanitize repositories names !
+   CLOSED: [2011-02-09 Wed 10:24]
+** DONE Delete and edit links on user page for repos
+   CLOSED: [2011-02-09 Wed 10:16]
+** DONE Change /:branch/ url stuff
+   CLOSED: [2011-02-09 Wed 10:15]
 ** DONE View file overflow-x/y auto needed
    CLOSED: [2011-02-08 Tue 23:36]
 ** DONE Doesn't add ?branch= if 'master' (default)

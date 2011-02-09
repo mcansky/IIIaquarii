@@ -18,6 +18,10 @@ class AqRepository < ActiveRecord::Base
   belongs_to :parent, :class_name => "AqRepository", :foreign_key => "parent_id"
   has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
 
+  validates :name, :presence => true, :uniqueness => true, :length => { :maximum => 25 }
+
+  validates_presence_of :kind, :visibility
+
   before_save :sanitize_name
 
   default_scope :order => "aq_repositories.created_at DESC"
