@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     repo = AqRepository.find(repo)
     branch = repo.branches.find_by_name(branch)
 
-    if !branch
+    if !branch and (repo.branches.count > 0)
       return raise ActiveRecord::RecordNotFound
     end
   end

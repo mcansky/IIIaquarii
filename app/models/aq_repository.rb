@@ -7,6 +7,7 @@ class AqRepository < ActiveRecord::Base
   before_save :repo_path
   after_save :repo_init
   after_save :repo_set_visibility
+  after_update :update_repo_on_fs
 
   has_friendly_id :name, :use_slug => true
 
@@ -22,7 +23,7 @@ class AqRepository < ActiveRecord::Base
 
   validates_presence_of :kind, :visibility
 
-  before_save :sanitize_name
+  before_validation :sanitize_name
 
   default_scope :order => "aq_repositories.created_at DESC"
 
@@ -34,6 +35,12 @@ class AqRepository < ActiveRecord::Base
     where("(rights.user_id = ? AND rights.role = ? AND aq_repositories.visibility = ?) OR aq_repositories.visibility = ?", user_id, 'o', 1, 0).
     group("aq_repositories.id")
   }
+
+  def update_repo_on_fs
+    if self.name_changed?
+      File.mv(self.path_was, self.path)
+    end
+  end
 
   def sanitize_name
     self.name = self.name.gsub /\W+/, "_"
