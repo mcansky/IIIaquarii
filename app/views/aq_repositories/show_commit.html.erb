@@ -6,6 +6,7 @@
 <% branch = params[:branch] if params[:branch] %>
 <% commit = params[:sha] %>
 <% commit = @grit_repo.commit(commit) %>
+<% diffs = commit.diffs %>
 
 <div id="repository">
   <div id="repo_infos_and_ppl">
@@ -30,40 +31,59 @@
     <div class="clear"></div>
   </div>
 
-  <div class="grid_12 repo_desc">
-    <p class="desc"><%= @repository.desc %></p>
+  <% if !@repository.desc.empty? %>
+    <div class="grid_12 repo_desc">
+      <p class="desc"><%= @repository.desc %></p>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+
+  <div class="grid_10 prefix_1 suffix_1">
+    <div id="show_commit_description">
+      <div class="commit_date">
+        <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
+        on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
+        (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
+      </div>
+      <div class="commit_m=essage">
+        <%= commit.message %>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <div class="grid_10 prefix_1 suffix_1">
+    <div id="show_commit_file_list">
+      <ul>
+        <% diff_x = 0 %>
+        <% diffs.each do |diff| %>
+          <% classLI = "diff_present_file" %>
+          <% classLI = "diff_deleted_file" if diff.deleted_file %>
+          <% classLI = "diff_new_file" if diff.new_file %>
+          <li class="<%= classLI %> list_file_diff"><a href="#diff-<%= diff_x %>"><%= diff.a_path %></a></li>
+          <% diff_x += 1 %>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="clear"></div>
 
   <div class="grid_10 prefix_1 suffix_1">
     <div id="show_commit">
-      <% if @repository.branches.size != 0 %>
-
-        <% if commit %>
-          <div class="commit">
-            <div class="commit_date">
-              <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
-              on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
-              (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
-            </div>
-            <div class="commit_m=essage">
-              <%= commit.message %>
-            </div>
-            <br />
-            <div class="commit_diff">
-              <% diffs = commit.diffs %>
-              <% for diff in diffs %>
-                <% cache Digest::SHA1.hexdigest(diff.diff) do %>
-                  <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-          <br />
-        <% end %>
+      <% diff_x = 0 %>
+      <% for diff in diffs %>
+        <div class="show_commit_head">
+          <span class="list_file_diff"><%= diff.a_path %></span>
+        </div>
+        <div class="commit_diff">
+          <a name="diff-<%= diff_x %>"></a>
+          <% cache Digest::SHA1.hexdigest(diff.diff) do %>
+            <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+          <% end %>
+          <% diff_x += 1 %>
+        </div>
       <% end %>
     </div>
   </div>
-
   <div class="clear"></div>
 </div>

@@ -1,4 +1,4 @@
-* Tasks [26/35] [74%]
+* Tasks [27/36] [75%]
 ** TODO Global links colour
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO Renaming seems broken
@@ -7,8 +7,10 @@
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
 ** TODO RSS feeds for commit log of a project
 ** TODO RSS feed for all commits for an user
-** TODO Clickable liste of files in the commit diff
+** TODO Use disable/enable _daemon_serve of Grit::Repo to enable or disable public/private repository
 
+** DONE Clickable liste of files in the commit diff
+   CLOSED: [2011-02-09 Wed 11:59]
 ** DONE Add cache blocks for highlights
    CLOSED: [2011-02-09 Wed 10:52]
 ** DONE Encode emails addresses
