@@ -1,7 +1,9 @@
 class SshKey < ActiveRecord::Base
   belongs_to :user
 
+  validates :name, :presence => true, :length => { :maximum => 50 }
   validates_presence_of :name, :key
+
   before_validation :is_valid?
 
   # Wrapper around valid method for validation
