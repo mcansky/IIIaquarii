@@ -1,4 +1,4 @@
-* Tasks [21/33] [63%]
+* Tasks [21/34] [61%]
 ** TODO Global links colour
 ** TODO Sanitize repositories names !
 ** TODO Move filesystem repos to deleted directory on destroy
@@ -11,6 +11,7 @@
 ** TODO Add cache blocks for highlights
 ** TODO Clickable liste of files in the commit diff
 ** TODO Encode emails addresses
+** TODO Change /:branch/ url stuff
 
 ** DONE View file overflow-x/y auto needed
    CLOSED: [2011-02-08 Tue 23:36]

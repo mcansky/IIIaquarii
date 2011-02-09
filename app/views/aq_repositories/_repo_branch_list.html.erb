@@ -7,7 +7,7 @@
       <%= t(:no_branches, :scope => :repositories) %>
     <% end %>
     <% @repository.branches.each do |br| %>
-      <%= link_to br.name, user_aq_repository_url(@repository.owner, @repository, :branch => br.name) %>
+      <%= link_to br.name, show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => br.name) %>
     <% end %>
   </p>
   <p><strong><%= link_to t(:commits, :scope => :repositories), commits_user_aq_repository_url(@repository.owner, @repository, :branch => branch)  %> <%= @repository.commits.count %></strong></p>

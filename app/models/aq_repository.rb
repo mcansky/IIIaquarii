@@ -18,6 +18,8 @@ class AqRepository < ActiveRecord::Base
   belongs_to :parent, :class_name => "AqRepository", :foreign_key => "parent_id"
   has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
 
+  before_save :sanitize_name
+
   default_scope :order => "aq_repositories.created_at DESC"
 
   scope :public,  { :conditions => ['visibility = ?', 0] }
@@ -28,6 +30,10 @@ class AqRepository < ActiveRecord::Base
     where("(rights.user_id = ? AND rights.role = ? AND aq_repositories.visibility = ?) OR aq_repositories.visibility = ?", user_id, 'o', 1, 0).
     group("aq_repositories.id")
   }
+
+  def sanitize_name
+    self.name = self.name.gsub /\W+/, "_"
+  end
 
   def owner
     a_right = self.rights.find(:all, :conditions => ["role = ?", 'o']).first

@@ -1,3 +1,6 @@
+<% branch = "master" %>
+<% branch = params[:branch] if params[:branch] %>
+
 <div class="short_commit">
   <!-- commit date -->
   <div class="sh_commit_date_repos">
@@ -15,7 +18,7 @@
     <p>
       <span class="commit_id">
         <%= t(:commit, :scope => :commits).downcase %>
-        <%= link_to commit.sha.slice(0,7) + "...", show_commit_user_aq_repository_url(commit.branch.aq_repository.owner.login, commit.branch.aq_repository, commit.sha, :branch => commit.branch.name) %>
+        <%= link_to commit.sha.slice(0,7) + "...", show_commit_user_aq_repository_url(commit.branch.aq_repository.owner.login, commit.branch.aq_repository, commit.sha) %>
       </span>
       <span class="commit_author"><%= t(:by, :scope => :other) %> <%= link_to commit.author.login, commit.author %></span>
     </p>

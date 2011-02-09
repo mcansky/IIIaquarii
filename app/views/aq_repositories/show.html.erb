@@ -56,7 +56,7 @@
       <% path = "" %>
       <% path = (Pathname(params[:dir] + "/") + "..").to_s if params[:dir] %>
       <p>
-        <%= link_to @repository.name, user_aq_repository_url(@repository.owner, @repository, :branch => branch) %> /
+        <%= link_to @repository.name, show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => branch) %> /
         <% old_path = [] %>
         <% path.split("/").each do |p| %>
           <% if p != "." %>

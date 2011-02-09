@@ -16,7 +16,7 @@
 	<% if (params[:back] == branch) || troot == "." %>
 	  <td>
 	    <%= image_tag("/images/icons/folder-horizontal.png", :title => t(:up, :scope => :repositories), :alt => t(:up, :scope => :repositories), :border => 0)%>
-	<%= link_to "..", user_aq_repository_url(@repository.owner, @repository, :branch => branch) %></td>
+	<%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => branch) %></td>
 	<% else %>
           <td><%= link_to "..", show_dir_user_aq_repository_url(@repository.owner, @repository, troot, :branch => branch) %></td>
 	<% end %>
