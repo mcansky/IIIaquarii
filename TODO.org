@@ -1,10 +1,11 @@
-* Tasks [34/39] [87%]
-** TODO Global links colour
+* Tasks [35/39] [89%]
 ** TODO SSL
 ** TODO i18n
 ** TODO Handle error pages
 ** TODO Basic admin
 
+** DONE Global links colour
+   CLOSED: [2011-02-10 Thu 00:17]
 ** DONE Can remove repositories from filesystem
    CLOSED: [2011-02-09 Wed 21:16]
 ** DONE Renaming seems broken
