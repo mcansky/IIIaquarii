@@ -1,9 +1,10 @@
-<% content_for :head do %>
-  <title><%= t(:repo_sources, :scope => :repositories) %> - <%= Settings.application.name %></title>
-<% end %>
-
 <% branch = "master" %>
 <% branch = params[:branch] if params[:branch] %>
+
+<% content_for :head do %>
+  <title><%= t(:repo_sources, :scope => :repositories) %> - <%= Settings.application.name %></title>
+  <%= auto_discovery_link_tag(:atom, commits_user_aq_repository_url(@repository.owner, @repository, :branch => branch) + ".atom") %>
+<% end %>
 
 <%= render :partial => "shared/flash_messages" %>
 
@@ -33,11 +34,12 @@
   </div>
 
 
-
-  <div class="grid_12 repo_desc">
-    <p class="desc"><%= @repository.desc %></p>
-  </div>
-  <div class="clear"></div>
+  <% if !@repository.desc.blank? %>
+    <div class="grid_12 repo_desc">
+      <p class="desc"><%= @repository.desc %></p>
+    </div>
+    <div class="clear"></div>
+  <% end %>
 
   <div class="grid_10 prefix_1 suffix_1">
     <%= render "last_commit", :repository => @repository, :branch => branch %>

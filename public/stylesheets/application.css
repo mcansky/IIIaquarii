@@ -119,6 +119,14 @@ body {
     padding-left: 20px;
     margin-top:3px;
 }
+a.atom_feed {
+    background-image: url(/images/icons/feed.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+    margin-top:3px;
+}
 
 
 #index_menu_right {
@@ -609,7 +617,7 @@ input, textarea {
 #us_commits_count {
     font-size: 30pt;
     display: block;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 #us_commits_txt {
@@ -620,7 +628,7 @@ input, textarea {
 #us_repos_count {
     font-size: 30pt;
     display: block;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 #us_repos_txt {

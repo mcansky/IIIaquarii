@@ -1,14 +1,18 @@
-* Tasks [27/36] [75%]
+* Tasks [30/37] [81%]
 ** TODO Global links colour
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO Renaming seems broken
 ** TODO fix aq_sh log path
 ** TODO Problems trigger by the git:pull task causes "-- not found (filename)"
 ** TODO Error message if branch not found, avoid displaying the "file browser head"
-** TODO RSS feeds for commit log of a project
-** TODO RSS feed for all commits for an user
 ** TODO Use disable/enable _daemon_serve of Grit::Repo to enable or disable public/private repository
 
+** DONE RSS feeds for commit log of a project
+   CLOSED: [2011-02-09 Wed 14:49]
+** DONE RSS feed for all commits for an user
+   CLOSED: [2011-02-09 Wed 14:49]
+** DONE RSS feed for all repos on index
+   CLOSED: [2011-02-09 Wed 14:49]
 ** DONE Clickable liste of files in the commit diff
    CLOSED: [2011-02-09 Wed 11:59]
 ** DONE Add cache blocks for highlights

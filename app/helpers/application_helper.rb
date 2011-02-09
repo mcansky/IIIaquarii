@@ -35,5 +35,16 @@ module ApplicationHelper
     return "<pre>#{text}</pre>"
   end
 
+  def format_commit_changes_for_atom(commit)
+    str = ""
+    commit.diffs.each do |diff|
+      m = "m"
+      m = "+" if diff.new_file
+      m = "-" if diff.deleted_file
+      str << "#{m} #{diff.a_path}\n"
+    end
+    return str
+  end
+
 
 end

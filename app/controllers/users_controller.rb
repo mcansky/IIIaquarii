@@ -7,4 +7,21 @@ class UsersController < ApplicationController
       @user_repositories = @user.aq_repositories.public
     end
   end
+
+  def feed_repositories
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.atom
+    end
+  end
+
+  def feed_commits
+    @user = User.find(params[:id])
+    @commits = @user.aq_commits.of_public_repositories
+
+    respond_to do |format|
+      format.atom
+    end
+  end
 end

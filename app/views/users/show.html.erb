@@ -1,5 +1,7 @@
 <% content_for :head do %>
   <title><%= @user.login %><%= t(:user_show_profile, :scope => :users) %> - <%= Settings.application.name %></title>
+  <%= auto_discovery_link_tag(:atom, feed_repositories_user_url(@user) + ".atom") %>
+  <%= auto_discovery_link_tag(:atom, feed_commits_user_url(@user) + ".atom") %>
 <% end %>
 
 <div id="user_gravatar_and_links">
@@ -30,6 +32,9 @@
         <br>
       <% end %>
       <strong><%= t(:email, :scope => :users) %></strong> <%= mail_to @user.email, nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>
+      <br>
+      <%= link_to "Repositories feed", feed_repositories_user_url(@user)+".atom", :class => "atom_feed" %>
+      <%= link_to "Commits feed", feed_commits_user_url(@user)+".atom", :class => "atom_feed" %>
     </p>
   </div>
 
