@@ -1,6 +1,9 @@
-* Tasks [34/36] [94%]
+* Tasks [34/39] [87%]
 ** TODO Global links colour
-** TODO fix aq_sh log path
+** TODO SSL
+** TODO i18n
+** TODO Handle error pages
+** TODO Basic admin
 
 ** DONE Can remove repositories from filesystem
    CLOSED: [2011-02-09 Wed 21:16]
