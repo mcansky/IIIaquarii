@@ -266,7 +266,6 @@ class AqRepository < ActiveRecord::Base
   # 1 = private
   def repo_set_git_visibility
     File.umask(0001)
-    file_export = "git-daemon-export-ok"
     dot_git = Pathname(self.path)
     grit_repo = Repo.new(dot_git)
 
