@@ -2,6 +2,8 @@
   <title><%= t(:file_view, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <% branch = "master" %>
 <% branch = params[:branch] if params[:branch] %>
 <% root_dir = "" %>

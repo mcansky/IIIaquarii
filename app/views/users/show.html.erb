@@ -4,6 +4,8 @@
   <%= auto_discovery_link_tag(:atom, feed_commits_user_url(@user) + ".atom") %>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <div id="user_gravatar_and_links">
   <div class="grid_6">
     <h2 id="username_w_gravatar">
