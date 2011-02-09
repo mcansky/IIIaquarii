@@ -12,7 +12,9 @@
       <span class="repo_private" title="<%= t(:repo_private, :scope => :repositories) %>" >P</span>
     <% end %>
     <span class="rep_name"><%= link_to rep.owner.login + "/" + rep.name, user_aq_repository_url(rep.owner.login, rep) %></span>
-    &nbsp;-&nbsp;
-    <span class="rep_short_desc"><%= rep.short_desc %></span>
+    <% if !rep.short_desc.empty? %>
+      &nbsp;-&nbsp;
+      <span class="rep_short_desc"><%= rep.short_desc %></span>
+    <% end %>
   </p>
 </div>

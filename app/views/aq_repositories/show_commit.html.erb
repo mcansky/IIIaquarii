@@ -42,9 +42,9 @@
         <% if commit %>
           <div class="commit">
             <div class="commit_date">
-              <%# branch to url here %>
               <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
-              <%= "on: #{commit.date.strftime("%I:%M %p %x").downcase} by: #{commit.author.name} #{commit.author.email}" %>
+              on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
+              (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
             </div>
             <div class="commit_m=essage">
               <%= commit.message %>
