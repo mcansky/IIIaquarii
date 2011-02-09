@@ -28,32 +28,40 @@
     <div class="clear"></div>
   </div>
 
-  <div class="grid_12 repo_desc">
-    <p class="desc"><%= @repository.desc %></p>
-  </div>
-  <div class="clear"></div>
-
-  <div class="grid_10 prefix_1 suffix_1">
-    <div id="commits_list">
-      <% if @repository.branches.size != 0 %>
-        <% for commit in @commits %>
-          <div class="commit">
-            <div class="commit_date">
-              <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
-              on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
-              (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
-            </div>
-            <% # Typo '=' ? %>
-            <div class="commit_m=essage">
-              <%= commit.message %>
-            </div>
-          </div>
-          <br />
-        <% end %>
-      <% end %>
+  <% if !@repository.desc.blank? %>
+    <div class="grid_12 repo_desc">
+      <p class="desc"><%= @repository.desc %></p>
     </div>
-  </div>
-  <div class="clear"></div>
+    <div class="clear"></div>
+  <% end %>
+
+  <% if !@repository.branches.find_by_name(branch) %>
+    <div class="grid_10 prefix_1 suffix_1">
+      <div class="branch_not_found"><%= t(:branch_not_found, :scope => :repositories, :branch => branch) %></div>
+    </div>
+    <div class="clear"></div>
+  <% else %>
+
+    <div class="grid_10 prefix_1 suffix_1">
+      <div id="commits_list">
+        <% if @repository.branches.size != 0 %>
+          <% for commit in @commits %>
+            <div class="commit">
+              <div class="commit_date">
+                <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
+                on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
+                (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
+              </div>
+              <div class="commit_message">
+                <%= commit.message %>
+              </div>
+            </div>
+            <br />
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="clear"></div>
 </div>
 
 <div class="grid_10 prefix_1 suffix_1 pagination_aq3">
@@ -63,3 +71,5 @@
   </div>
 </div>
 <div class="clear"></div>
+
+<% end %>

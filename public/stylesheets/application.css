@@ -786,3 +786,9 @@ button.clean-gray:active {
 .show_commit_head .list_file_diff {
     font-size: 11pt;
 }
+
+.branch_not_found {
+    text-align: center;
+    font-size: 14pt;
+    margin-bottom: 1em;
+}

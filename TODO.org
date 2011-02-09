@@ -1,11 +1,12 @@
-* Tasks [31/37] [83%]
+* Tasks [32/37] [86%]
 ** TODO Global links colour
 ** TODO Move filesystem repos to deleted directory on destroy
 ** TODO Renaming seems broken
 ** TODO fix aq_sh log path
 ** TODO Problems trigger by the git:pull task causes "-- not found (filename)"
-** TODO Error message if branch not found, avoid displaying the "file browser head"
 
+** DONE Error message if branch not found, avoid displaying the "file browser head"
+   CLOSED: [2011-02-09 Wed 19:04]
 ** DONE Use disable/enable _daemon_serve of Grit::Repo to enable or disable public/private repository
    CLOSED: [2011-02-09 Wed 15:52]
 ** DONE RSS feeds for commit log of a project

@@ -24,6 +24,18 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def check_branch_existancy
+    branch = params[:branch] || "master"
+    repo = params[:id]
+
+    repo = AqRepository.find(repo)
+    branch = repo.branches.find_by_name(branch)
+
+    if !branch
+      return raise ActiveRecord::RecordNotFound
+    end
+  end
+
   # We need to access to "current_user" from some models
   # and we can't with Devise, so we use this workaroud
   def set_our_current_user
