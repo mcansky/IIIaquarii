@@ -72,11 +72,11 @@
     <div id="show_commit">
       <% diff_x = 0 %>
       <% for diff in diffs %>
+        <a name="diff-<%= diff_x %>"></a>
         <div class="show_commit_head">
           <span class="list_file_diff"><%= diff.a_path %></span>
         </div>
         <div class="commit_diff">
-          <a name="diff-<%= diff_x %>"></a>
           <% cache Digest::SHA1.hexdigest(diff.diff) do %>
             <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
           <% end %>
