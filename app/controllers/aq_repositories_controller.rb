@@ -2,9 +2,9 @@ require 'grit'
 include Grit
 
 class AqRepositoriesController < ApplicationController
-  before_filter :login_required, :except => [:index, :show, :view_file, :show_commits, :show_commit]
+  before_filter :login_required, :except => [:index, :show, :view_file, :show_commits, :show_commit, :view_raw_file]
   before_filter :check_private_repository, :except => [:index, :new, :create]
-  before_filter :warning_no_sshkey, :only => [:new, :create, :show]
+  before_filter :warning_no_sshkey, :only => [:new, :create, :show, :update, :edit]
   before_filter :check_branch_existancy, :except => [:new, :create, :update, :destroy, :index]
 
   def index
