@@ -74,7 +74,7 @@
         <span class="file_browser_lines"><%= a_file.data.split("\n").size %> <%= t(:lines, :scope => :file_browser) %></span>
         <span class="file_browser_separator">|</span>
         <span class="file_browser_size"><%= a_file.size %> <%= t(:bytes, :scope => :file_browser) %></span>
-        <span class="vfi_raw"><%= t(:raw, :scope => :file_browser) %></span>
+        <span class="vfi_raw"><%= link_to t(:raw, :scope => :file_browser), raw_file_user_aq_repository_url(@repository.owner, @repository, params[:file_path], :branch => branch) %></span>
       </div>
     </div>
     <div class="clear"></div>

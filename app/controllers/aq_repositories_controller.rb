@@ -126,4 +126,18 @@ class AqRepositoriesController < ApplicationController
     end
   end
 
+  def view_raw_file
+    branch = "master"
+    branch = params[:branch] if params[:branch]
+    fpath = params[:file_path]
+    repository = AqRepository.find(params[:id])
+    if repository.is_git?
+      grit_repo = Repo.new(repository.path)
+    end
+    a_file = grit_repo.tree(branch) / fpath
+    raise ActiveRecord::RecordNotFound if !a_file
+    response.headers["Content-Type"] = "text/plain"
+    render :text => a_file.data
+  end
+
 end
