@@ -27,6 +27,7 @@ en:
     branch_not_found: "The branch %{branch} cannot be found."
     explore: "Explore"
     repositories_feed: "Repositories feed"
+    no_ssh_key: "You need to add an SSH key to be able to push."
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
@@ -58,6 +59,7 @@ en:
     leave_blank_no_change_pass: "(leave blank if you don't want to change it)"
     unhappy: "Unhappy?"
     cancel_account: "Cancel account"
+    login_required: "Login required"
   sessions:
     sign_in: "Sign In"
   commits:

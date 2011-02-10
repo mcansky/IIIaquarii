@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   def warning_no_sshkey
     if current_user
       if current_user.ssh_keys.size == 0
-        flash[:notice] = "You need to add an SSH key to be able to push."
+        flash[:notice] = t(:no_ssh_key, :scope => :repositories)
       end
     end
   end
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
     if current_user
       return true
     else
-      flash[:notice] = t(:required, :scope => :login)
+      flash[:notice] = t(:login_required, :scope => :users)
       redirect_to new_user_session_url
     end # if current_user
   end # def login_required
