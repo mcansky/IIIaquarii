@@ -67,6 +67,13 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def check_registration_state
+    if Settings.application.disable_registration
+      flash[:error] = t(:registration_disabled, :scope => :users)
+      return redirect_to root_url
+    end
+  end
+
   private
   def login_required
     if current_user

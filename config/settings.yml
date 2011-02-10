@@ -6,6 +6,7 @@ application:
   contact: admin@example.com
   hostname: localhost
   use_rvm: true
+  disable_registration: true
 pagination:
   all_repositories: 20
   user_repositories: 20

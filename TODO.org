@@ -1,9 +1,11 @@
-* Tasks [36/40] [90%]
+* Tasks [38/40] [95%]
 ** TODO SSL
-** TODO Handle error pages
 ** TODO Basic admin
-** TODO Deactivate user registration using a config option
 
+** DONE Deactivate user registration using a config option
+   CLOSED: [2011-02-10 Thu 09:50]
+** DONE Handle error pages
+   CLOSED: [2011-02-10 Thu 09:44]
 ** DONE i18n
    CLOSED: [2011-02-10 Thu 01:57]
 ** DONE Global links colour

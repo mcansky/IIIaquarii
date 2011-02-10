@@ -60,6 +60,7 @@ en:
     unhappy: "Unhappy?"
     cancel_account: "Cancel account"
     login_required: "Login required"
+    registration_disabled: "Registration is currently disabled."
   sessions:
     sign_in: "Sign In"
   commits:
