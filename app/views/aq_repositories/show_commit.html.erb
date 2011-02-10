@@ -44,7 +44,8 @@
     <div id="show_commit_description">
       <div class="commit_date">
         <%= link_to "#{commit.sha.slice(0,7)}", show_commit_user_aq_repository_url(@repository.owner, @repository, commit.sha) %>...
-        on: <%= commit.date.strftime("%I:%M %p %x").downcase %> by: <%= commit.author.name %>
+        <%= t(:on_l, :scope => :other) %> <%= commit.date.strftime("%I:%M %p %x").downcase %>
+        <%= t(:by, :scope => :other).capitalize %> <%= commit.author.name %>
         (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
       </div>
       <div class="commit_m=essage">

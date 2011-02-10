@@ -1,9 +1,9 @@
 <div id="repo_browser">
   <table cellspacing=0 id="repo_files">
     <tr>
-      <th class="rf_filename" >Filename</th>
-      <th class="rf_updated_on" >Updated on</th>
-      <th class="rf_commit_log" >Commit log</th>
+      <th class="rf_filename" ><%= t(:filename, :scope => :file_browser) %></th>
+      <th class="rf_updated_on" ><%= t(:updated_on, :scope => :file_browser) %></th>
+      <th class="rf_commit_log" ><%= t(:commit_log, :scope => :file_browser) %></th>
     </tr>
     <% branch = "master" %>
     <% branch = params[:branch] if params[:branch] %>

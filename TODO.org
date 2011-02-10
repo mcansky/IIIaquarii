@@ -1,9 +1,10 @@
-* Tasks [35/39] [89%]
+* Tasks [36/39] [92%]
 ** TODO SSL
-** TODO i18n
 ** TODO Handle error pages
 ** TODO Basic admin
 
+** DONE i18n
+   CLOSED: [2011-02-10 Thu 01:57]
 ** DONE Global links colour
    CLOSED: [2011-02-10 Thu 00:17]
 ** DONE Can remove repositories from filesystem

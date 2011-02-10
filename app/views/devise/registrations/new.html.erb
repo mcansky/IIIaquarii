@@ -29,7 +29,7 @@
       <p><%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation %></p>
 
-      <p class="sign_up_form_submit" ><%= f.submit "Sign up" %></p>
+      <p class="sign_up_form_submit" ><%= f.submit t(:sign_up, :scope => [:devise, :shared_links]) %></p>
     <% end %>
 
     <%= render :partial => "devise/shared/links" %>

@@ -18,19 +18,19 @@
         <%= f.text_field :name %>
       </p>
 
-      <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <p><%= f.label :password %> <i><%= t(:leave_blank_no_change_pass, :scope => :users) %></i><br />
         <%= f.password_field :password %></p>
 
       <p><%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation %></p>
 
-      <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <p><%= f.label :current_password %> <i><%= t(:cur_pass_to_confirm, :scope => :users) %></i><br />
         <%= f.password_field :current_password %></p>
 
-      <p class="edit_registration_form_submit" ><%= f.submit "Update" %></p>
+      <p class="edit_registration_form_submit" ><%= f.submit t(:update, :scope => :links) %></p>
     <% end %>
 
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+    <p><%= t(:unhappy, :scope => :users) %> <%= link_to t(:cancel_account, :scope => :users), registration_path(resource_name), :confirm => t(:confirm, :scope => :js), :method => :delete %>.</p>
 
   </div>
 </div>

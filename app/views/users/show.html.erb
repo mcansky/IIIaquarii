@@ -35,8 +35,8 @@
       <% end %>
       <strong><%= t(:email, :scope => :users) %></strong> <%= mail_to @user.email, nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>
       <br>
-      <%= link_to "Repositories feed", feed_repositories_user_url(@user)+".atom", :class => "atom_feed" %>
-      <%= link_to "Commits feed", feed_commits_user_url(@user)+".atom", :class => "atom_feed" %>
+      <%= link_to t(:repositories_feed, :scope => :repositories), feed_repositories_user_url(@user)+".atom", :class => "atom_feed" %>
+      <%= link_to t(:commits_feed, :scope => :commits), feed_commits_user_url(@user)+".atom", :class => "atom_feed" %>
     </p>
   </div>
 

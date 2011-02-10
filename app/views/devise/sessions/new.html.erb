@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= t(:signin, :scope => :sessions) %> - <%= Settings.application.name %></title>
+  <title><%= t(:sign_in, :scope => :sessions) %> - <%= Settings.application.name %></title>
 <% end %>
 
 <%= render :partial => "shared/flash_messages" %>
@@ -18,7 +18,7 @@
         <p><%= f.check_box :remember_me, :class => "login_form_remember_me" %> <%= f.label :remember_me %></p>
       <% end -%>
 
-      <p class="login_form_submit"><%= f.submit "Sign in" %></p>
+      <p class="login_form_submit"><%= f.submit t(:sign_in, :scope => :sessions) %></p>
     <% end %>
 
 

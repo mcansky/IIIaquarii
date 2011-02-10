@@ -25,6 +25,8 @@ en:
     up: "Up"
     repo_private: "Private"
     branch_not_found: "The branch %{branch} cannot be found."
+    explore: "Explore"
+    repositories_feed: "Repositories feed"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
@@ -52,12 +54,19 @@ en:
     email: "Email:"
     name: "Name:"
     delete: "Delete user"
+    cur_pass_to_confirm: "(we need your current password to confirm your changes)"
+    leave_blank_no_change_pass: "(leave blank if you don't want to change it)"
+    unhappy: "Unhappy?"
+    cancel_account: "Cancel account"
   sessions:
-    signin: "Sign In"
+    sign_in: "Sign In"
   commits:
     commit: "Commit"
     last_commit: "Last commit"
+    latest_commits: "Latest commits"
     author: "author"
+    commits_feed: "Commits feed"
+    commits: "commits"
   beans:
     beans: "Coffee beans"
     show_some_love: "Show some love: drop a coffee bean !"
@@ -70,11 +79,28 @@ en:
     submit: "Submit"
     delete: "Delete"
     continue: "Continue"
+    update: "Update"
   js:
     confirm: "Are you sure?"
   other:
     by: "by"
     on_l: "on"
+  file_browser:
+    filename: "Filename"
+    updated_on: "Updated on"
+    commit_log: "Commit log"
+    mode: "Mode:"
+    lines: "lines"
+    bytes: "bytes"
+    raw: "raw"
+  devise:
+    shared_links:
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      forgot_password: "Forgot your password?"
+      didnt_receive_confirmation: "Didn't receive confirmation instructions?"
+      didnt_receive_unlock: "Didn't receive unlock instructions?"
+      sign_in_with: "Sign in with"
   activerecord:
     attributes:
       aq_repository:

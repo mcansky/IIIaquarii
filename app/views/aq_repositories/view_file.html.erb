@@ -69,12 +69,12 @@
   <% if (a_file = @grit_repo.tree(branch) / params[:file_path]) %>
     <div class="grid_10 prefix_1 suffix_1">
       <div id="vfi_mode_lines_size">
-        <span class="file_browser_mode" title="File mode">Mode: <%= a_file.mode %></span>
+        <span class="file_browser_mode" title="File mode"><%= t(:mode, :scope => :file_browser) %> <%= a_file.mode %></span>
         <span class="file_browser_separator">|</span>
-        <span class="file_browser_lines"><%= a_file.data.split("\n").size %> lines</span>
+        <span class="file_browser_lines"><%= a_file.data.split("\n").size %> <%= t(:lines, :scope => :file_browser) %></span>
         <span class="file_browser_separator">|</span>
-        <span class="file_browser_size"><%= a_file.size %> bytes</span>
-        <span class="vfi_raw">raw</span>
+        <span class="file_browser_size"><%= a_file.size %> <%= t(:bytes, :scope => :file_browser) %></span>
+        <span class="vfi_raw"><%= t(:raw, :scope => :file_browser) %></span>
       </div>
     </div>
     <div class="clear"></div>

@@ -25,7 +25,7 @@
   <!-- left, commits -->
   <div class="grid_6">
     <div id="commits">
-      <h2>Latest commits</h2>
+      <h2><%= t(:latest_commits, :scope => :commits) %></h2>
       <% for commit in @commits %>
         <%= render "short_commit", :commit => commit %>
       <% end %>
@@ -35,7 +35,7 @@
   <!-- right, repositories -->
   <div class="grid_6">
     <div id="repositories">
-      <h2>Repositories</h2>
+      <h2><%= t(:repositories, :scope => :repositories) %></h2>
       <% @repositories.each do |rep| %>
         <%= render "short_repository", :rep => rep %>
       <% end %>

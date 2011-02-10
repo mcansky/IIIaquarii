@@ -1,7 +1,7 @@
 <div class="user_links">
   <% if current_user %>
     <%= link_to new_user_aq_repository_url(@user) do %>
-      <button class="clean-gray">New repository</button>
+      <button class="clean-gray"><%= t(:new, :scope => :repositories)%></button>
     <% end %>
   <% end %>
 </div>

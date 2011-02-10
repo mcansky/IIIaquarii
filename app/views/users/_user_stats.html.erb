@@ -2,11 +2,11 @@
   <li>
     <%= link_to user_aq_repositories_url(@user) do %>
       <span id="us_repos_count"><%= @user.aq_repositories.public.all.count %></span>
-      <span id="us_repos_txt">repositories</span>
+      <span id="us_repos_txt"><%= t(:repositories, :scope => :repositories).downcase %></span>
     <% end %>
   </li>
   <li>
     <span id="us_commits_count"><%= @user.aq_commits.of_public_repositories.all.count %></span>
-    <span id="us_commits_txt">commits</span>
+    <span id="us_commits_txt"><%= t(:commits, :scope => :commits).downcase %></span>
   </li>
 </ul>
