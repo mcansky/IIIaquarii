@@ -121,6 +121,7 @@ en:
       actions: "Actions"
       make_admin: "Make admin"
       make_user: "Make user"
+      its_you: "It's you!"
       show:
         label: "Admin - Show user"
         id: "ID:"
