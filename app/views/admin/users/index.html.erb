@@ -2,6 +2,8 @@
   <title><%= t(:users, :scope => :admin) %> - <%= Settings.application.name %></title>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <div class="grid_12">
   <table width="100%" id="admin_users_table">
     <tr id="head">
