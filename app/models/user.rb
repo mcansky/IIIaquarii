@@ -17,8 +17,10 @@ class User < ActiveRecord::Base
   has_many :rights
   has_many :aq_repositories, :through => :rights
   has_many :aq_commits, :foreign_key => "author_id", :order => "committed_time DESC"
+  has_one :role
 
   before_validation :set_initial_name
+  after_create :set_initial_role
 
   validates_presence_of :login, :email, :password, :name
   # TODO how to i18n this ?
@@ -31,12 +33,14 @@ class User < ActiveRecord::Base
   def set_initial_name
     self.name = self.login if self.name.blank?
   end
+  def set_initial_role
+    self.create_role(:name => "user", :user_id => self.id)
+    self.role.save
+  end
 
   # TODO FIXME
   def admin?
-    return false
+    return (self.role.name == "admin")
   end
-  def role
-    return "user"
-  end
+
 end

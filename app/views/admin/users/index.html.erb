@@ -1,0 +1,42 @@
+<% content_for :head do %>
+  <title><%= t(:users, :scope => :admin) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<div class="grid_12">
+  <table width="100%" id="admin_users_table">
+    <tr id="head">
+      <td>ID</td>
+      <td>Login</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Failed attempts</td>
+      <td>Created</td>
+      <td>Updated</td>
+      <td>Role</td>
+      <td>Actions</td>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.login %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.failed_attempts %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.updated_at %></td>
+        <td><%= user.role.name %></td>
+        <td>edit/delete</td>
+      <tr>
+    <% end %>
+  </table>
+</div>
+<div class="clear"></div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @users, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @users %>
+  </div>
+</div>
+<div class="clear"></div>
+

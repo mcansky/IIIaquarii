@@ -84,6 +84,14 @@ body {
     padding-left: 20px;
     margin-left: 5px;
 }
+#index_menu_left #link_admin {
+    background-image: url(/images/icons/hammer-screwdriver.png);
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    padding-left: 20px;
+    margin-left: 5px;
+}
 #index_menu_right #link_edit_user {
     background-image: url(/images/icons/wrench.png);
     background-repeat:no-repeat;
@@ -792,4 +800,15 @@ button.clean-gray:active {
     text-align: center;
     font-size: 14pt;
     margin-bottom: 1em;
+}
+
+#admin_users_table {
+}
+
+#admin_users_table tr#head {
+    font-weight: bold;
+}
+
+#admin_users_table td {
+    border-bottom: 1px solid #CCC;
 }

@@ -21,6 +21,10 @@ IIIaquarii::Application.routes.draw do
     end
   end
 
+  namespace "admin" do
+    resources :users
+  end
+
   match "/repositories", :via => :get, :to => "application#repositories"
 
   root :to => "application#index"

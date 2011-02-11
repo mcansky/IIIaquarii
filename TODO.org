@@ -1,6 +1,10 @@
-* Tasks [38/40] [95%]
+* Tasks [38/41] [92%]
 ** TODO SSL
 ** TODO Basic admin
+*** TODO Users
+*** TODO Repositories
+*** TODO SshKeys
+** TODO Change role to a separate table
 
 ** DONE Deactivate user registration using a config option
    CLOSED: [2011-02-10 Thu 09:50]

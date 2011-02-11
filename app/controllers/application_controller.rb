@@ -84,4 +84,10 @@ class ApplicationController < ActionController::Base
     end # if current_user
   end # def login_required
 
+  def admin_required
+    if !current_user.admin?
+      flash[:error] = t(:admin_perms_needed, :scope => :users)
+      return redirect_to root_url
+    end
+  end
 end

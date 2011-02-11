@@ -27,3 +27,6 @@ logs:
   email: email.log
   scm: scm.log
   aq_sh: aq_sh.log
+admin:
+  pagination:
+    users: 50
