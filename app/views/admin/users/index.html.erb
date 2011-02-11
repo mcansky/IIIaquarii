@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= t(:users, :scope => :admin) %> - <%= Settings.application.name %></title>
+  <title><%= t(:label, :scope => [:admin, :users]) %> - <%= Settings.application.name %></title>
 <% end %>
 
 <%= render :partial => "shared/flash_messages" %>
@@ -7,27 +7,38 @@
 <div class="grid_12">
   <table width="100%" id="admin_users_table">
     <tr id="head">
-      <td>ID</td>
-      <td>Login</td>
-      <td>Name</td>
-      <td>Email</td>
-      <td>Failed attempts</td>
-      <td>Created</td>
-      <td>Updated</td>
-      <td>Role</td>
-      <td>Actions</td>
+      <td><%= t(:id ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:login ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:name ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:email ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:failed_attempts ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:created ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:role ,:scope => [:admin, :users]) %></td>
+      <td><%= t(:actions ,:scope => [:admin, :users]) %></td>
     </tr>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.id %></td>
-        <td><%= user.login %></td>
+        <td><%= link_to user.id, admin_user_url(user) %></td>
+        <td><%= link_to user.login, admin_user_url(user) %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.failed_attempts %></td>
         <td><%= user.created_at %></td>
-        <td><%= user.updated_at %></td>
         <td><%= user.role.name %></td>
-        <td>edit/delete</td>
+        <td>
+          <%= link_to t(:edit, :scope => :links), edit_admin_user_url(user) %>
+          &nbsp;-&nbsp;
+          <% if user.id != current_user.id %>
+            <% if user.admin? %>
+              <%= link_to t(:make_user, :scope => [:admin, :users]), "" %>
+              &nbsp;-&nbsp;
+            <% else %>
+              <%= link_to t(:make_admin, :scope => [:admin, :users]), "" %>
+              &nbsp;-&nbsp;
+            <% end %>
+          <% end %>
+          <%= link_to t(:delete, :scope => :links), ""%>
+        </td>
       <tr>
     <% end %>
   </table>
