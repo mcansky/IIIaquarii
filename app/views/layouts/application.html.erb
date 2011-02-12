@@ -38,7 +38,7 @@
 	        <%= link_to t(:label, :scope => :sshkeys), ssh_keys_url, :id => "link_ssh_keys" %>
 	      </span>
               <% if current_user.admin? %>
-                <%= link_to t(:admin, :scope => :admin), "", :id => "link_admin" %>
+                <%= link_to t(:admin, :scope => :admin), admin_url, :id => "link_admin" %>
               <% end %>
             <% end %>
           </div>

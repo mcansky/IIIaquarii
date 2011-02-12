@@ -2,6 +2,8 @@
   <title><%= t(:show, :scope => :sshkeys) %> <%= @key.name %> - <%= Settings.application.name %></title>
 <% end %>
 
+<%= render :partial => "shared/flash_messages" %>
+
 <div id="sshkeys">
   <h2>
     <%= image_tag("/images/icons/license-key.png", :title => t(:key, :scope => :sshkeys), :alt => t(:key, :scope => :sshkeys), :border => 0)%>

@@ -30,6 +30,8 @@ IIIaquarii::Application.routes.draw do
     end
   end
 
+  match "/admin", :via => :get, :to => "application#admin"
+
   match "/repositories", :via => :get, :to => "application#repositories"
 
   root :to => "application#index"

@@ -108,6 +108,8 @@ en:
       didnt_receive_unlock: "Didn't receive unlock instructions?"
       sign_in_with: "Sign in with"
   admin:
+    label: "Admin"
+    manage_users: "Manage users"
     users:
       label: "Admin - Users"
       id: "ID"

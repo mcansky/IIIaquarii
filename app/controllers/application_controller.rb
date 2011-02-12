@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :login_required
   before_filter :set_our_current_user
+  before_filter :login_required, :only => :admin
+  before_filter :admin_required, :only => :admin
 
   def index
     # only show 10 repositories and 30 commits on index page
@@ -22,6 +24,9 @@ class ApplicationController < ActionController::Base
       @repositories = AqRepository.public.paginate :page => page, :per_page => Settings.pagination.all_repositories
     end
 
+  end
+
+  def admin
   end
 
   def check_branch_existancy
