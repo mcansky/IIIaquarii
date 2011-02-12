@@ -5,6 +5,8 @@
 <%= render :partial => "shared/flash_messages" %>
 
 <div class="grid_12">
+  <%= link_to t(:new_user, :scope => [:admin, :users, :new]), new_admin_user_url %>
+  <br>
   <table width="100%" id="admin_users_table">
     <tr id="head">
       <td><%= t(:id ,:scope => [:admin, :users]) %></td>

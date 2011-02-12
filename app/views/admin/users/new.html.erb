@@ -1,0 +1,41 @@
+<% content_for :head do %>
+  <title><%= t(:label, :scope => [:admin, :users, :new]) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="sign_up_form">
+
+    <h2><%= t(:new_user, :scope => [:admin, :users, :new]) %></h2>
+
+    <%= form_for(@user, :url => admin_users_url) do |f| %>
+
+      <%= f.error_messages %>
+
+      <p><%= f.label :email %><br />
+        <%= f.email_field :email %></p>
+
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+
+      <p>
+        <%= f.label :login %><br />
+        <%= f.text_field :login %>
+      </p>
+
+      <p><%= f.label :password %><br />
+        <%= f.password_field :password %></p>
+
+      <p><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %></p>
+
+      <p class="sign_up_form_submit" ><%= f.submit t(:sign_up, :scope => [:devise, :shared_links]) %></p>
+    <% end %>
+
+
+  </div>
+</div>
+<div class="clear"></div>

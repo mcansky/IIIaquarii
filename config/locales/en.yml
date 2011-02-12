@@ -146,6 +146,9 @@ en:
         locked_at: "Locked at:"
         created_at: "Created at:"
         updated_at: "Updated at:"
+      new:
+        label: "Admin - New user"
+        new_user: "New user"
     admin: "Admin"
   activerecord:
     attributes:

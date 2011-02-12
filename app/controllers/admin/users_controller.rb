@@ -15,6 +15,22 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      @user.confirm!
+      @user.send_reset_password_instructions
+      flash[:notice] = t(:created, :scope => [:admin, :users])
+      redirect_to admin_users_url
+    else
+      render :action => :new
+    end
+  end
+
   def make_admin
     user = User.find(params[:id])
     if user.id == current_user.id
