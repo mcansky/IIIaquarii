@@ -1,0 +1,37 @@
+<% content_for :head do %>
+  <title><%= t(:label, :scope => [:admin, :users, :edit]) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="edit_registration_form">
+
+    <h2><%= t(:edit_user, :scope => [:admin, :users, :edit]) %></h2>
+
+    <%= form_for(@user, :url => admin_user_url(@user), :html => { :method => :put }) do |f| %>
+      <%= f.error_messages %>
+
+      <p><%= f.label :email %><br />
+        <%= f.email_field :email %></p>
+
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+
+      <p><%= f.label :password %> <i><%= t(:leave_blank_no_change_pass, :scope => :users) %></i><br />
+        <%= f.password_field :password %></p>
+
+      <p><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %></p>
+
+      <p><%= f.label :current_password %> <i><%= t(:cur_pass_to_confirm, :scope => :users) %></i><br />
+        <%= f.password_field :current_password %></p>
+
+      <p class="edit_registration_form_submit" ><%= f.submit t(:update, :scope => :links) %></p>
+    <% end %>
+
+  </div>
+</div>
+<div class="clear"></div>

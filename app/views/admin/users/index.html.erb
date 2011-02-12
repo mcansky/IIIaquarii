@@ -38,7 +38,7 @@
               <%= link_to t(:make_admin, :scope => [:admin, :users]), make_admin_admin_user_url(user) %>
               &nbsp;-&nbsp;
             <% end %>
-            <%= link_to t(:delete, :scope => :links), ""%>
+            <%= link_to t(:delete, :scope => :links), admin_user_url(user), :confirm => t(:confirm, :scope => :js), :method => :delete%>
           <% else %>
             <%= t(:its_you, :scope => [:admin, :users]) %>
           <% end %>

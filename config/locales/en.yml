@@ -122,9 +122,14 @@ en:
       make_admin: "Make admin"
       make_user: "Make user"
       its_you: "It's you!"
+      created: "User created"
+      destroyed: "User deleted"
       change_role:
         refused: "Muahahaha, no, you can't, sorry."
         role_changed: "Role of user %{user} changed from %{from_role} to %{to_role}"
+      edit:
+        label: "Admin - Edit user"
+        edit_user: "Edit user"
       show:
         label: "Admin - Show user"
         id: "ID:"

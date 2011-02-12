@@ -15,6 +15,16 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = t(:updated, :scope => [:admin, :users])
+      redirect_to admin_users_url
+    else
+      render :action => 'edit'
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -29,6 +39,13 @@ class Admin::UsersController < ApplicationController
     else
       render :action => :new
     end
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    flash[:notice] = t(:destroyed, :scope => [:admin, :users])
+    redirect_to admin_users_url
   end
 
   def make_admin
