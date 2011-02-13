@@ -7,13 +7,10 @@
   <div id="flash_error_messages">
     <a class="close_flash_error_message" href="#" onclick="$('#flash_error_messages').toggle('slow');$('#show_error_messages').toggle();" >x</a>
     <span>
-      <%= flash[:error] %>
-      <% if flash[:alert] %><br><% end %>
-      <%= flash[:alert] %>
-      <% if flash[:warning] %><br><% end %>
-      <%= flash[:warning] %>
-      <% if flash[:notice] %><br><% end %>
-      <%= flash[:notice] %>
+      <div><%= flash[:error] %></div>
+      <div><%= flash[:alert] %></div>
+      <div><%= flash[:warning] %></div>
+      <div><%= flash[:notice] %></div>
     </span>
   </div>
 <% end %>

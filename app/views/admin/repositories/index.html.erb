@@ -37,7 +37,7 @@
         </td>
       </tr>
       <tr>
-        <% if !repo.desc.empty? %>
+        <% if !repo.desc.blank? %>
           <td class="desc_td" colspan="8"><%= repo.desc %></td>
         <% else %>
           <td class="desc_td" colspan="8"><%= t(:no_desc, :scope => [:admin, :repositories]) %></td>

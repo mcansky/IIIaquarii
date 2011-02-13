@@ -4,7 +4,7 @@ include Grit
 class AqRepositoriesController < ApplicationController
   before_filter :login_required, :except => [:index, :show, :view_file, :show_commits, :show_commit, :view_raw_file]
   before_filter :check_private_repository, :except => [:index, :new, :create]
-  before_filter :warning_no_sshkey, :only => [:new, :create, :show, :update, :edit]
+  before_filter :warning_no_sshkey, :only => [:show, :update, :edit]
   before_filter :check_branch_existancy, :except => [:new, :create, :update, :destroy, :index]
 
   def index
@@ -83,7 +83,7 @@ class AqRepositoriesController < ApplicationController
       repository.rights << a_right
       repository.save
     end
-    redirect_to repository
+    redirect_to user_aq_repository_url(current_user, repository)
   end
 
   def fork
@@ -91,7 +91,7 @@ class AqRepositoriesController < ApplicationController
     repository = AqRepository.new
     repository.fork(parent_repo)
     repository.save if repository
-    redirect_to repository
+    redirect_to user_aq_repository_url(current_user, repository)
   end
 
   def view_file

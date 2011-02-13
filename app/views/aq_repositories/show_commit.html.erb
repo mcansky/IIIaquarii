@@ -33,7 +33,7 @@
     <div class="clear"></div>
   </div>
 
-  <% if !@repository.desc.empty? %>
+  <% if !@repository.desc.blank? %>
     <div class="grid_12 repo_desc">
       <p class="desc"><%= @repository.desc %></p>
     </div>
