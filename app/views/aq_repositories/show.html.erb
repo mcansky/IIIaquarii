@@ -88,7 +88,7 @@
       </div>
 
       <% if @repository.branches.size != 0 and params[:dir].nil? %>
-        <% tree = @grit_repo.tree(branch, "") %>
+        <% tree = @grit_repo.tree(branch, []) %>
         <% if !params[:dir] %>
           <% blobs = tree.blobs %>
           <% if blobs %>
