@@ -28,6 +28,7 @@ IIIaquarii::Application.routes.draw do
         get 'make_user'
       end
     end
+    resources :sshkeys
   end
 
   match "/admin", :via => :get, :to => "application#admin"

@@ -110,6 +110,15 @@ en:
   admin:
     label: "Admin"
     manage_users: "Manage users"
+    manage_sshkeys: "Manage SSH Keys"
+    ssh_keys:
+      label: "Admin - SSH Keys"
+      edit: "Admin - Edit SSH key"
+      user_login: "User"
+      name: "Key name"
+      login: "Key login"
+      updated: "Key updated"
+      destroyed: "Key deleted"
     users:
       label: "Admin - Users"
       id: "ID"

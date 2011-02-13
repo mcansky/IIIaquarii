@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <title><%= t(:edit, :scope => [:admin, :ssh_keys]) %> <%= @ssh_key.name %> - <%= Settings.application.name %></title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div id="sshkeys">
+  <h2><%= t(:edit, :scope => :sshkeys) %></h2>
+
+  <%= render "form", :key => @ssh_key %>
+</div>

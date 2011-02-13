@@ -1,0 +1,41 @@
+<% content_for :head do %>
+  <title><%= t(:label, :scope => [:admin, :ssh_keys]) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_12">
+  <br>
+  <table width="100%" id="admin_ssh_keys_table">
+    <tr id="head">
+      <td><%= t(:user_login ,:scope => [:admin, :ssh_keys]) %></td>
+      <td><%= t(:name, :scope => [:admin, :ssh_keys]) %></td>
+      <td><%= t(:login ,:scope => [:admin, :ssh_keys]) %></td>
+      <td><%= t(:actions ,:scope => [:admin, :users]) %></td>
+    </tr>
+    <% @ssh_keys.each do |ssh_key| %>
+      <tr>
+        <td><%= link_to ssh_key.user.login, admin_user_url(ssh_key.user) %></td>
+        <td><%= ssh_key.name %></td>
+        <td><%= ssh_key.login %></td>
+        <td>
+          <%= link_to t(:edit, :scope => :links), edit_admin_sshkey_url(ssh_key) %>
+          &nbsp;-&nbsp;
+          <%= link_to t(:delete, :scope => :links), admin_sshkey_url(ssh_key), :confirm => t(:confirm, :scope => :js), :method => :delete%>
+        </td>
+      </tr>
+      <tr class="key_tr">
+        <td colspan="4" class="key_td" ><%= truncate(ssh_key.key, :length => 100, :omission => "...") %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="clear"></div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @ssh_keys, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @ssh_keys %>
+  </div>
+</div>
+<div class="clear"></div>
