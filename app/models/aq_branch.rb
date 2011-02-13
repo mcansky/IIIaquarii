@@ -49,7 +49,12 @@ class AqBranch < ActiveRecord::Base
         count += diff_c
       end
     end
-    aq_logger(Settings.logs.scm, "User #{self.aq_repository.owner.login}, Branch : #{self.name}, #{count} commits treated.")
+    if self.aq_repository.owner.nil?
+      the_user = User.our_current_user.login || "error: cant get user login"
+    else
+      the_user = self.aq_repository.owner.login
+    end
+    aq_logger(Settings.logs.scm, "User #{the_user}, Branch : #{self.name}, #{count} commits treated.")
   end # def grit_update // update AqBranch using GritRepoBranch
 
   def purge

@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20110210231800) do
   end
 
   create_table "roles", :force => true do |t|
-    t.string  "name"
+    t.string  "name",    :default => "user"
     t.integer "user_id"
   end
 

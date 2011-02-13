@@ -21,7 +21,7 @@ class AqRepository < ActiveRecord::Base
   belongs_to :parent, :class_name => "AqRepository", :foreign_key => "parent_id"
   has_many :files, :class_name => "AqFile", :foreign_key => "aq_repository_id"
 
-  validates :name, :presence => true, :uniqueness => true, :length => { :maximum => 25 }
+  validates :name, :presence => true, :length => { :maximum => 25 }
 
   validates_presence_of :kind, :visibility
 
@@ -106,6 +106,10 @@ class AqRepository < ActiveRecord::Base
     return (self.kind == "git")
   end
 
+  def is_hg?
+    return (self.kind == "hg")
+  end
+
   def is_private?
     return (self.visibility == 1)
   end
@@ -120,7 +124,7 @@ class AqRepository < ActiveRecord::Base
     grit_repo = Repo.new(self.path)
     count = 0
     grit_repo.branches.each do |b|
-      self.branches << AqBranch.new(:name => b.name) if not self.branches.find_by_name(b.name)
+      self.branches.build(:name => b.name, :aq_repository => self, :aq_repository_id => self.id) if not self.branches.find_by_name(b.name)
     end
     self.branches.each do |b|
       b.grit_update
@@ -194,13 +198,17 @@ class AqRepository < ActiveRecord::Base
     if !User.our_current_user.aq_repositories.find_by_name(parent_repo.name)
       self.name = parent_repo.name
       self.kind = parent_repo.kind
+      self.desc = parent_repo.desc
       self.repo_path
-      system("cp -r #{parent_repo.path}/* #{self.path}")
+
+      parent_repoGrit = Repo.new(parent_repo.path)
+      new_repo = parent_repoGrit.fork_bare(self.path)
+
       self.parent = parent_repo
       self.owner = User.our_current_user
       self.repo_update
     else
-      redirect_to parent_repo
+      return false
     end
   end # def fork
 

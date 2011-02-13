@@ -33,6 +33,7 @@ en:
     created: "Repository created"
     error_creating: "An error occured"
     insufficient_rights: "Insufficient rights"
+    parent: "Parent"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
