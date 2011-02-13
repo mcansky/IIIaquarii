@@ -49,9 +49,11 @@ class ApplicationController < ActionController::Base
 
   def warning_no_sshkey
     repository = AqRepository.find(params[:id])
-    if current_user.id == repository.owner.id
-      if current_user.ssh_keys.size == 0
-        flash[:error] = t(:no_ssh_key, :scope => :repositories)
+    if current_user
+      if current_user.id == repository.owner.id
+        if current_user.ssh_keys.size == 0
+          flash[:error] = t(:no_ssh_key, :scope => :repositories)
+        end
       end
     end
   end
