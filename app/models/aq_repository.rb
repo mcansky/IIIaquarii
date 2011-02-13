@@ -34,8 +34,8 @@ class AqRepository < ActiveRecord::Base
 
   scope :public_with_private_user, lambda { |user_id|
     joins(:rights).
-    where("(rights.user_id = ? AND rights.role = ? AND aq_repositories.visibility = ?) OR aq_repositories.visibility = ?", user_id, 'o', 1, 0).
-    group("aq_repositories.id")
+    where("(rights.user_id = ? AND rights.role = ? AND aq_repositories.visibility = ?) OR aq_repositories.visibility = ?", user_id, 'o', 1, 0)
+    #group("aq_repositories.id")
   }
 
   def delete_repository
