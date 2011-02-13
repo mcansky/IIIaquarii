@@ -34,10 +34,10 @@ class AqRepositoriesController < ApplicationController
     @repository = AqRepository.new(params[:aq_repository])
     @repository.owner = current_user
     if @repository.save
-      flash[:notice] = t(:repo_create_ok)
+      flash[:notice] = t(:created, :scope => :repositories)
       redirect_to [@repository.owner, @repository]
     else
-      flash[:notice] = t(:repo_create_ko)
+      flash[:notice] = t(:error_creating, :scope => :repositories)
       render :action => :new
     end
   end
@@ -46,7 +46,7 @@ class AqRepositoriesController < ApplicationController
     @repository = AqRepository.find(params[:id])
     if @repository.owner != current_user
       @repository = nil
-      flash[:notice] = t(:insufficient_rights)
+      flash[:notice] = t(:insufficient_rights, :scope => :repositories)
       redirect_to root_path
     end
     @user = @repository.owner
@@ -58,7 +58,7 @@ class AqRepositoriesController < ApplicationController
       @repository.owner = current_user
     end
     if @repository.update_attributes(params[:aq_repository])
-      flash[:notice] = t(:repo_update_ok)
+      flash[:notice] = t(:updated, :scope => :repositories)
       redirect_to [@repository.owner, @repository]
     else
       render :action => 'edit'
@@ -68,7 +68,7 @@ class AqRepositoriesController < ApplicationController
   def destroy
     repository = AqRepository.find(params[:id])
     repository.destroy
-    flash[:notice] = t(:repo_destroy_ok)
+    flash[:notice] = t(:destroyed, :scope => :repositories)
     redirect_to user_aq_repositories_path(current_user)
   end
 

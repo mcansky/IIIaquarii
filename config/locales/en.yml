@@ -28,6 +28,11 @@ en:
     explore: "Explore"
     repositories_feed: "Repositories feed"
     no_ssh_key: "You need to add an SSH key to be able to push."
+    updated: "Repository updated"
+    destroyed: "Repository deleted"
+    created: "Repository created"
+    error_creating: "An error occured"
+    insufficient_rights: "Insufficient rights"
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"
