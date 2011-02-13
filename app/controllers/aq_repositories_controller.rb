@@ -11,7 +11,11 @@ class AqRepositoriesController < ApplicationController
     page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
     @user = User.find(params[:user_id])
     if current_user
-      @repositories = current_user.aq_repositories.paginate :page => page, :per_page => Settings.pagination.user_repositories
+      if current_user.id == @user.id
+        @repositories = current_user.aq_repositories.paginate :page => page, :per_page => Settings.pagination.user_repositories
+      else
+        @repositories = @user.aq_repositories.public.paginate :page => page, :per_page => Settings.pagination.user_repositories
+      end
     else
       @repositories = @user.aq_repositories.public.paginate :page => page, :per_page => Settings.pagination.user_repositories
     end
