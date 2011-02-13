@@ -36,7 +36,7 @@
         <% end %>
 	<span class="rep_name"><%= link_to rep2.owner.login + "/" + rep2.name, user_aq_repository_url(rep2.owner, rep2) %></span>
         <span class="rep_actions">
-          <% if current_user %>
+          <% if current_user == rep2.owner %>
 	    <%= link_to t(:delete, :scope => :repositories), user_aq_repository_url(rep2.owner, rep2), {:method => :delete, :confirm => t(:confirm, :scope => :js), :title => t(:delete, :scope => :repositories) }%>
           <% end %>
         </span>
