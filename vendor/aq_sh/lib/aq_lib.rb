@@ -1,12 +1,12 @@
 module AqLib
   begin
     # Try to require the preresolved locked set of gems.
-    require File.expand_path('../../.bundle/environment', __FILE__)
+    require File.expand_path('../../../../.bundle/environment', __FILE__)
   rescue LoadError
     # Fall back on doing an unlocked resolve at runtime.
     require "rubygems"
     require "bundler"
-    gemfile_path= File.expand_path('../../', __FILE__)
+    gemfile_path= File.expand_path('../../../../', __FILE__)
     ENV['BUNDLE_GEMFILE'] ||= File.join(gemfile_path, 'Gemfile')
     Bundler.setup
   end
