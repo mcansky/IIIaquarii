@@ -15,6 +15,7 @@ pagination:
 aq_sh:
   user_home: /tmp
   user_name: aq_git
+  environment: production
 repos:
   root_dir: /tmp
   repo_user: aq_git

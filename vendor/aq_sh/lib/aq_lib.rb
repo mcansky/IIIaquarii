@@ -25,7 +25,7 @@ module AqLib
 
 
   dbconfig = YAML::load(File.expand_path("../../../../config/database.yml"))
-  ActiveRecord::Base.establish_connection(dbconfig)
+  ActiveRecord::Base.establish_connection(dbconfig[Settings.aq_sh.environment])
 
   class User < ActiveRecord::Base
     has_many :ssh_keys
