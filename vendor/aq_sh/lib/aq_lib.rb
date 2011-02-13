@@ -24,7 +24,7 @@ module AqLib
   RailsConfig.load_and_set_settings config_file
 
 
-  dbconfig = YAML::load(File.expand_path("../../../../config/database.yml"))
+  dbconfig = YAML::load(File.open(File.expand_path("../../../../config/database.yml"), "r"))
   ActiveRecord::Base.establish_connection(dbconfig[Settings.aq_sh.environment])
 
   class User < ActiveRecord::Base
