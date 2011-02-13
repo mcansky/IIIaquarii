@@ -7,7 +7,7 @@
     </tr>
     <% branch = "master" %>
     <% branch = params[:branch] if params[:branch] %>
-    <% root_dir = "" %>
+    <% root_dir = [] %>
     <% root_dir = params[:dir] + "/" if params[:dir] %>
     <% tree = @grit_repo.tree(branch, root_dir) %>
     <% if params[:dir] %>
