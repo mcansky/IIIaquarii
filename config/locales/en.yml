@@ -110,7 +110,8 @@ en:
   admin:
     label: "Admin"
     manage_users: "Manage users"
-    manage_sshkeys: "Manage SSH Keys"
+    manage_sshkeys: "Manage SSH keys"
+    manage_repositories: "Manage repositories"
     ssh_keys:
       label: "Admin - SSH Keys"
       edit: "Admin - Edit SSH key"
@@ -166,6 +167,23 @@ en:
         label: "Admin - New user"
         new_user: "New user"
     admin: "Admin"
+    repositories:
+      label: "Admin - Repositories"
+      id: "ID"
+      name: "Name"
+      kind: "Type"
+      parent: "Parent repository"
+      visibility: "Visibility"
+      path: "Filesystem Path"
+      owner: "Owner"
+      actions: "Actions"
+      repo_visibility_0: "Public"
+      repo_visibility_1: "Private"
+      no_parent: "No parent"
+      edit: "Admin - Edit repository"
+      updated: "Repository updated"
+      destroyed: "Repository deleted"
+      no_desc: "No description"
   activerecord:
     attributes:
       aq_repository:

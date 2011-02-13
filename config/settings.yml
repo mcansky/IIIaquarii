@@ -31,3 +31,4 @@ admin:
   pagination:
     users: 50
     ssh_keys: 50
+    repositories: 50

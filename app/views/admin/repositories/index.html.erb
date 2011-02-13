@@ -1,0 +1,57 @@
+<% content_for :head do %>
+  <title><%= t(:label, :scope => [:admin, :repositories]) %> - <%= Settings.application.name %></title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_12">
+  <br>
+  <table width="100%" id="admin_repositories_table">
+    <tr id="head">
+      <td><%= t(:id ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:name, :scope => [:admin, :repositories]) %></td>
+      <td><%= t(:kind ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:parent ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:visibility ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:path ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:owner ,:scope => [:admin, :repositories]) %></td>
+      <td><%= t(:actions ,:scope => [:admin, :repositories]) %></td>
+    </tr>
+    <% @repositories.each do |repo| %>
+      <tr>
+        <td><%= repo.id %></td>
+        <td><%= repo.name %></td>
+        <td><%= repo.kind %></td>
+        <% if repo.parent %>
+          <td><%= repo.parent %></td>
+        <% else %>
+          <td><%= t(:no_parent, :scope => [:admin, :repositories]) %></td>
+        <% end %>
+        <td><%= t("repo_visibility_#{repo.visibility}".to_sym, :scope => [:admin, :repositories]) %></td>
+        <td><%= repo.path %></td>
+        <td><%= link_to repo.owner.login, admin_user_url(repo.owner) %></td>
+        <td>
+          <%= link_to t(:edit, :scope => :links), edit_admin_repository_url(repo) %>
+          &nbsp;-&nbsp;
+          <%= link_to t(:delete, :scope => :links), admin_repository_url(repo), :confirm => t(:confirm, :scope => :js), :method => :delete%>
+        </td>
+      </tr>
+      <tr>
+        <% if !repo.desc.empty? %>
+          <td class="desc_td" colspan="8"><%= repo.desc %></td>
+        <% else %>
+          <td class="desc_td" colspan="8"><%= t(:no_desc, :scope => [:admin, :repositories]) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="clear"></div>
+
+<div class="grid_10 prefix_1 suffix_1 pagination_aq3">
+  <%= will_paginate @repositories, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @repositories %>
+  </div>
+</div>
+<div class="clear"></div>

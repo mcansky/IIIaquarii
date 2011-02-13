@@ -821,3 +821,12 @@ button.clean-gray:active {
 #admin_ssh_keys_table td.key_td {
     border-bottom: 1px solid #CCC;
 }
+
+#admin_repositories_table tr#head {
+    font-weight: bold;
+    border-bottom: 1px solid #CCC;
+}
+
+#admin_repositories_table td.desc_td {
+    border-bottom: 1px solid #CCC;
+}

@@ -1,0 +1,17 @@
+<% content_for :head do %>
+  <title>
+    <%= t(:edit, :scope => [:admin, :repositories]) %> - <%= Settings.application.name %>
+  </title>
+<% end %>
+
+<%= render :partial => "shared/flash_messages" %>
+
+<div class="grid_4 prefix_4 suffix_4">
+  <div id="repository_form">
+    <h1><%= @repository.name %></h1>
+
+    <%= render "form", :repository => @repository %>
+
+    </div>
+</div>
+<div class="clear"></div>

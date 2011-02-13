@@ -29,6 +29,7 @@ IIIaquarii::Application.routes.draw do
       end
     end
     resources :sshkeys
+    resources :repositories
   end
 
   match "/admin", :via => :get, :to => "application#admin"
