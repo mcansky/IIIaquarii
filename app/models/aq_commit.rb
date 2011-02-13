@@ -8,8 +8,8 @@ class AqCommit < ActiveRecord::Base
 
   scope :repositories_with_visibility, lambda { |vis|
     joins(:repository).
-    where("aq_repositories.visibility = ?", vis).
-    group("aq_commits.id")
+    where("aq_repositories.visibility = ?", vis)
+    #group("aq_commits.id")
   }
 
   scope :of_public_repositories, repositories_with_visibility(0)
