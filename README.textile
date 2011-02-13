@@ -1,6 +1,6 @@
 h1. III Aquarii
 
-The project aims to provide a quite complete web app to manage small, medium or big quantities of git and hg repositories. We want to include repository management, ssh keys management, repository browser, commits browser, diff display, tickets and milestones management.
+The project aims to provide a quite complete web app to manage small, medium or big quantities of git repositories. We want to include repository management, ssh keys management, repository browser, commits browser, diff display, tickets and milestones management.
 
 Before starting this project we dissected Gitauth, to extract its very essence. We then decided to start from scratch on our own, tossing everything and starting from a clean slate. So it probably looks similar to GithAuth, or Gitosis, since these projects are pretty much the state-of-the-art.
 
@@ -20,13 +20,13 @@ This project is released under MIT Licence.
 
 h2. Todo
 
-This gonna be big. First push to GitHub repository is really really a first draft of the base project.
+A lot of things.
 
 
 h2. 0.0.1
 
-As of the first tag (0.0.1) it's almost usable. You need to check the aq_lib too.
-It only manage ssh keys and repositories though. But just with that you can say good bye to gitosis. (well first we need to wait for some comments and tests). Yet you still need a git server to provide public read only access to your repositories.
+As of the first tag (0.0.1) it's usable. You need to check the aq_lib too.
+It can manage ssh keys and repositories though. But just with that you can say good bye to gitosis. (well first we need to wait for some comments and tests). Yet you still need a git server to provide public read only access to your repositories.
 
 h2. Long run
 
@@ -43,9 +43,9 @@ The long run is a bit more complex : the aim is to provide something similar to 
 
 h2. Install
 
-Right now it's not really usable, yet it works. 
-Clone this code, and edit the config/application.yml file and database.yml file. You also need to tweak vendor/aq_sh/config/application.yml accordingly.
+See the file 'GIT_CONFIG_PATHS' to understand first the path concept between the application and the Aquarii Shell.
+You need to edit RAILS_ROOT/config/settings.yml
 
 h2. Contact
 
-On the GitHub page.
+Rhaamo : rhaamo -at- gruik -dot- at
