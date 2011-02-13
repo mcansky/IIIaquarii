@@ -7,9 +7,9 @@
     </tr>
     <% branch = "master" %>
     <% branch = params[:branch] if params[:branch] %>
-    <% root_dir = [] %>
+    <% root_dir = "" %>
     <% root_dir = params[:dir] + "/" if params[:dir] %>
-    <% tree = @grit_repo.tree(branch, root_dir) %>
+    <% tree = @grit_repo.tree(branch, [root_dir]) %>
     <% if params[:dir] %>
       <tr class="dir">
 	<% troot = (Pathname(root_dir) + "..").to_s %>
@@ -24,7 +24,7 @@
 	<td></td>
       </tr>
     <% end %>
-    <% for dir in @grit_repo.tree(branch, root_dir).trees %>
+    <% for dir in @grit_repo.tree(branch, [root_dir]).trees %>
       <tr class="dir">
 	<td>
 	  <%= image_tag("/images/icons/folder-horizontal.png", :title => dir.basename, :alt => dir.basename, :border => 0) %>
