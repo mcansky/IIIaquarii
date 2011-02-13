@@ -6,16 +6,16 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
   # gem 'ruby-debug'
   gem 'ruby-debug19'
 end
 
 group :production do
-  gem 'pg'
   gem 'unicorn'
 end
+
+gem 'pg'
 
 # User auth
 gem "devise", :git => 'git://github.com/plataformatec/devise.git'
