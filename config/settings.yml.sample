@@ -5,7 +5,6 @@ application:
   name: III Aquarii
   contact: admin@example.com
   hostname: localhost
-  use_rvm: true
   disable_registration: true
   index_msg: "Short news example"
 pagination:

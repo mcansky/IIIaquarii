@@ -51,12 +51,7 @@ class SshKey < ActiveRecord::Base
   # prepare the command for the export to the filesystem
   def command
     if self.valid
-      if Settings.application.use_rvm
-        rvm_stuff = "source ~/.rvm/scripts/rvm ; "
-      else
-        rvm_stuff = ""
-      end
-      command = ["command=\"#{rvm_stuff}#{Rails.root}/#{Settings.shell.path} #{self.login}\"",
+      command = ["command=\"#{Rails.root}/#{Settings.shell.path} #{self.login}\"",
                  "no-port-forwarding", "no-X11-forwarding", "no-agent-forwarding"]
       command.join(",")
     end
