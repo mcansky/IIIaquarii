@@ -9,7 +9,7 @@ class SshKey < ActiveRecord::Base
   # Wrapper around valid method for validation
   def is_valid?
     if not self.valid
-      errors.add_to_base "Invalid SSH Key !"
+      errors.add :key, "Invalid SSH Key !"
     end
   end
 
