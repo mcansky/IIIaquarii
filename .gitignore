@@ -6,3 +6,5 @@ tmp/**/*
 config/settings.yml
 coverage
 tmp
+config/devs.yml
+AUTO_CHANGELOG.md
