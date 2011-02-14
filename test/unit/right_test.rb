@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class RightTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should belong_to(:user)
+  should belong_to(:aq_repository)
+  should belong_to(:ssh_key)
 end
