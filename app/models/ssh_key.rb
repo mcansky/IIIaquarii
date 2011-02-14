@@ -33,18 +33,31 @@ class SshKey < ActiveRecord::Base
   def valid
     if self.key
       key_pieces = self.key.split(" ")
-      if key_pieces.size < 2
-        return false
+      if key_pieces.size < 3
+        return false # we want a full three parts ssh key
       end
-      small_key = key_pieces[0] + " " + key_pieces[1]
-      #if small_key =~ /^(ssh-\w+ [a-zA-Z0-9\/\+]+==?).*$/
-      if small_key =~ /^(ssh-\w+ [a-zA-Z0-9\/\+].*)$/
+
+      # Test first element
+      if !['ssh-dss', 'ssh-rsa'].include? key_pieces[0]
+        return false # The key doesn't start with a valid identifier
+      end
+
+      # Test key format : first element need to match the start of the key
+      # We can't have a ssh-rsa start with a ssh-dsa key ...
+      ## ssh-rsa
+      if key_pieces[1].start_with?("AAAAB3NzaC1yc2EA") and key_pieces[0] == "ssh-rsa"
         return true
-      else
-        return false
       end
-    else
+      ## ssh-dss
+      if key_pieces[1].start_with?("AAAAB3NzaC1kc3MA") and key_pieces[0] == "ssh-dss"
+        return true
+      end
+
+      # if no test return true, the key is invalid
       return false
+
+    else
+      return false # no ssh key
     end
   end # def valid
 
