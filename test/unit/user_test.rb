@@ -16,4 +16,9 @@ class UserTest < ActiveSupport::TestCase
   should_not allow_value("admin").for(:name)
   should_not allow_value("login").for(:name)
   should_not allow_value("logout").for(:name)
+  should have_many(:ssh_keys)
+  should have_many(:rights)
+  should have_many(:aq_repositories)
+  should have_many(:aq_commits)
+  should have_one(:role)
 end
