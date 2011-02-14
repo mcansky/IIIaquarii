@@ -58,3 +58,10 @@ gem 'albino', :git => "git://github.com/rhaamo/albino.git"
 gem "will_paginate",:git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
 
 gem 'fileutils'
+
+# test stuff
+group :test do
+  gem "shoulda"
+  gem 'factory_girl_rails', "1.1.beta1"
+  gem "rspec-rails", "2.0.0.beta.12"
+end
