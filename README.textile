@@ -23,9 +23,9 @@ h2. Todo
 A lot of things.
 
 
-h2. 0.0.1
+h2. 0.0.2
 
-As of the first tag (0.0.1) it's usable. You need to check the aq_lib too.
+As of the first tag (0.0.2) it's usable. You need to check the aq_lib too.
 It can manage ssh keys and repositories though. But just with that you can say good bye to gitosis. (well first we need to wait for some comments and tests). Yet you still need a git server to provide public read only access to your repositories.
 
 h2. Long run
