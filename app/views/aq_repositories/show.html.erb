@@ -46,68 +46,69 @@
   </div>
   <div class="clear"></div>
 
+  <% if @repository.branches.empty? and @repository.commits.empty? %>
   <div class="grid_10 prefix_1 suffix_1">
-    <% if @repository.branches.empty? and @repository.commits.empty? %>
-      <%= render "new_repository_text_message", :repository => @repository %>
-    <% end %>
+    <%= render "new_repository_text_message", :repository => @repository %>
   </div>
   <div class="clear"></div>
-
-  <% if !@repository.branches.find_by_name(branch) %>
-    <div class="grid_10 prefix_1 suffix_1">
-      <div class="branch_not_found"><%= t(:branch_not_found, :scope => :repositories, :branch => branch) %></div>
-    </div>
-    <div class="clear"></div>
   <% else %>
 
-    <div class="grid_10 prefix_1 suffix_1">
-      <div class="view_file_path">
-        <% path = "" %>
-        <% path = (Pathname(params[:dir] + "/") + "..").to_s if params[:dir] %>
-        <p>
-          <%= link_to @repository.name, show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => branch) %> /
-          <% old_path = [] %>
-          <% path.split("/").each do |p| %>
-            <% if p != "." %>
-              <% act_path = (old_path + [p]).join("/") %>
-              <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path, :branch => branch) %>
-              /
+    <% if !@repository.branches.find_by_name(branch) %>
+      <div class="grid_10 prefix_1 suffix_1">
+        <div class="branch_not_found"><%= t(:branch_not_found, :scope => :repositories, :branch => branch) %></div>
+      </div>
+      <div class="clear"></div>
+    <% else %>
+
+      <div class="grid_10 prefix_1 suffix_1">
+        <div class="view_file_path">
+          <% path = "" %>
+          <% path = (Pathname(params[:dir] + "/") + "..").to_s if params[:dir] %>
+          <p>
+            <%= link_to @repository.name, show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => branch) %> /
+            <% old_path = [] %>
+            <% path.split("/").each do |p| %>
+              <% if p != "." %>
+                <% act_path = (old_path + [p]).join("/") %>
+                <%= link_to p, show_dir_user_aq_repository_url(@repository.owner, @repository, act_path, :branch => branch) %>
+                /
+              <% end %>
+              <% old_path << p %>
             <% end %>
-            <% old_path << p %>
-          <% end %>
-          <%= params[:dir].split("/").last if params[:dir] %> (<%= params[:branch] || "master" %>)</p>
+            <%= params[:dir].split("/").last if params[:dir] %> (<%= params[:branch] || "master" %>)</p>
+        </div>
       </div>
-    </div>
-    <div class="clear"></div>
+      <div class="clear"></div>
 
-    <div class="grid_10 prefix_1 suffix_1">
-      <div id="files">
-        <% if @repository.branches.size != 0 %>
-	  <%= render "files", :repository => @repository %>
-          <% end %>
-      </div>
+      <div class="grid_10 prefix_1 suffix_1">
+        <div id="files">
+          <% if @repository.branches.size != 0 %>
+	    <%= render "files", :repository => @repository %>
+            <% end %>
+        </div>
 
-      <% if @repository.branches.size != 0 and params[:dir].nil? %>
-        <% tree = @grit_repo.tree(branch, []) %>
-        <% if !params[:dir] %>
-          <% blobs = tree.blobs %>
-          <% if blobs %>
-            <% blobs.each do |a_blob| %>
-              <% if a_blob.name =~ /^(README|README.(.*)|readme|readme.(.*))$/ and a_blob.mime_type =~ /^text\/(.*)$/ %>
-                <h3><%= a_blob.name %></h3>
-                <div id="view_readme_file">
-                  <% cache Digest::SHA1.hexdigest(a_blob.data) do %>
-                    <%= GitHub::Markup.render(a_blob.name, a_blob.data).html_safe %>
-                  <% end %>
-                </div>
+        <% if @repository.branches.size != 0 and params[:dir].nil? %>
+          <% tree = @grit_repo.tree(branch, []) %>
+          <% if !params[:dir] %>
+            <% blobs = tree.blobs %>
+            <% if blobs %>
+              <% blobs.each do |a_blob| %>
+                <% if a_blob.name =~ /^(README|README.(.*)|readme|readme.(.*))$/ and a_blob.mime_type =~ /^text\/(.*)$/ %>
+                  <h3><%= a_blob.name %></h3>
+                  <div id="view_readme_file">
+                    <% cache Digest::SHA1.hexdigest(a_blob.data) do %>
+                      <%= GitHub::Markup.render(a_blob.name, a_blob.data).html_safe %>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
 
+    <% end %>
   <% end %>
 
 </div>
