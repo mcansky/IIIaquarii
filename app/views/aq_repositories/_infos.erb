@@ -17,6 +17,10 @@
     <%= link_to image_tag("/images/icons/arrow-skip-090.png", :title => t(:parent, :scope => :repositories), :alt => t(:parent, :scope => :repositories), :border => 0), user_aq_repository_url(@repository.parent.owner, @repository.parent) %>
   <% end %>
   <% if current_user && current_user != @repository.owner %>
-    <%= link_to image_tag("/images/icons/arrow-split.png", :title => t(:fork, :scope => :repositories).capitalize, :alt => t(:fork, :scope => :repositories).capitalize, :border => 0), fork_user_aq_repository_url(@repository.owner, @repository.id) %>
+    <% if current_user.aq_repositories.find_by_parent_id(@repository.id) %>
+      <%= link_to image_tag("/images/icons/arrow-split.png", :title => t(:your_fork, :scope => :repositories).capitalize, :alt => t(:your_fork, :scope => :repositories).capitalize, :border => 0), user_aq_repository_url(current_user, current_user.aq_repositories.find_by_parent_id(@repository.id)) %>
+    <% else %>
+      <%= link_to image_tag("/images/icons/arrow-split.png", :title => t(:fork, :scope => :repositories).capitalize, :alt => t(:fork, :scope => :repositories).capitalize, :border => 0), fork_user_aq_repository_url(@repository.owner, @repository.id) %>
+    <% end %>
   <% end %>
 </h2>

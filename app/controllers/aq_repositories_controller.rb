@@ -91,6 +91,10 @@ class AqRepositoriesController < ApplicationController
   end
 
   def fork
+    if current_user.aq_repositories.find_by_parent_id(params[:id])
+      flash[:error] = t(:fork_exist, :scope => :repositories)
+      return redirect_to user_aq_repository_url(params[:user_id], params[:id])
+    end
     parent_repo = AqRepository.find(params[:id])
     repository = AqRepository.new
     repository.fork(parent_repo)
