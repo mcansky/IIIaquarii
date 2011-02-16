@@ -1,0 +1,23 @@
+Installation notes and tips.
+
+If you use RVM, you should put
+
+  if [ -f $HOME/.bashrc ]; then
+  . $HOME/.bashrc
+  fi
+
+in the ~/.bash_profile of the user which will host the app
+
+You need to run periodically two rake tasks:
+
+  rake sshkeys:export         # export ssh keys to authorized_keys file
+  rake git:pull               # Check git repository for new commits
+
+Be sure to run it with the RVM environment if you use it !
+
+example:
+
+  $ crontab -l
+  */15 * * * * /usr/pkg/bin/bash -l -c '/home/aquarii/IIIaquarii/aq_cron.sh' >> /home/aquarii/cron.log 2>&1
+
+where aq_cron.sh is you script running the rake tasks, an example is located in `vendor/'
