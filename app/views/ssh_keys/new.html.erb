@@ -2,8 +2,6 @@
   <title><%= t(:new, :scope => :sshkeys) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<%= render :partial => "shared/flash_messages" %>
-
 <h1><%= t(:new, :scope => :sshkeys) %></h1>
 
 <%= render "form", :key => @key %>

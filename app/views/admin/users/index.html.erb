@@ -2,8 +2,6 @@
   <title><%= t(:label, :scope => [:admin, :users]) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<%= render :partial => "shared/flash_messages" %>
-
 <div class="grid_12">
   <%= link_to t(:new_user, :scope => [:admin, :users, :new]), new_admin_user_url %>
   <br>

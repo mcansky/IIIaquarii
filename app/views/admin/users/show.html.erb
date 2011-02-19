@@ -2,8 +2,6 @@
   <title><%= t(:label, :scope => [:admin, :users, :show]) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<%= render :partial => "shared/flash_messages" %>
-
 <div class="grid_12">
   <h2><%= t(:label, :scope => [:admin, :users, :show]) %> <%= @user.login %></h2>
   <ul>

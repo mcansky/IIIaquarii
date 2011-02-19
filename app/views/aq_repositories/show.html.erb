@@ -6,8 +6,6 @@
   <%= auto_discovery_link_tag(:atom, commits_user_aq_repository_url(@repository.owner, @repository, :branch => branch) + ".atom") %>
 <% end %>
 
-<%= render :partial => "shared/flash_messages" %>
-
 <div id="repository">
   <div id="repo_infos_and_ppl">
     <div class="grid_7 alpha">

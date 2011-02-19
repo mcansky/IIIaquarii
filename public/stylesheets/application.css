@@ -362,8 +362,7 @@ span.repo_private {
 }
 
 #flash_error_messages {
-    margin-top: -1em; /* content have a margin-top: 1em; */
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     padding-top: 4px;
     padding-left: 4px;
     padding-bottom: 4px;
@@ -829,4 +828,10 @@ button.clean-gray:active {
 
 #admin_repositories_table td.desc_td {
     border-bottom: 1px solid #CCC;
+}
+
+#repo_head_infos {
+    background-image: url(/images/background-yellow.png);
+    padding: 4px;
+    margin-top: 1em;
 }

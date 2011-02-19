@@ -2,8 +2,6 @@
   <title><%= t(:show_commit, :scope => :repositories) %> - <%= Settings.application.name %></title>
 <% end %>
 
-<%= render :partial => "shared/flash_messages" %>
-
 <% branch = "master" %>
 <% branch = params[:branch] if params[:branch] %>
 <% commit = params[:sha] %>
