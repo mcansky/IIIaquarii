@@ -6,16 +6,6 @@
 <% branch = params[:branch] if params[:branch] %>
 
 <div id="repository">
-  <div id="repo_infos_and_ppl">
-    <div class="grid_7 alpha">
-      <%= render "infos", :repository => @repository %>
-    </div>
-
-    <div class="grid_5 omega">
-      <%= render "people", :repository => @repository %>
-    </div>
-    <div class="clear"></div>
-  </div>
 
   <div id="repo_urls_and_branchs">
     <div class="grid_7 alpha">

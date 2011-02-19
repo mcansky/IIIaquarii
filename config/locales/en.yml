@@ -36,6 +36,7 @@ en:
     parent: "Parent"
     fork_exist: "You already have a fork"
     your_fork: "Your fork"
+    forked_from: "Forked from: "
   sshkeys:
     label: "SSH keys"
     yours: "Your Keys"

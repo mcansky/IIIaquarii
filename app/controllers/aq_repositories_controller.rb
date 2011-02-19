@@ -51,7 +51,7 @@ class AqRepositoriesController < ApplicationController
     if @repository.owner != current_user
       @repository = nil
       flash[:notice] = t(:insufficient_rights, :scope => :repositories)
-      redirect_to root_path
+      return redirect_to root_path
     end
     @user = @repository.owner
   end

@@ -1,0 +1,43 @@
+<% if @repository %>
+  <% branch = "master" %>
+  <% branch = params[:branch] if params[:branch] %>
+
+  <div id="repo_head_infos">
+    <div class="grid_11 alpha left_infos_repo_head">
+      <h3>
+        <% if @repository.is_private? %>
+          <%= image_tag("/images/icons/lock.png", :alt => t(:repo_private, :scope => :repositories), :title => t(:repo_private, :scope => :repositories)) %>
+        <% end %>
+        <% if @repository.is_git? %>
+          <span class="kind_git" title="git" >G</span>
+        <% end %>
+
+        <%= link_to @repository.owner.login, :controller => :users, :action => :show, :id => @repository.owner %> /
+        <%= link_to @repository.name, show_dir_user_aq_repository_url(@repository.owner, @repository, :branch => branch) %>
+      </h3>
+      <% if @repository.parent %>
+        <small id="forked_from">
+          <%= t(:forked_from, :scope => :repositories) %>
+          <%= link_to "#{@repository.parent.owner.login}/#{@repository.parent.name}", user_aq_repository_url(@repository.parent.owner, @repository.parent) %>
+        </small>
+      <% end %>
+    </div>
+
+    <div class="grid_1 omega right_infos_repo_head">
+      <% if current_user && @repository.owner == current_user %>
+        <%= link_to image_tag("/images/icons/pencil.png", :title => t(:edit, :scope => :repositories), :alt => t(:edit, :scope => :repositories), :border => 0), edit_user_aq_repository_url(@repository.owner, @repository) %>
+      <% end %>
+
+      <% if current_user && current_user != @repository.owner %>
+        <% if current_user.aq_repositories.find_by_parent_id(@repository.id) %>
+          <%= link_to image_tag("/images/icons/arrow-split.png", :title => t(:your_fork, :scope => :repositories).capitalize, :alt => t(:your_fork, :scope => :repositories).capitalize, :border => 0), user_aq_repository_url(current_user, current_user.aq_repositories.find_by_parent_id(@repository.id)) %>
+        <% else %>
+          <%= link_to image_tag("/images/icons/arrow-split.png", :title => t(:fork, :scope => :repositories).capitalize, :alt => t(:fork, :scope => :repositories).capitalize, :border => 0), fork_user_aq_repository_url(@repository.owner, @repository.id) %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="clear"></div>
+  </div>
+<% end %>

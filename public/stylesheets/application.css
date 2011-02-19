@@ -835,3 +835,7 @@ button.clean-gray:active {
     padding: 4px;
     margin-top: 1em;
 }
+
+#forked_from {
+    padding-left: 2em;
+}
