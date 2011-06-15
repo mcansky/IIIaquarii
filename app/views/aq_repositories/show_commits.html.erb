@@ -44,7 +44,7 @@
                 (<%= mail_to commit.author.email , nil, :encode => "hex", :replace_dot => " dot ", :replace_at => " at " %>)
               </div>
               <div class="commit_message">
-                <%= commit.message %>
+                <%= commit.message.force_encoding("UTF-8") %>
               </div>
             </div>
             <br />
