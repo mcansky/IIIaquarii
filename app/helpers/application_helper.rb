@@ -28,7 +28,7 @@ module ApplicationHelper
 
     if lexer
       syntaxer = Albino.new(text, lexer[:keywrd])
-      return syntaxer.colorize(options)
+      return syntaxer.colorize(options).force_encoding("UTF-8")
     end
 
     # We can't highlight... return the text
