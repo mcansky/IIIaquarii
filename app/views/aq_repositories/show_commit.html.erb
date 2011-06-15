@@ -69,7 +69,7 @@
         </div>
         <div class="commit_diff">
           <% cache Digest::SHA1.hexdigest(diff.diff) do %>
-            <%= highlight("commit.diff", "text/plain", diff.diff, {:O => "linenos=Table,nowrap=False"}).html_safe %>
+            <%= highlight("commit.diff", "text/plain", diff.diff.force_encoding("UTF-8"), {:O => "linenos=Table,nowrap=False"}).html_safe %>
           <% end %>
           <% diff_x += 1 %>
         </div>
