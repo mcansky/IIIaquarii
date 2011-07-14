@@ -11,3 +11,7 @@ rescue Bundler::GemNotFound => e
   STDERR.puts "Try running `bundle install`."
   exit!
 end if File.exist?(gemfile)
+
+# http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml/5107098#5107098
+require 'yaml'
+YAML::ENGINE.yamler= 'syck'
