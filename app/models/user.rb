@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   after_create :set_initial_role
 
-  validates_presence_of :login, :email, :password
+  validates_presence_of :login, :email
   # TODO how to i18n this ?
   #validates_format_of :login, :with => /^[A-Z][a-zA-Z '&-]*[A-Za-z]$/i, :allow_blank => false, :message => "can only contains letters and numbers."
   #validates_format_of :login, :with => /^\w+$/i, :message => "can only contains letters and numbers."

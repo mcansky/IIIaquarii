@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:show, :new, :create, :index]
+  before_filter :login_required, :except => [:show, :new, :create, :index]
 
   def index
     @users = User.page(params[:page])
