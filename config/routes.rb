@@ -1,7 +1,6 @@
 IIIaquarii::Application.routes.draw do
-
   resources :ssh_keys
-  resources :users
+  resources :users, :user_sessions
   #resources :aq_repositories # nested on :users
   resources :users do
     resources :aq_repositories do
@@ -32,8 +31,10 @@ IIIaquarii::Application.routes.draw do
   end
 
   match "/admin", :via => :get, :to => "application#admin"
-
   match "/repositories", :via => :get, :to => "application#repositories"
+
+  match "/login", :to => "user_sessions#new"
+  match "/logout", :to => "user_sessions#destroy"
 
   root :to => "application#index"
 end

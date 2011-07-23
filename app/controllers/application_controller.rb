@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :login_required
-  before_filter :set_our_current_user
+  helper_method :login_required, :current_user_session, :current_user
   before_filter :login_required, :only => :admin
   before_filter :admin_required, :only => :admin
 
@@ -41,12 +40,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # We need to access to "current_user" from some models
-  # and we can't with Devise, so we use this workaroud
-  def set_our_current_user
-    User.our_current_user = current_user || nil
-  end
-
   def warning_no_sshkey
     repository = AqRepository.find(params[:id])
     if current_user
@@ -83,6 +76,16 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+
   def login_required
     if current_user
       return true
