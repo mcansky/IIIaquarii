@@ -1,6 +1,6 @@
 IIIaquarii::Application.routes.draw do
   resources :ssh_keys
-  resources :users, :user_sessions
+  resources :user_sessions
   #resources :aq_repositories # nested on :users
   resources :users do
     resources :aq_repositories do
