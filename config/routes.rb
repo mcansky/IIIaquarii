@@ -1,5 +1,4 @@
 IIIaquarii::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :ssh_keys
   resources :users

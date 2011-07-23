@@ -19,7 +19,7 @@ end
 gem 'pg'
 
 # User auth
-gem "devise", :git => 'git://github.com/plataformatec/devise.git'
+gem 'authlogic'
 
 # Rails config files
 gem 'rails_config'

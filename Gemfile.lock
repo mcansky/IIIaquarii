@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: 76a480044688672acdd40469c74c6abfea35f8a4
-  specs:
-    devise (1.2.rc)
-      bcrypt-ruby (~> 2.1.2)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.0.3)
-
-GIT
   remote: git://github.com/rhaamo/albino.git
   revision: 978f6f5bcd51590e476ac148dd58289976a25700
   specs:
@@ -66,8 +57,9 @@ GEM
     activesupport (3.0.3)
     archive-tar-minitar (0.5.2)
     arel (2.0.7)
+    authlogic (2.1.6)
+      activesupport
     babosa (0.2.2)
-    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     columnize (0.3.2)
     creole (0.3.8)
@@ -103,7 +95,6 @@ GEM
     nokogiri (1.4.4)
     org-ruby (0.5.3)
       rubypants (>= 0.2.0)
-    orm_adapter (0.0.4)
     pg (0.10.1)
     polyglot (0.3.1)
     posix-spawn (0.3.6)
@@ -164,8 +155,6 @@ GEM
     unicorn (3.3.1)
       kgio (~> 2.1)
       rack
-    warden (1.0.3)
-      rack (>= 1.0.0)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -178,8 +167,8 @@ DEPENDENCIES
   RedCloth
   acts_as_versioned!
   albino!
+  authlogic
   creole
-  devise!
   factory_girl_rails (= 1.1.beta1)
   fileutils
   friendly_id (~> 3.2)
