@@ -5,22 +5,16 @@
 <div class="grid_4 prefix_4 suffix_4">
   <div id="login_form">
 
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <p><%= f.label :email %><br />
-        <%= f.email_field :email %></p>
+    <%- form_for @user_session do |f| %>
+      <p><%= f.label :login %><br />
+        <%= f.text_field :login %></p>
 
       <p><%= f.label :password %><br />
         <%= f.password_field :password %></p>
 
-      <% if devise_mapping.rememberable? -%>
-        <p><%= f.check_box :remember_me, :class => "login_form_remember_me" %> <%= f.label :remember_me %></p>
-      <% end -%>
-
       <p class="login_form_submit"><%= f.submit t(:sign_in, :scope => :sessions) %></p>
     <% end %>
 
-
-    <%= render :partial => "devise/shared/links" %>
 
   </div>
 </div>

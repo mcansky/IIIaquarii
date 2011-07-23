@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.9'
+
+gem 'haml'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,7 +21,7 @@ end
 gem 'pg'
 
 # User auth
-gem 'authlogic'
+gem 'authlogic', '~> 3.0'
 
 # Rails config files
 gem 'rails_config'

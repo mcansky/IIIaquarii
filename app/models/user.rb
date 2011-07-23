@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
 
   validates_presence_of :login, :email, :password
   # TODO how to i18n this ?
-  validates_format_of :name, :with => /^[A-Z][a-zA-Z '&-]*[A-Za-z]$/i, :allow_blank => true, :message => "can only contains letters and numbers."
-  validates_format_of :login, :with => /^\w+$/i, :message => "can only contains letters and numbers."
-  validates_uniqueness_of :name, :case_sensitive => true
+  #validates_format_of :login, :with => /^[A-Z][a-zA-Z '&-]*[A-Za-z]$/i, :allow_blank => false, :message => "can only contains letters and numbers."
+  #validates_format_of :login, :with => /^\w+$/i, :message => "can only contains letters and numbers."
+  validates_uniqueness_of :login, :case_sensitive => true
   validates_uniqueness_of :email, :case_sensitive => true
-  validates_exclusion_of :name, :in => ["admin", "login", "logout"], :message => "name %{value} is reserved"
+  validates_exclusion_of :login, :in => ["admin", "login", "logout"], :message => "name %{value} is reserved"
 
   def set_initial_role
     self.create_role(:name => "user", :user_id => self.id)
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   # TODO FIXME
   def admin?
     return (self.role.name == "admin")
+  end
+
+  def name
+    "#{self.firstname if !self.firstname.blank?} #{self.lastname if !self.lastname.blank?}".strip # strip is here to remove the whitespace if no firstname
   end
 
 end
