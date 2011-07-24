@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/bokmann/sentient_user.git
+  revision: 3ee20fc4b2df3ef22ef6d3d1a972670345f71527
+  specs:
+    sentient_user (0.3.2)
+
+GIT
   remote: git://github.com/rhaamo/albino.git
   revision: 978f6f5bcd51590e476ac148dd58289976a25700
   specs:
@@ -190,6 +196,7 @@ DEPENDENCIES
   rdiscount
   rspec-rails (= 2.0.0.beta.12)
   ruby-debug19
+  sentient_user!
   shoulda
   simplecov (>= 0.3.8)
   sqlite3

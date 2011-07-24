@@ -157,7 +157,7 @@ class AqRepository < ActiveRecord::Base
   # Generate the repo path
   # Check config/settings.yml for setup
   def repo_path
-    current_user = UserSession.find.user
+    current_user = User.current
     # root dir is the system home folder, need to exist prior to app launch
     # e.g. /home
     root_dir = Pathname(Settings.repos.root_dir)
@@ -196,7 +196,7 @@ class AqRepository < ActiveRecord::Base
   end # def repo_path // Generate the repo path
 
   def fork(parent_repo)
-    current_user = UserSession.find.user
+    current_user = User.current
     if !current_user.aq_repositories.find_by_name(parent_repo.name)
       self.name = parent_repo.name
       self.kind = parent_repo.kind

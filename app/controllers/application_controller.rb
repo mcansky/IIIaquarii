@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :login_required, :only => :admin
   before_filter :admin_required, :only => :admin
 
+  include SentientController
+
   def index
     # only show 10 repositories and 30 commits on index page
     if current_user
