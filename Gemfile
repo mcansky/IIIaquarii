@@ -22,6 +22,8 @@ gem 'pg'
 
 # User auth
 gem 'authlogic', '~> 3.0'
+# Prefers to use UserSession.find.user
+# gem 'sentient_user', :git => 'git://github.com/bokmann/sentient_user.git'
 
 # Rails config files
 gem 'rails_config'

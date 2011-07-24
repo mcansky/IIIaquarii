@@ -1,8 +1,11 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
-  adapter: sqlite3
-  database: db/dev.db
+  adapter: postgresql
+  database: aquarii
+  port: 5432
+  username: marc
+  host: localhost
   encoding: utf8
 
 
@@ -13,8 +16,7 @@ test:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: aquarii
-  password: aquarii1234
+  username: marc
   database: aquarii
   encoding: utf8
 
@@ -22,7 +24,6 @@ production:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: aquarii
-  password: foo
+  username: marc
   database: aquarii
   encoding: utf8

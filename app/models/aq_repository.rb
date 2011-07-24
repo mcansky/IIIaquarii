@@ -157,6 +157,7 @@ class AqRepository < ActiveRecord::Base
   # Generate the repo path
   # Check config/settings.yml for setup
   def repo_path
+    current_user = UserSession.find.user
     # root dir is the system home folder, need to exist prior to app launch
     # e.g. /home
     root_dir = Pathname(Settings.repos.root_dir)
@@ -179,8 +180,8 @@ class AqRepository < ActiveRecord::Base
     # e.g. /home/aq_git/git/username
     if self.owner
       repo_dir = scm_dir + self.owner.login
-    elsif User.our_current_user
-      repo_dir = scm_dir + User.our_current_user.login
+    elsif current_user
+      repo_dir = scm_dir + current_user.login
     end
     repo_dir.mkdir if !repo_dir.exist?
 
@@ -195,7 +196,8 @@ class AqRepository < ActiveRecord::Base
   end # def repo_path // Generate the repo path
 
   def fork(parent_repo)
-    if !User.our_current_user.aq_repositories.find_by_name(parent_repo.name)
+    current_user = UserSession.find.user
+    if !current_user.aq_repositories.find_by_name(parent_repo.name)
       self.name = parent_repo.name
       self.kind = parent_repo.kind
       self.desc = parent_repo.desc
@@ -205,7 +207,7 @@ class AqRepository < ActiveRecord::Base
       new_repo = parent_repoGrit.fork_bare(self.path)
 
       self.parent = parent_repo
-      self.owner = User.our_current_user
+      self.owner = current_user
       self.repo_update
     else
       return false

@@ -61,7 +61,9 @@
     </div>
 
     <div class="container_12">
-      <%= render :partial => "aq_repositories/repo_head_infos" %>
+      <%- if @repository and !@repository.new_record? %>
+        <%= render :partial => "aq_repositories/repo_head_infos" %>
+      <% end %>
       <%= render :partial => "shared/flash_messages" %>
     </div>
     <div class="clear"></div>
