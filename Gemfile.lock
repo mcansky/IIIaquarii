@@ -5,10 +5,10 @@ GIT
     sentient_user (0.3.2)
 
 GIT
-  remote: git://github.com/rhaamo/albino.git
-  revision: 978f6f5bcd51590e476ac148dd58289976a25700
+  remote: git://github.com/jedisct1/albino.git
+  revision: 5e3750d304f65799b9ce0653005f822c624c19d4
   specs:
-    albino (1.2.3)
+    albino (1.3.3)
 
 GIT
   remote: git://github.com/rhaamo/markup.git

@@ -57,7 +57,8 @@ gem 'creole'
 gem 'github-markup', :git => "git://github.com/rhaamo/markup.git", :require => 'github/markup'
 
 # Render code
-gem 'albino', :git => "git://github.com/rhaamo/albino.git"
+#gem 'albino', :git => "git://github.com/rhaamo/albino.git"
+gem 'albino', :git => "git://github.com/jedisct1/albino.git"
 
 # Pagination
 gem "will_paginate",:git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
