@@ -53,7 +53,7 @@
 	<tr class="file">
 	  <td>
             <%= image_tag("/images/icons/document-code.png", :title => file.name, :alt => file.name, :border => 0)%>
-            <%= link_to file.name, show_file_user_aq_repository_url(@repository.owner, @repository, file.name, :branch => branch) %>
+            <%= link_to File.basename(file.name), show_file_user_aq_repository_url(@repository.owner, @repository, file.name, :branch => branch) %>
 	  </td>
 	  <td><%= commit_time %></td>
 	  <td><%= last_log %></td>
