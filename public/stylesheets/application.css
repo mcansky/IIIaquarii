@@ -361,10 +361,11 @@ span.repo_private {
     margin-bottom: 10px;
 }
 
+#flash_error_button {
+    float: left;
+}
 
 #flash_error {
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
     position: absolute;
     top: 0;
