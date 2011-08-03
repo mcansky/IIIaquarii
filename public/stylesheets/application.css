@@ -361,6 +361,15 @@ span.repo_private {
     margin-bottom: 10px;
 }
 
+
+#flash_error {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
 #flash_error_messages {
     /*margin-bottom: 10px;*/
     padding-top: 4px;
@@ -370,10 +379,10 @@ span.repo_private {
     border-left: 1px solid #424242;
     border-right: 1px solid #424242;
     border-bottom: 1px solid #424242;
-    width: 50%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    width: 50%;
 }
 
 #flash_error_messages .close_flash_error_message {
