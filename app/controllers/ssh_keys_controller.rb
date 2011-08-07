@@ -23,7 +23,7 @@ class SshKeysController < ApplicationController
   def create
     @key = SshKey.new(params[:ssh_key])
     @key.user = current_user
-    @key.extract_login
+    @key.extract_login # TODO move to model in post_save
     if @key.save
       flash[:notice] = t(:created, :scope => :sshkeys)
       redirect_to @key
@@ -45,7 +45,7 @@ class SshKeysController < ApplicationController
     @key = SshKey.find(params[:id])
     if @key.user == current_user
       if @key.update_attributes(params[:ssh_key])
-        @key.extract_login
+        @key.extract_login # TODO move to model in post_save
         flash[:notice] = t(:updated, :scope => :sshkeys)
         redirect_to @key
       else

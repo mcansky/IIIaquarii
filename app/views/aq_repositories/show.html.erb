@@ -36,7 +36,11 @@
 
   <% if @repository.branches.empty? and @repository.commits.empty? %>
   <div class="grid_10 prefix_1 suffix_1">
-    <%= render "new_repository_text_message", :repository => @repository %>
+    <% if current_user %>
+        <%= render "new_repository_text_message", :repository => @repository %>
+    <% else %>
+        Empty repository. <%# FIXME i18n %>
+    <% end %>
   </div>
   <div class="clear"></div>
   <% else %>

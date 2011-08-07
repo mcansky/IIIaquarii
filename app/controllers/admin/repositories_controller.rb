@@ -4,7 +4,7 @@ class Admin::RepositoriesController < ApplicationController
 
   def index
     page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
-    @repositories = AqRepository.paginate :page => page, :per_page => Settings.admin.pagination.repositories
+    @repositories = AqRepository.page(page).per(Settings.admin.pagination.repositories)
   end
 
   def edit

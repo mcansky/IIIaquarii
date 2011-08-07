@@ -16,9 +16,6 @@
 </div>
 
 <div class="grid_10 prefix_1 suffix_1 pagination_aq3">
-  <%= will_paginate @repositories, :container => false %>
-  <div class="page_info">
-    <%= page_entries_info @repositories %>
-  </div>
+  <%= paginate @repositories %>
 </div>
 <div class="clear"></div>

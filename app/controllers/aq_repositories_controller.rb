@@ -12,13 +12,14 @@ class AqRepositoriesController < ApplicationController
     @user = User.find(params[:user_id])
     if current_user
       if current_user.id == @user.id
-        @repositories = current_user.aq_repositories.paginate :page => page, :per_page => Settings.pagination.user_repositories
+        @repositories = current_user.aq_repositories
       else
-        @repositories = @user.aq_repositories.public.paginate :page => page, :per_page => Settings.pagination.user_repositories
+        @repositories = @user.aq_repositories.public
       end
     else
-      @repositories = @user.aq_repositories.public.paginate :page => page, :per_page => Settings.pagination.user_repositories
+      @repositories = @user.aq_repositories.public
     end
+    @repositories = @repositories.page(page).per(Settings.pagination.user_repositories)
   end
 
   def show
@@ -96,6 +97,7 @@ class AqRepositoriesController < ApplicationController
       return redirect_to user_aq_repository_url(params[:user_id], params[:id])
     end
     parent_repo = AqRepository.find(params[:id])
+    # TODO: Improve forking
     repository = AqRepository.new
     repository.fork(parent_repo)
     repository.save if repository
@@ -119,11 +121,8 @@ class AqRepositoriesController < ApplicationController
       @grit_repo = Repo.new(@repository.path)
     end
 
-
-    @commits = WillPaginate::Collection.create(page, Settings.pagination.commits, @grit_repo.commit_count(branch)) do |pager|
-      start = (page.to_i-1)*Settings.pagination.commits # Assuming "current_page" is 1 based.
-      pager.replace(@grit_repo.commits(branch, Settings.pagination.commits, start)) # branch, max to show, start at (skips)
-    end
+    # FIXME very inefficient i think, especially on big repositories ...
+    @commits = Kaminari.paginate_array(@grit_repo.commits(branch)).page(page).per(Settings.pagination.commits)
 
   end
 
@@ -141,8 +140,10 @@ class AqRepositoriesController < ApplicationController
     repository = AqRepository.find(params[:id])
     if repository.is_git?
       grit_repo = Repo.new(repository.path)
+      a_file = grit_repo.tree(branch) / fpath
+    else
+      a_file = "Unknown Error."
     end
-    a_file = grit_repo.tree(branch) / fpath
     raise ActiveRecord::RecordNotFound if !a_file
     response.headers["Content-Type"] = "text/plain"
     render :text => a_file.data

@@ -31,9 +31,6 @@
 <div class="clear"></div>
 
 <div class="grid_10 prefix_1 suffix_1 pagination_aq3">
-  <%= will_paginate @ssh_keys, :container => false %>
-  <div class="page_info">
-    <%= page_entries_info @ssh_keys %>
-  </div>
+  <%= paginate @ssh_keys %>
 </div>
 <div class="clear"></div>

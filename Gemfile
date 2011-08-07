@@ -61,7 +61,7 @@ gem 'github-markup', :git => "git://github.com/rhaamo/markup.git", :require => '
 gem 'albino', :git => "git://github.com/jedisct1/albino.git"
 
 # Pagination
-gem "will_paginate",:git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
+gem "kaminari"
 
 gem 'fileutils'
 

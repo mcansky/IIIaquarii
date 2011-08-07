@@ -61,6 +61,7 @@ class AqRepository < ActiveRecord::Base
     else
       owner = nil
     end # if a_right
+    owner # FIXME Missing owner return ?
   end # def owner
 
   def owner=(user)
@@ -91,6 +92,7 @@ class AqRepository < ActiveRecord::Base
       split_path = self.path.split("/")
       ppath = "git://" + Settings.application.hostname + "/" +
         split_path[-2] + "/" + split_path[-1]
+      # FIXME missing return ppath ?
     end # if self.is_git?
   end # def public_path
 
@@ -99,6 +101,7 @@ class AqRepository < ActiveRecord::Base
       split_path = self.path.split("/")
       ppath = Settings.repos.repo_user + "@" + Settings.application.hostname + ":" +
         split_path[-2] + "/" + split_path[-1]
+      # missing here too ?
     end # if self.is_git?
   end # def private_path
 
@@ -203,8 +206,8 @@ class AqRepository < ActiveRecord::Base
       self.desc = parent_repo.desc
       self.repo_path
 
-      parent_repoGrit = Repo.new(parent_repo.path)
-      new_repo = parent_repoGrit.fork_bare(self.path)
+      parent_repo_grit = Repo.new(parent_repo.path)
+      new_repo = parent_repo_grit.fork_bare(self.path)
 
       self.parent = parent_repo
       self.owner = current_user

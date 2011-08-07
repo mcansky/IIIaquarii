@@ -4,7 +4,7 @@ class Admin::SshkeysController < ApplicationController
 
   def index
     page = (!params[:page] or (params[:page] == "0")) ? 1 : params[:page]
-    @ssh_keys = SshKey.paginate :page => page, :per_page => Settings.admin.pagination.ssh_keys
+    @ssh_keys = SshKey.page(page).per(Settings.admin.pagination.ssh_keys)
   end
 
   def edit

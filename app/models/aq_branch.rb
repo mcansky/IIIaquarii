@@ -24,10 +24,10 @@ class AqBranch < ActiveRecord::Base
                                   :committed_time => c.committed_date,
                                   :repository => self.aq_repository)
           c.diffs.each do |diff|
-            a_file = nil
             begin
               a_file = AqFile.find_by_path(diff.b_path, :conditions => ["aq_branch_id = ?", self.id])
             rescue
+              a_file = nil
             end
             if !a_file
               a_file = AqFile.new(:name => diff.b_path.split("/").last, :path => diff.b_path)
