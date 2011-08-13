@@ -789,7 +789,7 @@ button.clean-gray:active {
 #show_commit .commit_diff td.code {
     padding-left: 5px;
     padding-top: 5px;
-    paddinb-bottom:5px;
+    padding-bottom:5px;
 }
 
 .show_commit_head {
@@ -840,10 +840,17 @@ button.clean-gray:active {
     border-bottom: 1px solid #CCC;
 }
 
-#repo_head_infos {
+#repo_head_infos .container_12 {
     background-image: url(/images/background-yellow.png);
-    padding: 4px;
     margin-top: 1em;
+}
+
+#repo_head_infos .left_infos_repo_head {
+  padding-left: 5px;
+}
+
+#repo_head_infos .right_infos_repo_head {
+  margin-top: 5px;
 }
 
 #forked_from {

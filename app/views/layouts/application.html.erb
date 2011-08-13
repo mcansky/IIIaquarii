@@ -62,14 +62,12 @@
       </div>
     </div>
 
-    <div class="container_12">
-      <%- if @repository and !@repository.new_record? %>
+    <%- if @repository and !@repository.new_record? %>
+      <div id="repo_head_infos">
         <%= render :partial => "aq_repositories/repo_head_infos" %>
-      <% end %>
-
-    </div>
-    <div class="clear"></div>
-
+      </div>
+      <div class="clear"></div>
+    <% end %>
 
     <!-- main -->
     <div id="content">
