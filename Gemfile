@@ -70,5 +70,4 @@ group :test do
   gem "shoulda"
   gem 'factory_girl_rails', "1.1.beta1"
   gem "rspec-rails", "2.0.0.beta.12"
-  gem 'simplecov', '>=0.3.8', :require => false
 end
